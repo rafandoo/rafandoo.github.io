@@ -3,7 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #393e46;
-  background: url("../../assets/img/background.jpg");
+  background: url("../../assets/img/background.webp");
   background-size: cover;
   background-position: center;
 }
