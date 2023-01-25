@@ -1,48 +1,44 @@
 :root {
 
-    /**
-     * colors
-     */
+    /* #colors */
 
     /* gradient */
 
     --bg-gradient-onyx: linear-gradient(to bottom right,
-            hsl(240, 1%, 25%) 3%,
-            hsl(0, 0%, 19%) 97%);
+            rgb(63, 63, 64) 3%,
+            rgb(48, 48, 48) 97%);
     --bg-gradient-jet: linear-gradient(to bottom right,
-            hsla(240, 1%, 18%, 0.251) 0%,
-            hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
-    --bg-gradient-yellow-1: linear-gradient(to bottom right,
-            hsl(45, 100%, 71%) 0%,
-            hsla(36, 100%, 69%, 0) 50%);
-    --bg-gradient-yellow-2: linear-gradient(135deg,
-            hsla(45, 100%, 71%, 0.251) 0%,
-            hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
+            rgba(45, 45, 46, 0.251) 0%,
+            rgba(27, 27, 29, 0) 100%), hsl(240, 2%, 13%);
+    --bg-gradient-blue-1: linear-gradient(to bottom right,
+            rgb(107, 220, 255) 0%,
+            rgba(255, 192, 97, 0) 50%);
+    --bg-gradient-blue-2: linear-gradient(135deg,
+            rgba(107, 176, 255, 0.251) 0%,
+            rgba(255, 187, 92, 0) 59.86%), hsl(240, 2%, 13%);
     --border-gradient-onyx: linear-gradient(to bottom right,
-            hsl(0, 0%, 25%) 0%,
-            hsla(0, 0%, 25%, 0) 50%);
+            rgb(64, 64, 64) 0%,
+            rgba(64, 64, 64, 0) 50%);
     --text-gradient-yellow: linear-gradient(to right,
-            hsl(45, 100%, 72%),
-            hsl(35, 100%, 68%));
+            rgb(112, 198, 255),
+            rgb(92, 122, 255));
 
     /* solid */
 
-    --jet: hsl(0, 0%, 22%);
-    --onyx: hsl(240, 1%, 17%);
-    --eerie-black-1: hsl(240, 2%, 13%);
-    --eerie-black-2: hsl(240, 2%, 12%);
-    --smoky-black: hsl(0, 0%, 7%);
-    --white-1: hsl(0, 0%, 100%);
-    --white-2: hsl(0, 0%, 98%);
-    --orange-yellow-crayola: hsl(45, 100%, 72%);
-    --vegas-gold: hsl(45, 54%, 58%);
-    --light-gray: hsl(0, 0%, 84%);
-    --light-gray-70: hsla(0, 0%, 84%, 0.7);
-    --bittersweet-shimmer: hsl(0, 43%, 51%);
+    --jet: rgb(56, 56, 56);
+    --onyx: rgb(43, 43, 44);
+    --eerie-black-1: rgb(32, 32, 34);
+    --eerie-black-2: rgb(30, 30, 31);
+    --smoky-black: rgb(18, 18, 18);
+    --white-1: rgb(255, 255, 255);
+    --white-2: rgb(250, 250, 250);
+    --blue-past: rgb(112, 210, 255);
+    --g-blue: rgb(90, 154, 206);
+    --light-gray: rgb(214, 214, 214);
+    --light-gray-70: rgba(214, 214, 214, 0.7);
+    --bittersweet-shimmer: rgb(184, 76, 76);
 
-    /**
-     * typography
-     */
+    /* #typography */
 
     /* font-family */
     --ff-poppins: 'Poppins', sans-serif;
@@ -63,32 +59,22 @@
     --fw-500: 500;
     --fw-600: 600;
 
-    /**
-     * shadow
-     */
+    /* #shadow */
 
-    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+    --shadow-1: -4px 8px 24px rgba(0, 0, 0, 0.25);
     --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
     --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
     --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
     --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
 
-    /**
-     * transition
-     */
+    /* #transition */
 
     --transition-1: 0.25s ease;
     --transition-2: 0.5s ease-in-out;
-
 }
 
 
-
-
-
-/*-----------------------------------*\
-    #RESET
-\*-----------------------------------*/
+/*--- #RESET ---*/
 
 *,
 *::before,
@@ -132,12 +118,12 @@ textarea {
 }
 
 ::selection {
-    background: var(--orange-yellow-crayola);
+    background: var(--blue-past);
     color: var(--smoky-black);
 }
 
 :focus {
-    outline-color: var(--orange-yellow-crayola);
+    outline-color: var(--blue-past);
 }
 
 html {
@@ -149,12 +135,9 @@ body {
 }
 
 
-
-
-
-/*-----------------------------------*\
-    #REUSED STYLE
-\*-----------------------------------*/
+/*----------*\
+#REUSED STYLE
+\*----------*/
 
 .sidebar,
 article {
@@ -183,7 +166,7 @@ article {
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    color: var(--orange-yellow-crayola);
+    color: var(--blue-past);
     box-shadow: var(--shadow-1);
     z-index: 1;
 }
@@ -263,9 +246,7 @@ article {
 
 .has-scrollbar::-webkit-scrollbar {
     width: 5px;
-    /* for vertical scrollbar */
     height: 5px;
-    /* for horizontal scrollbar */
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
@@ -274,7 +255,7 @@ article {
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
-    background: var(--orange-yellow-crayola);
+    background: var(--blue-past);
     border-radius: 5px;
 }
 
@@ -303,26 +284,16 @@ article {
 }
 
 
+/*--- #MAIN ---*/
 
-
-
-/*-----------------------------------*\
-    #MAIN
-\*-----------------------------------*/
-
-main {
+.main {
     margin: 15px 12px;
     margin-bottom: 75px;
     min-width: 259px;
 }
 
 
-
-
-
-/*-----------------------------------*\
-    #SIDEBAR
-\*-----------------------------------*/
+/*--- #SIDEBAR ---*/
 
 .sidebar {
     margin-bottom: 15px;
@@ -372,7 +343,7 @@ main {
     right: -15px;
     border-radius: 0 15px;
     font-size: 13px;
-    color: var(--orange-yellow-crayola);
+    color: var(--blue-past);
     background: var(--border-gradient-onyx);
     padding: 10px;
     box-shadow: var(--shadow-2);
@@ -392,12 +363,12 @@ main {
 
 .info_more-btn:hover,
 .info_more-btn:focus {
-    background: var(--bg-gradient-yellow-1);
+    background: var(--bg-gradient-blue-1);
 }
 
 .info_more-btn:hover::before,
 .info_more-btn:focus::before {
-    background: var(--bg-gradient-yellow-2);
+    background: var(--bg-gradient-blue-2);
 }
 
 .info_more-btn span {
@@ -469,12 +440,7 @@ main {
 }
 
 
-
-
-
-/*-----------------------------------*\
-    #NAVBAR
-\*-----------------------------------*/
+/*--- #NAVBAR ---*/
 
 .navbar {
     position: fixed;
@@ -510,16 +476,11 @@ main {
 }
 
 .navbar-link.active {
-    color: var(--orange-yellow-crayola);
+    color: var(--blue-past);
 }
 
 
-
-
-
-/*-----------------------------------*\
-    #ABOUT
-\*-----------------------------------*/
+/*--- #ABOUT ---*/
 
 .about .article-title {
     margin-bottom: 15px;
@@ -537,133 +498,7 @@ main {
 }
 
 
-
-/**
-    #service 
-*/
-
-.service {
-    margin-bottom: 35px;
-}
-
-.service-title {
-    margin-bottom: 20px;
-}
-
-.service-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.service-item {
-    position: relative;
-    background: var(--border-gradient-onyx);
-    padding: 20px;
-    border-radius: 14px;
-    box-shadow: var(--shadow-2);
-    z-index: 1;
-}
-
-.service-item::before {
-    content: "";
-    position: absolute;
-    inset: 1px;
-    background: var(--bg-gradient-jet);
-    border-radius: inherit;
-    z-index: -1;
-}
-
-.service-icon-box {
-    margin-bottom: 10px;
-}
-
-.service-icon-box img {
-    margin: auto;
-}
-
-.service-content-box {
-    text-align: center;
-}
-
-.service-item-title {
-    margin-bottom: 7px;
-}
-
-.service-item-text {
-    color: var(--light-gray);
-    font-size: var(--fs-6);
-    font-weight: var(--fw-3);
-    line-height: 1.6;
-}
-
-
-/*-----------------------------------*\
-    #PORTFOLIO
-\*-----------------------------------*/
-
-.filter-list {
-    display: none;
-}
-
-.filter-select-box {
-    position: relative;
-    margin-bottom: 25px;
-}
-
-.filter-select {
-    background: var(--eerie-black-2);
-    color: var(--light-gray);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid var(--jet);
-    border-radius: 14px;
-    font-size: var(--fs-6);
-    font-weight: var(--fw-300);
-}
-
-.filter-select.active .select-icon {
-    transform: rotate(0.5turn);
-}
-
-.select-list {
-    background: var(--eerie-black-2);
-    position: absolute;
-    top: calc(100% + 6px);
-    width: 100%;
-    padding: 6px;
-    border: 1px solid var(--jet);
-    border-radius: 14px;
-    z-index: 2;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: 0.15s ease-in-out;
-}
-
-.filter-select.active+.select-list {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-}
-
-.select-item button {
-    background: var(--eerie-black-2);
-    color: var(--light-gray);
-    font-size: var(--fs-6);
-    font-weight: var(--fw-300);
-    text-transform: capitalize;
-    width: 100%;
-    padding: 8px 10px;
-    border-radius: 8px;
-}
-
-.select-item button:hover {
-    --eerie-black-2: hsl(240, 2%, 20%);
-}
+/*--- #PORTFOLIO ---*/
 
 .project-list {
     display: grid;
@@ -722,9 +557,8 @@ main {
 
 .project-item-icon-box {
     --scale: 0.8;
-
     background: var(--jet);
-    color: var(--orange-yellow-crayola);
+    color: var(--blue-past);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -777,44 +611,28 @@ main {
 }
 
 
+/*--- #RESPONSIVE ---*/
 
-
-/*-----------------------------------*\
-    #RESPONSIVE
-\*-----------------------------------*/
-
-/**
-   * responsive larger than 450px screen
-   */
+/*
+    responsive larger than 450px screen
+*/
 
 @media (min-width: 450px) {
-
-    /**
-     * #PORTFOLIO 
-     */
-
+    /* #PORTFOLIO  */
     .project-img {
         height: auto;
     }
-
 }
 
-/**
-   * responsive larger than 580px screen
-   */
+/*
+    responsive larger than 580px screen
+*/
 
 @media (min-width: 580px) {
 
-    /**
-     * CUSTOM PROPERTY
-     */
+    /* CUSTOM PROPERTY */
 
     :root {
-
-        /**
-       * typography
-       */
-
         --fs-1: 32px;
         --fs-2: 24px;
         --fs-3: 26px;
@@ -824,11 +642,7 @@ main {
         --fs-8: 12px;
     }
 
-
-
-    /**
-     * #REUSED STYLE
-     */
+    /* #REUSED STYLE */
 
     .sidebar,
     article {
@@ -854,21 +668,10 @@ main {
         font-size: 18px;
     }
 
-
-
-    /**
-     * #MAIN
-     */
-
-    main {
+    .main {
         margin-top: 60px;
         margin-bottom: 100px;
     }
-
-
-    /**
-     * #SIDEBAR
-     */
 
     .sidebar {
         max-height: 180px;
@@ -927,12 +730,6 @@ main {
         width: calc(100% - 64px);
     }
 
-
-
-    /**
-     * #NAVBAR
-     */
-
     .navbar {
         border-radius: 20px 20px 0 0;
     }
@@ -945,12 +742,6 @@ main {
         --fs-8: 14px;
     }
 
-
-
-    /**
-     * #ABOUT
-     */
-
     .about .article-title {
         margin-bottom: 20px;
     }
@@ -959,47 +750,19 @@ main {
         margin-bottom: 40px;
     }
 
-    /* service */
-
-    .service-item {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 18px;
-        padding: 30px;
-    }
-
-    .service-icon-box {
-        margin-bottom: 0;
-        margin-top: 5px;
-    }
-
-    .service-content-box {
-        text-align: left;
-    }
-
-
-
-
-    /**
-     * #PORTFOLIO
-     */
-
     .project-img {
         border-radius: 16px;
     }
 }
 
 
-/**
-* responsive larger than 768px screen
+/*
+    responsive larger than 768px screen
 */
 
 @media (min-width: 768px) {
 
-    /**
-     * REUSED STYLE
-     */
+    /* REUSED STYLE */
 
     .sidebar,
     article {
@@ -1010,82 +773,18 @@ main {
         width: 100px;
     }
 
-
-
-    /**
-     * SIDEBAR
-     */
-
     .contacts-list {
         grid-template-columns: 1fr 1fr;
         gap: 30px 15px;
     }
 
-
-
-    /**
-     * NAVBAR
-     */
-
     .navbar-link {
         --fs-8: 15px;
     }
 
-
-
-    /**
-     * ABOUT
-     */
-
-    /* testimonials modal */
-
-    .testimonials-modal {
-        gap: 35px;
-        max-width: 680px;
-    }
-
-    .modal-avatar-box img {
-        width: 80px;
-    }
-
-
-
-    /**
-     * PORTFOLIO
-     */
-
     .article-title {
         padding-bottom: 20px;
     }
-
-    .filter-select-box {
-        display: none;
-    }
-
-    .filter-list {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 25px;
-        padding-left: 5px;
-        margin-bottom: 30px;
-    }
-
-    .filter-item button {
-        color: var(--light-gray);
-        font-size: var(--fs-5);
-        transition: var(--transition-1);
-    }
-
-    .filter-item button:hover {
-        color: var(--light-gray-70);
-    }
-
-    .filter-item button.active {
-        color: var(--orange-yellow-crayola);
-    }
-
-    /* portfolio and blog grid */
 
     .project-list {
         grid-template-columns: 1fr 1fr;
@@ -1093,36 +792,21 @@ main {
 }
 
 
-
-
-
-/**
-   * responsive larger than 1024px screen
-   */
+/*
+    responsive larger than 1024px screen
+*/
 
 @media (min-width: 1024px) {
 
-    /**
-     * CUSTOM PROPERTY
-     */
+    /* CUSTOM PROPERTY */
 
     :root {
-
-        /**
-      * shadow
-      */
-
         --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
         --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
         --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
-
     }
 
-
-
-    /**
-     * REUSED STYLE
-     */
+    /* REUSED STYLE */
 
     .sidebar,
     article {
@@ -1130,13 +814,7 @@ main {
         box-shadow: var(--shadow-5);
     }
 
-
-
-    /**
-     * MAIN 
-     */
-
-    main {
+    .main {
         margin-bottom: 60px;
     }
 
@@ -1145,12 +823,6 @@ main {
         width: max-content;
         margin: auto;
     }
-
-
-
-    /**
-     * NAVBAR
-     */
 
     .navbar {
         position: absolute;
@@ -1173,23 +845,6 @@ main {
         font-weight: var(--fw-500);
     }
 
-
-
-    /**
-     * ABOUT
-     */
-
-    /* service */
-
-    .service-list {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px 25px;
-    }
-
-    /**
-     * PORTFOLIO
-     */
-
     .project-list {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -1197,18 +852,12 @@ main {
 }
 
 
-
-
-
-/**
-   * responsive larger than 1250px screen
-   */
+/*
+    responsive larger than 1250px screen
+*/
 
 @media (min-width: 1250px) {
-
-    /**
-     * RESET
-     */
+    /* RESET */
 
     body::-webkit-scrollbar {
         width: 20px;
@@ -1234,11 +883,7 @@ main {
         height: 60px;
     }
 
-
-
-    /**
-     * REUSED STYLE
-     */
+    /* REUSED STYLE */
 
     .sidebar,
     article {
@@ -1249,13 +894,7 @@ main {
         min-height: 100%;
     }
 
-
-
-    /**
-     * MAIN
-     */
-
-    main {
+    .main {
         max-width: 1200px;
         margin-inline: auto;
         display: flex;
@@ -1269,12 +908,6 @@ main {
         width: 75%;
         margin: 0;
     }
-
-
-
-    /**
-     * SIDEBAR
-     */
 
     .sidebar {
         position: sticky;
@@ -1335,5 +968,4 @@ main {
     .social-list {
         justify-content: center;
     }
-
 }
