@@ -1,30 +1,14 @@
 :root {
-
     /* #colors */
-
     /* gradient */
 
-    --bg-gradient-onyx: linear-gradient(to bottom right,
-            rgb(63, 63, 64) 3%,
-            rgb(48, 48, 48) 97%);
-    --bg-gradient-jet: linear-gradient(to bottom right,
-            rgba(45, 45, 46, 0.251) 0%,
-            rgba(27, 27, 29, 0) 100%), hsl(240, 2%, 13%);
-    --bg-gradient-blue-1: linear-gradient(to bottom right,
-            rgb(107, 220, 255) 0%,
-            rgba(255, 192, 97, 0) 50%);
-    --bg-gradient-blue-2: linear-gradient(135deg,
-            rgba(107, 176, 255, 0.251) 0%,
-            rgba(255, 187, 92, 0) 59.86%), hsl(240, 2%, 13%);
-    --border-gradient-onyx: linear-gradient(to bottom right,
-            rgb(64, 64, 64) 0%,
-            rgba(64, 64, 64, 0) 50%);
-    --text-gradient-yellow: linear-gradient(to right,
-            rgb(112, 198, 255),
-            rgb(92, 122, 255));
+    --bg-gradient-jet: linear-gradient(to bottom right, rgba(45, 45, 46, 0.251) 0%, rgba(27, 27, 29, 0) 100%), hsl(240, 2%, 13%);
+    --bg-gradient-blue-1: linear-gradient(to bottom right, rgb(107, 220, 255) 0%, rgba(255, 192, 97, 0) 50%);
+    --bg-gradient-blue-2: linear-gradient(135deg, rgba(107, 176, 255, 0.251) 0%, rgba(255, 187, 92, 0) 59.86%), rgb(32, 32, 34);
+    --border-gradient-onyx: linear-gradient(to bottom right, rgb(64, 64, 64) 0%, rgba(64, 64, 64, 0) 50%);
+    --text-gradient-blue: linear-gradient(to right, rgb(112, 198, 255), rgb(92, 122, 255));
 
     /* solid */
-
     --jet: rgb(56, 56, 56);
     --onyx: rgb(43, 43, 44);
     --eerie-black-1: rgb(32, 32, 34);
@@ -36,7 +20,6 @@
     --g-blue: rgb(90, 154, 206);
     --light-gray: rgb(214, 214, 214);
     --light-gray-70: rgba(214, 214, 214, 0.7);
-    --bittersweet-shimmer: rgb(184, 76, 76);
 
     /* #typography */
 
@@ -240,7 +223,7 @@ article {
     left: 0;
     width: 30px;
     height: 3px;
-    background: var(--text-gradient-yellow);
+    background: var(--text-gradient-blue);
     border-radius: 3px;
 }
 

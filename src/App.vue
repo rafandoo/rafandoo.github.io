@@ -29,32 +29,38 @@
                         'PomoTimer': {
                             'title': 'PomoTimer',
                             'category': 'Aplicação da tècinca Pomodoro',
-                            'img': 'https://i.ibb.co/VxjwbSR/dJryJg.webp',
+                            'img': 'img/pomotimer.webp',
                             'link': 'https://rafandoo.github.io/pomotimer-lite/'
                         },
                         'Predição de AVC': {
                             'title': 'Predição de AVC',
                             'category': 'Rede Neural Arficial Multilayer Percptron',
-                            'img': 'https://i.ibb.co/Jcq880T/dJznyN.webp',
+                            'img': 'img/avc.webp',
                             'link': 'https://github.com/rafandoo/predicao-avc'
                         },
                         'Speed Test': {
                             'title': 'Speed Test',
                             'category': 'Speed Test e Dashboard feito em Python com Django',
-                            'img': 'https://i.ibb.co/VpbSywV/dJz5Fj.webp',
+                            'img': 'img/speed-test.webp',
                             'link': 'https://github.com/rafandoo/SpeedTestRplus'
                         },
                         '8 rainhas': {
                             'title': '8 rainhas',
                             'category': 'Algoritmo genético para resolver o problema das 8 rainhas',
-                            'img': 'https://i.ibb.co/xjNg6rn/8-rainhas.webp',
+                            'img': 'img/8-rainhas.webp',
                             'link': 'https://github.com/rafandoo/8-rainhas'
                         },
                         'Help Desk': {
                             'title': 'Help Desk',
                             'category': 'Sistema de Help Desk desenvolvido com o framework Laravel',
-                            'img': 'https://i.ibb.co/BBVhT10/helpdesk.webp',
+                            'img': 'img/helpdesk.webp',
                             'link': 'https://github.com/rafandoo/HelpDeskRplus'
+                        },
+                        'Projeto CLI': {
+                            'title': 'Projeto CLI',
+                            'category': 'Automatização de criação de projetos com Python',
+                            'img': 'img/project-cli.webp',
+                            'link': 'https://github.com/rafandoo/project-cli'
                         }
                     }"
                 />
