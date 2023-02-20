@@ -10,7 +10,7 @@
                     <input type="email" name="email" class="form-input" placeholder="E-mail" required data-form-input>
                 </div>
                 <textarea name="message" class="form-input" placeholder="Sua mensagem" required data-form-input></textarea>
-                <button class="form-btn" type="submit" disabled data-form-btn>
+                <button class="form-btn" type="submit" disabled data-form-btn @click="showToast()">
                     <ion-icon name="paper-plane"></ion-icon>
                     <span>Enviar</span>
                 </button>
@@ -20,11 +20,19 @@
 </template>
 
 <script>
+import { useToast } from 'vue-toastification';
+
 export default {
     name: 'ContactMe',
     props: [
         'integration_link',
     ],
+    setup() {
+        const toast = useToast();
+        return {
+            toast,
+        }
+    },
     methods: {
         ctrlForm() {
             const form = document.querySelector("[data-form]");
@@ -40,6 +48,22 @@ export default {
                     }
                 });
             }
+        },
+        showToast() {
+            this.toast.success('Mensagem enviada com sucesso!', {
+                position: 'top-right',
+                timeout: 5000,
+                closeOnClick: true,
+                pauseOnFocusLoss: false,
+                pauseOnHover: true,
+                draggable: true,
+                draggablePercent: 0.6,
+                showCloseButtonOnHover: false,
+                hideProgressBar: false,
+                closeButton: 'button',
+                icon: true,
+                rtl: false,
+            });
         }
     },
     mounted() {
