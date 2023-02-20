@@ -5,7 +5,10 @@
                 <button class="navbar-link active" id="about" data-bs-toggle="tab">Sobre</button>
             </li>
             <li class="navbar-item">
-                <button class="navbar-link" id="port" data-bs-toggle="tab">Portfolio</button>
+                <button class="navbar-link" id="port" data-bs-toggle="tab">Portfólio</button>
+            </li>
+            <li class="navbar-item">
+                <button class="navbar-link" id="contact" data-bs-toggle="tab">Contato</button>
             </li>
         </ul>
     </nav>

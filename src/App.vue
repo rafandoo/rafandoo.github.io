@@ -28,41 +28,52 @@
                     :projects="{
                         'PomoTimer': {
                             'title': 'PomoTimer',
-                            'category': 'Aplicação da tècinca Pomodoro',
+                            'subtitle': 'Aplicação da técnica Pomodoro.',
+                            'category': ['Web App', 'Vue.JS'],
                             'img': 'img/pomotimer.webp',
                             'link': 'https://rafandoo.github.io/pomotimer-lite/'
                         },
                         'Predição de AVC': {
                             'title': 'Predição de AVC',
-                            'category': 'Rede Neural Arficial Multilayer Percptron',
+                            'subtitle': 'Rede Neural Arficial MLP, para predição de AVC.',
+                            'category': ['Machine Learning', 'Python'],
                             'img': 'img/avc.webp',
                             'link': 'https://github.com/rafandoo/predicao-avc'
                         },
                         'Speed Test': {
                             'title': 'Speed Test',
-                            'category': 'Speed Test e Dashboard feito em Python com Django',
+                            'subtitle': 'Speed Test com Dashboard para visualização dos resultados.',
+                            'category': ['Web App', 'Python', 'Django'],
                             'img': 'img/speed-test.webp',
                             'link': 'https://github.com/rafandoo/SpeedTestRplus'
                         },
                         '8 rainhas': {
                             'title': '8 rainhas',
-                            'category': 'Algoritmo genético para resolver o problema das 8 rainhas',
+                            'subtitle': 'Algoritmo genético para solucionar o problema das 8 rainhas.',
+                            'category': ['Algoritmo Genético', 'Python'],
                             'img': 'img/8-rainhas.webp',
                             'link': 'https://github.com/rafandoo/8-rainhas'
                         },
                         'Help Desk': {
                             'title': 'Help Desk',
-                            'category': 'Sistema de Help Desk desenvolvido com o framework Laravel',
+                            'subtitle': 'Sistema de Help Desk para suporte técnico.',
+                            'category': ['Web App', 'Laravel', 'PHP'],
                             'img': 'img/helpdesk.webp',
                             'link': 'https://github.com/rafandoo/HelpDeskRplus'
                         },
                         'Projeto CLI': {
                             'title': 'Projeto CLI',
-                            'category': 'Automatização de criação de projetos com Python',
+                            'subtitle': 'Automatização de criação de estrutura de projetos.',
+                            'category': ['Python'],
                             'img': 'img/project-cli.webp',
                             'link': 'https://github.com/rafandoo/project-cli'
                         }
                     }"
+                />
+            </div>
+            <div class="tab-content" id="contact">
+                <ContactMe 
+                    integration_link="https://send.pageclip.co/PFWf4lo5hFmU0tI2gNrf7nsRJCeMGh8b/contact-gh-pages"
                 />
             </div>
         </div>
@@ -74,6 +85,7 @@ import SideBar from './components/SideBar.vue'
 import NavBar from './components/NavBar.vue'
 import AboutMe from './components/AboutMe.vue'
 import PortfolioPage from './components/PortfolioPage.vue'
+import ContactMe from './components/ContactMe.vue'
 
 export default {
     name: 'App',
@@ -82,6 +94,7 @@ export default {
         NavBar,
         AboutMe,
         PortfolioPage,
+        ContactMe
     }
 }
 </script>

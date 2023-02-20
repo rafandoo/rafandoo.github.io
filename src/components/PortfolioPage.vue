@@ -1,6 +1,6 @@
 <template>
     <article class="portfolio" data-page="portfolio">
-        <h2 class="h2 article-title">Portfolio</h2>
+        <h2 class="h2 article-title">Portfólio</h2>
         <div class="projects">
             <ul class="project-list">
                 <li class="project-item" v-for="(project, index) in projects" :key="index">
@@ -12,7 +12,10 @@
                             <img :src="project.img" alt="" loading="lazy">
                         </figure>
                         <h3 class="project-title">{{ project.title }}</h3>
-                        <p class="project-category">{{ project.category }}</p>
+                        <div class="project-categories">
+                            <span class="project-category" v-for="(category, index) in project.category" :key="index">{{ category }}</span>
+                        </div>
+                        <p class="project-subtitle">{{ project.subtitle }}</p>
                     </a>
                 </li>
             </ul>
