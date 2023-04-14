@@ -42,10 +42,10 @@
                         },
                         'Speed Test': {
                             'title': 'Speed Test',
-                            'subtitle': 'Speed Test com Dashboard para visualização dos resultados.',
-                            'category': ['Web App', 'Python', 'Django'],
+                            'subtitle': 'Speed Test CLI com persistência dos dados coletados.',
+                            'category': ['Python', 'CLI'],
                             'img': 'img/speed-test.webp',
-                            'link': 'https://github.com/rafandoo/SpeedTestRplus'
+                            'link': 'https://github.com/rafandoo/speedtest'
                         },
                         '8 rainhas': {
                             'title': '8 rainhas',
