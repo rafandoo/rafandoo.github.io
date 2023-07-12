@@ -578,7 +578,7 @@ article {
 .project-title,
 .project-subtitle,
 .project-category {
-    margin-left: 10px;
+    margin-left: 6px;
 }
 
 .project-title {
@@ -602,7 +602,58 @@ article {
 
 .project-category {
     margin-top: 10px;
+    margin-right: 3px;
+    margin-bottom: 10px;
+    color: var(--white-1);
+    background: var(--onyx);
+    font-size: var(--fs-8);
+    font-weight: var(--fw-300);
+    width: max-content;
+    padding: 3px 12px;
+    border-radius: 8px;
+}
+
+/*--- #SKILL ---*/
+.skill-list {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.skill-item {
+    display: flex;
+    animation: scaleUp 0.25s ease forwards;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills {
+    margin-top: 30px;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.skill-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    transition: var(--transition-1);
+}
+
+
+.skill-title {
+    margin-top: 10px;
     margin-right: 5px;
+    margin-left: 5px;
     margin-bottom: 10px;
     color: var(--white-1);
     background: var(--onyx);
@@ -911,6 +962,10 @@ textarea.form-input::-webkit-resizer {
         grid-template-columns: 1fr 1fr;
     }
 
+    .skill-list {
+        grid-template-columns: 2fr 2fr;
+    }
+
     .input-wrapper { grid-template-columns: 1fr 1fr; }
 
     .form-btn {
@@ -977,6 +1032,10 @@ textarea.form-input::-webkit-resizer {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .skill-list {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
 }
 
 
@@ -1023,7 +1082,7 @@ textarea.form-input::-webkit-resizer {
     }
 
     .main {
-        max-width: 1200px;
+        max-width: 1300px;
         margin-inline: auto;
         display: flex;
         justify-content: center;

@@ -2,7 +2,7 @@
     <aside class="sidebar" data-sidebar>
         <div class="sidebar-info">
             <figure class="avatar-box">
-                <img class="avatar-picture" :src="profile_picture" :alt="my_name" width="80">
+                <img class="avatar-picture" :src="gravatar" :alt="my_name" width="80">
             </figure>
             <div class="info-content">
                 <h1 class="name">{{ my_name }}</h1>
@@ -67,12 +67,14 @@
 </template>
 
 <script>
+import md5 from 'md5';
+
 export default {
     name: 'SideBar',
 
     props: [
         'my_name',
-        'profile_picture',
+        'gravatar_email',
         'sub_title',
         'email',
         'whats_link',
@@ -95,6 +97,13 @@ export default {
             sidebarBtn.addEventListener("click", function () { 
                 elementToggleFunc(sidebar); 
             });
+        }
+    },
+
+    computed: {
+        gravatar() {
+            const hash = md5(this.gravatar_email.trim().toLowerCase());
+            return `https://www.gravatar.com/avatar/${hash}?s=200&d=retro`;
         }
     },
 
