@@ -2,7 +2,7 @@
     <div class="main">
         <SideBar 
             my_name="Rafael Camargo"
-            profile_picture="https://avatars.githubusercontent.com/u/53565557?v=4"
+            gravatar_email="rafaelcamargo.inf@gmail.com"
             sub_title="Estudante de Ciência da Computação"
             email="rafaelcamargo.inf@gmail.com"
             whats_link="https://api.whatsapp.com/send/?phone=5547933000961&text=Ol%C3%A1!"
@@ -23,7 +23,7 @@
                     ]"
                 />
             </div>
-            <div class="tab-content" id="port">
+            <div class="tab-content" id="portfolio">
                 <PortfolioPage 
                     :projects="{
                         'PomoTimer': {
@@ -43,7 +43,7 @@
                         'Speed Test': {
                             'title': 'Speed Test',
                             'subtitle': 'Speed Test CLI com persistência dos dados coletados.',
-                            'category': ['Python', 'CLI'],
+                            'category': ['CLI', 'Python'],
                             'img': 'img/speed-test.webp',
                             'link': 'https://github.com/rafandoo/speedtest'
                         },
@@ -71,6 +71,48 @@
                     }"
                 />
             </div>
+            <div class="tab-content" id="skills">
+                <SkillsPage 
+                    :skills="{
+                        1.1: {
+                            'title': 'Python',
+                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
+                        },
+                        1.2: {
+                            'title': 'Java',
+                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
+                        },
+                        1.3: {
+                            'title': 'PHP',
+                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg'
+                        },
+                        2.1: {
+                            'title': 'Git',
+                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
+                        },
+                        3.1: {
+                            'title': 'Laravel',
+                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg'
+                        },
+                        3.2: {
+                            'title': 'Vue.JS',
+                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
+                        },
+                        3.3: {
+                            'title': 'Selenium',
+                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg'
+                        },
+                        4.1: {
+                            'title': 'MySQL',
+                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
+                        },
+                        4.2: {
+                            'title': 'SQLite',
+                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg'
+                        },
+                    }"
+                />
+            </div>
             <div class="tab-content" id="contact">
                 <ContactMe 
                     integration_link="https://send.pageclip.co/PFWf4lo5hFmU0tI2gNrf7nsRJCeMGh8b/contact-gh-pages"
@@ -85,6 +127,7 @@ import SideBar from './components/SideBar.vue'
 import NavBar from './components/NavBar.vue'
 import AboutMe from './components/AboutMe.vue'
 import PortfolioPage from './components/PortfolioPage.vue'
+import SkillsPage from './components/Skills.vue'
 import ContactMe from './components/ContactMe.vue'
 
 export default {
@@ -94,6 +137,7 @@ export default {
         NavBar,
         AboutMe,
         PortfolioPage,
+        SkillsPage,
         ContactMe
     }
 }
