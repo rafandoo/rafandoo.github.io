@@ -34,3 +34,4 @@ jobs:
         with:
           publish_dir: ./dist
           github_token: ${{ secrets.TOKEN }}
+          commit_message: ":rocket: Deploy id ${{ github.run_id }} | "
