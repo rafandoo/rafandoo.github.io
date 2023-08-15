@@ -17,9 +17,9 @@
             <div class="tab-content active" id="about">
                 <AboutMe 
                     :about_me_paragraphs="[
-                        'Olá, meu nome é Rafael Camargo, tenho 20 anos e sou estudante de Ciência da Computação no Instituto Fereral Catarinense (IFC).',
-                        'Sou apaixonado por tecnologia e programação, e estou sempre em busca de novos conhecimentos e desafios. Atualmente estou focado em apreder sobre o eco-sistema python e suas possibilidades.', 
-                        'Possuo conhecimentos em Python, Java, PHP, MySQL, Git, entre outros.'
+                        'Olá, meu nome é Rafael Camargo, tenho 21 anos e sou estudante de Ciência da Computação no Instituto Federal Catarinense (IFC).',
+                        'Minha paixão pela tecnologia e programação me impulsiona a buscar constantemente novos conhecimentos e enfrentar desafios estimulantes. Atualmente, estou concentrado em explorar profundamente o ecossistema Python e suas inúmeras possibilidades.', 
+                        'Minha experiência abrange várias linguagens, incluindo Python, Java e PHP, além de estar familiarizado com o gerenciamento de bancos de dados MySQL e a utilização do Git para controle de versão. Estou ansioso para continuar a aprimorar minhas habilidades e contribuir para o mundo da tecnologia de maneiras significativas.'
                     ]"
                 />
             </div>
