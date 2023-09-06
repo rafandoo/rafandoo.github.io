@@ -3,11 +3,11 @@
         <SideBar 
             my_name="Rafael Camargo"
             gravatar_email="rafaelcamargo.inf@gmail.com"
-            sub_title="Estudante de Ciência da Computação"
+            :sub_title="$t('personal.sub_title')"
             email="rafaelcamargo.inf@gmail.com"
             whats_link="https://api.whatsapp.com/send/?phone=5547933000961&text=Ol%C3%A1!"
             phone="+55 (47) 99300-0961"
-            location="Santa Catarina, Brasil"
+            :location="$t('personal.location')"
             github_link="https://github.com/rafandoo"
             linkedin_link="https://www.linkedin.com/in/rafaelcamargob"
             instagram_link="https://www.instagram.com/rafandoo"
@@ -17,9 +17,9 @@
             <div class="tab-content active" id="about">
                 <AboutMe 
                     :about_me_paragraphs="[
-                        'Olá, meu nome é Rafael Camargo, tenho 21 anos e sou estudante de Ciência da Computação no Instituto Federal Catarinense (IFC).',
-                        'Minha paixão pela tecnologia e programação me impulsiona a buscar constantemente novos conhecimentos e enfrentar desafios estimulantes. Atualmente, estou concentrado em explorar profundamente o ecossistema Python e suas inúmeras possibilidades.', 
-                        'Minha experiência abrange várias linguagens, incluindo Python, Java e PHP, além de estar familiarizado com o gerenciamento de bancos de dados MySQL e a utilização do Git para controle de versão. Estou ansioso para continuar a aprimorar minhas habilidades e contribuir para o mundo da tecnologia de maneiras significativas.'
+                        $t('personal.about_me_one'),
+                        $t('personal.about_me_two'),
+                        $t('personal.about_me_three'),
                     ]"
                 />
             </div>
@@ -27,43 +27,43 @@
                 <PortfolioPage 
                     :projects="{
                         'PomoTimer': {
-                            'title': 'PomoTimer',
-                            'subtitle': 'Aplicação da técnica Pomodoro.',
+                            'title': $t('personal.projects.pomotimer.title'),
+                            'subtitle': $t('personal.projects.pomotimer.subtitle'),
                             'category': ['Web App', 'Vue.JS'],
                             'img': 'img/pomotimer.webp',
                             'link': 'https://rafandoo.github.io/pomotimer-lite/'
                         },
-                        'Predição de AVC': {
-                            'title': 'Predição de AVC',
-                            'subtitle': 'Rede Neural Arficial MLP, para predição de AVC.',
+                        'StrokePrediction': {
+                            'title': $t('personal.projects.stroke_prediction.title'),
+                            'subtitle': $t('personal.projects.stroke_prediction.subtitle'),
                             'category': ['Machine Learning', 'Python'],
                             'img': 'img/avc.webp',
                             'link': 'https://github.com/rafandoo/predicao-avc'
                         },
-                        'Speed Test': {
-                            'title': 'Speed Test',
-                            'subtitle': 'Speed Test CLI com persistência dos dados coletados.',
+                        'SpeedTest': {
+                            'title': $t('personal.projects.speed_test.title'),
+                            'subtitle': $t('personal.projects.speed_test.subtitle'),
                             'category': ['CLI', 'Python'],
                             'img': 'img/speed-test.webp',
                             'link': 'https://github.com/rafandoo/speedtest'
                         },
-                        '8 rainhas': {
-                            'title': '8 rainhas',
-                            'subtitle': 'Algoritmo genético para solucionar o problema das 8 rainhas.',
-                            'category': ['Algoritmo Genético', 'Python'],
+                        'EightQueens': {
+                            'title': $t('personal.projects.eight_queens.title'),
+                            'subtitle': $t('personal.projects.eight_queens.subtitle'),
+                            'category': ['AI', 'Python'],
                             'img': 'img/8-rainhas.webp',
                             'link': 'https://github.com/rafandoo/8-rainhas'
                         },
-                        'Help Desk': {
-                            'title': 'Help Desk',
-                            'subtitle': 'Sistema de Help Desk para suporte técnico.',
+                        'HelpDesk': {
+                            'title': $t('personal.projects.helpdesk.title'),
+                            'subtitle': $t('personal.projects.helpdesk.subtitle'),
                             'category': ['Web App', 'Laravel', 'PHP'],
                             'img': 'img/helpdesk.webp',
                             'link': 'https://github.com/rafandoo/HelpDeskRplus'
                         },
-                        'Projeto CLI': {
-                            'title': 'Projeto CLI',
-                            'subtitle': 'Automatização de criação de estrutura de projetos.',
+                        'CLIProject': {
+                            'title': $t('personal.projects.cli_project.title'),
+                            'subtitle': $t('personal.projects.cli_project.subtitle'),
                             'category': ['Python'],
                             'img': 'img/project-cli.webp',
                             'link': 'https://github.com/rafandoo/project-cli'

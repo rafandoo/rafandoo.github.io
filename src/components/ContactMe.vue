@@ -1,18 +1,18 @@
 <template>
     <article class="contact" data-page="contact">
         <header>
-            <h2 class="h2 article-title">Contato</h2>
+            <h2 class="h2 article-title">{{ $t('main.contact') }}</h2>
         </header>
         <section class="contact-form">
             <form :action="integration_link" class="form" data-form method="post">
                 <div class="input-wrapper">
-                    <input type="text" name="name" class="form-input" placeholder="Nome" required data-form-input>
+                    <input type="text" name="name" class="form-input" :placeholder="$t('elements.name')" required data-form-input>
                     <input type="email" name="email" class="form-input" placeholder="E-mail" required data-form-input>
                 </div>
-                <textarea name="message" class="form-input" placeholder="Sua mensagem" required data-form-input></textarea>
+                <textarea name="message" class="form-input" :placeholder="$t('elements.message')" required data-form-input></textarea>
                 <button class="form-btn" type="submit" disabled data-form-btn @click="showToast()">
                     <ion-icon name="paper-plane"></ion-icon>
-                    <span>Enviar</span>
+                    <span>{{ $t('elements.send') }}</span>
                 </button>
             </form>
         </section>

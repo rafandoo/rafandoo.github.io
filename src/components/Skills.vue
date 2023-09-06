@@ -1,6 +1,6 @@
 <template>
     <article class="skills-page" data-page="skills">
-        <h2 class="h2 article-title">Habilidades</h2>
+        <h2 class="h2 article-title">{{ $t('main.skills') }}</h2>
         <div class="skills">
             <ul class="skill-list">
                 <li class="skill-item" v-for="(skill, index) in skills" :key="index">

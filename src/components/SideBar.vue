@@ -9,7 +9,7 @@
                 <p class="title">{{ sub_title }}</p>
             </div>
             <button class="info_more-btn" data-sidebar-btn>
-                <span>Mostrar contatos</span>
+                <span>{{ $t('elements.show_contacts') }}</span>
                 <ion-icon name="chevron-down"></ion-icon>
             </button>
         </div>
@@ -21,7 +21,7 @@
                         <ion-icon name="mail-outline"></ion-icon>
                     </div>
                     <div class="contact-info">
-                        <p class="contact-title">Email</p>
+                        <p class="contact-title">E-mail</p>
                         <a :href="'mailto:' + email" class="contact-link" target="_blank">{{ email }}</a>
                     </div>
                 </li>
@@ -30,7 +30,7 @@
                         <ion-icon name="phone-portrait-outline"></ion-icon>
                     </div>
                     <div class="contact-info">
-                        <p class="contact-title">Telefone</p>
+                        <p class="contact-title">{{ $t('elements.phone') }}</p>
                         <a :href="whats_link" class="contact-link" target="_blank">{{ phone }}</a>
                     </div>
                 </li>
@@ -39,7 +39,7 @@
                         <ion-icon name="location-outline"></ion-icon>
                     </div>
                     <div class="contact-info">
-                        <p class="contact-title">Localização</p>
+                        <p class="contact-title">{{ $t('elements.location') }}</p>
                         <address>{{ location }}</address>
                     </div>
                 </li>

@@ -1,6 +1,6 @@
 <template>
     <article class="portfolio" data-page="portfolio">
-        <h2 class="h2 article-title">Portfólio</h2>
+        <h2 class="h2 article-title">{{ $t('main.portfolio') }}</h2>
         <div class="projects">
             <ul class="project-list">
                 <li class="project-item" v-for="(project, index) in projects" :key="index">
