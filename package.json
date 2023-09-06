@@ -11,6 +11,7 @@
     "core-js": "^3.32.0",
     "md5": "^2.3.0",
     "vue": "^3.3.4",
+    "vue-i18n": "^9.2.2",
     "vue-toastification": "^2.0.0-rc.5"
   },
   "devDependencies": {
