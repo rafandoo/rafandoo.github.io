@@ -74,42 +74,78 @@
             <div class="tab-content" id="skills">
                 <SkillsPage 
                     :skills="{
-                        1.1: {
-                            'title': 'Python',
-                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
+                        'programming_languages': {
+                            'title': $t('personal.skills.programming_languages'),
+                            'items': [
+                                {
+                                    'title': 'Python',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
+                                },
+                                {
+                                    'title': 'Java',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
+                                },
+                                {
+                                    'title': 'PHP',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg'
+                                },
+                                {
+                                    'title': 'JavaScript',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
+                                }
+                            ]
                         },
-                        1.2: {
-                            'title': 'Java',
-                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
+                        'frameworks': {
+                            'title': $t('personal.skills.frameworks'),
+                            'items': [
+                                {
+                                    'title': 'Selenium',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg'
+                                },
+                                {
+                                    'title': 'Laravel',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg'
+                                },
+                                {
+                                    'title': 'Vue.JS',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
+                                },
+                                {
+                                    'title': 'Django',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg'
+                                }
+                            ]
                         },
-                        1.3: {
-                            'title': 'PHP',
-                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg'
+                        'tools': {
+                            'title': $t('personal.skills.tools'),
+                            'items': [
+                                {
+                                    'title': 'Git',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
+                                },
+                                {
+                                    'title': 'Insomnia',
+                                    'logo': 'img/insomnia.svg'
+                                }
+                            ]
                         },
-                        2.1: {
-                            'title': 'Git',
-                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
-                        },
-                        3.1: {
-                            'title': 'Laravel',
-                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg'
-                        },
-                        3.2: {
-                            'title': 'Vue.JS',
-                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
-                        },
-                        3.3: {
-                            'title': 'Selenium',
-                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg'
-                        },
-                        4.1: {
-                            'title': 'MySQL',
-                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
-                        },
-                        4.2: {
-                            'title': 'SQLite',
-                            'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg'
-                        },
+                        'databases': {
+                            'title': $t('personal.skills.databases'),
+                            'items': [
+                                {
+                                    'title': 'MySQL',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
+                                },
+                                {
+                                    'title': 'PostgreSQL',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
+                                },
+                                {
+                                    'title': 'SQLite',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg'
+                                },
+                            ]
+                        }
                     }"
                 />
             </div>
