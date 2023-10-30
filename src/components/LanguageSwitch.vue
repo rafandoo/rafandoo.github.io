@@ -10,7 +10,7 @@
 export default {
     data() {
         return {
-            currentLanguage: 'pt_br',
+            currentLanguage: localStorage.getItem('language') || 'pt_br',
         };
     },
     methods: {
@@ -19,10 +19,14 @@ export default {
         },
         toggleLanguage() {
             this.currentLanguage = this.currentLanguage === 'pt_br' ? 'en' : 'pt_br';
+            localStorage.setItem('language', this.currentLanguage);
             this.changeLanguage(this.currentLanguage);
         },
         
     },
+    mounted() {
+        localStorage.setItem('language', this.currentLanguage);
+    }
 };
 </script>
 

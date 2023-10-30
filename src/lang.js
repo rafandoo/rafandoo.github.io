@@ -8,6 +8,6 @@ const messages = {
 };
 
 export default createI18n({
-    locale: 'pt_br',
+    locale: localStorage.getItem('language') || 'pt_br',
     messages
 });

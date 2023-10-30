@@ -45,7 +45,12 @@ export default {
                 title: 'Projeto CLI',
                 subtitle: 'Automatização de criação de estrutura de projetos.',
             }
-
+        },
+        skills: {
+            programming_languages: 'Linguagens de programação',
+            frameworks: 'Frameworks',
+            tools: 'Ferramentas',
+            databases: 'Bancos de dados',
         }
     }
 }

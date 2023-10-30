@@ -45,6 +45,12 @@ export default {
                 title: 'CLI Project',
                 subtitle: 'Project creation automation.',
             }
+        },
+        skills: {
+            programming_languages: 'Programming languages',
+            frameworks: 'Frameworks',
+            tools: 'Tools',
+            databases: 'Databases',
         }
     }
 }
