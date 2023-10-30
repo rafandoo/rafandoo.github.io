@@ -48,7 +48,7 @@ export default {
         },
         skills: {
             programming_languages: 'Linguagens de programação',
-            frameworks: 'Frameworks',
+            frameworks: 'Frameworks e bibliotecas',
             tools: 'Ferramentas',
             databases: 'Bancos de dados',
         }
