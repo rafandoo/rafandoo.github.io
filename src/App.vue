@@ -26,6 +26,20 @@
             <div class="tab-content" id="portfolio">
                 <PortfolioPage 
                     :projects="{
+                        'StockPrediction': {
+                            'title': $t('personal.projects.stock_prediction.title'),
+                            'subtitle': $t('personal.projects.stock_prediction.subtitle'),
+                            'category': ['Machine Learning', 'Python'],
+                            'img': 'img/stock.webp',
+                            'link': 'https://github.com/rafandoo/previsao-acoes'
+                        },
+                        'FInv': {
+                            'title': $t('personal.projects.finv.title'),
+                            'subtitle': $t('personal.projects.finv.subtitle'),
+                            'category': ['Java'],
+                            'img': 'img/finv.webp',
+                            'link': 'https://github.com/rafandoo/finv'
+                        },
                         'PomoTimer': {
                             'title': $t('personal.projects.pomotimer.title'),
                             'subtitle': $t('personal.projects.pomotimer.subtitle'),

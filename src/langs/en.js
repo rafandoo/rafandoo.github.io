@@ -21,6 +21,14 @@ export default {
         about_me_two: 'My passion for technology and programming drives me to constantly seek new knowledge and take on stimulating challenges. Currently, I\'m focused on delving deep into the Python ecosystem and its numerous possibilities.',
         about_me_three: 'My experience covers various languages, including Python, Java, and PHP, in addition to being familiar with MySQL database management and the use of Git for version control. I\'m eager to continue enhancing my skills and contributing to the world of technology in meaningful ways.',
         projects: {
+            stock_prediction: {
+                title: 'Stock Prediction',
+                subtitle: 'Machine Learning techniques for stock prediction.',
+            },
+            finv: {
+                title: 'FInv',
+                subtitle: 'Financial investment data library.',
+            },
             pomotimer: {
                 title: 'Pomotimer',
                 subtitle: 'Pomodoro timer application.',
