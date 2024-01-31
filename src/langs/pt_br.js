@@ -17,8 +17,8 @@ export default {
     personal: {
         sub_title: 'Estudante de Ciência da Computação',
         location: 'Santa Catarina, Brasil',
-        about_me_one: 'Olá, meu nome é Rafael Camargo, tenho 21 anos e sou estudante de Ciência da Computação no Instituto Federal Catarinense (IFC).',
-        about_me_two: 'Minha paixão pela tecnologia e programação me impulsiona a buscar constantemente novos conhecimentos e enfrentar desafios estimulantes. Atualmente, estou concentrado em explorar profundamente o ecossistema Python e suas inúmeras possibilidades.', 
+        about_me_one: 'Olá, me chamo Rafael, tenho 21 anos e sou estudante de Ciência da Computação no Instituto Federal Catarinense (IFC).',
+        about_me_two: 'Minha paixão pela tecnologia e programação me impulsiona a buscar constantemente novos conhecimentos e enfrentar desafios estimulantes. Atualmente, estou concentrado em explorar profundamente o ecossistema das linguagens Python e Java, com suas inúmeras possibilidades.', 
         about_me_three: 'Minha experiência abrange várias linguagens, incluindo Python, Java e PHP, além de estar familiarizado com o gerenciamento de bancos de dados MySQL e a utilização do Git para controle de versão. Estou ansioso para continuar a aprimorar minhas habilidades e contribuir para o mundo da tecnologia de maneiras significativas.',
         projects: {
             stock_prediction: {

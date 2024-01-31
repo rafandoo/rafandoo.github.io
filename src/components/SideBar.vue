@@ -31,7 +31,7 @@
                     </div>
                     <div class="contact-info">
                         <p class="contact-title">{{ $t('elements.phone') }}</p>
-                        <a :href="whats_link" class="contact-link" target="_blank">{{ phone }}</a>
+                        <a :href="whatsLink()" class="contact-link" target="_blank">{{ phone }}</a>
                     </div>
                 </li>
                 <li class="contact-item">
@@ -47,7 +47,7 @@
             <div class="separator"></div>
             <ul class="social-list">
                 <li class="social-item">
-                    <a :href="github_link" class="social-link" target="_blank">
+                    <a :href="'https://github.com/' + github_user" class="social-link" target="_blank">
                         <ion-icon name="logo-github"></ion-icon>
                     </a>
                 </li>
@@ -57,7 +57,7 @@
                     </a>
                 </li>
                 <li class="social-item">
-                    <a :href="instagram_link" class="social-link" target="_blank">
+                    <a :href="'https://www.instagram.com/' + instagram_user" class="social-link" target="_blank">
                         <ion-icon name="logo-instagram"></ion-icon>
                     </a>
                 </li>
@@ -74,15 +74,14 @@ export default {
 
     props: [
         'my_name',
-        'gravatar_email',
         'sub_title',
         'email',
-        'whats_link',
+        'whatsapp_message',
         'phone',
         'location',
-        'github_link',
+        'github_user',
+        'instagram_user',
         'linkedin_link',
-        'instagram_link',
     ],
 
     methods: {
@@ -97,12 +96,24 @@ export default {
             sidebarBtn.addEventListener("click", function () { 
                 elementToggleFunc(sidebar); 
             });
+        },
+
+        whatsLink() {
+            if (this.phone) {
+                let whatsLink = "https://api.whatsapp.com/send/?phone=";
+                whatsLink += this.phone.replace(/\D/g, '');
+                if (this.whatsapp_message) {
+                    whatsLink += "&text=" + this.whatsapp_message;
+                }
+                return whatsLink
+            } 
+            return null;
         }
     },
 
     computed: {
         gravatar() {
-            const hash = md5(this.gravatar_email.trim().toLowerCase());
+            const hash = md5(this.email.trim().toLowerCase());
             return `https://www.gravatar.com/avatar/${hash}?s=200&d=retro`;
         }
     },

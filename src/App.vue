@@ -2,15 +2,14 @@
     <div class="main">
         <SideBar 
             my_name="Rafael Camargo"
-            gravatar_email="rafaelcamargo.inf@gmail.com"
             :sub_title="$t('personal.sub_title')"
             email="rafaelcamargo.inf@gmail.com"
-            whats_link="https://api.whatsapp.com/send/?phone=5547991664002&text=Ol%C3%A1!"
+            whatsapp_message="Ol%C3%A1!"
             phone="+55 (47) 99166-4002"
             :location="$t('personal.location')"
-            github_link="https://github.com/rafandoo"
+            github_user="rafandoo"
+            instagram_user="rafandoo"
             linkedin_link="https://www.linkedin.com/in/rafaelcamargob"
-            instagram_link="https://www.instagram.com/rafandoo"
         />
         <div class="main-content">
             <NavBar />
@@ -29,7 +28,7 @@
                         'StockPrediction': {
                             'title': $t('personal.projects.stock_prediction.title'),
                             'subtitle': $t('personal.projects.stock_prediction.subtitle'),
-                            'category': ['Machine Learning', 'Python'],
+                            'category': ['AI', 'Machine Learning', 'Python'],
                             'img': 'img/stock.webp',
                             'link': 'https://github.com/rafandoo/previsao-acoes'
                         },
@@ -50,21 +49,21 @@
                         'StrokePrediction': {
                             'title': $t('personal.projects.stroke_prediction.title'),
                             'subtitle': $t('personal.projects.stroke_prediction.subtitle'),
-                            'category': ['Machine Learning', 'Python'],
+                            'category': ['AI', 'Machine Learning', 'Python'],
                             'img': 'img/avc.webp',
                             'link': 'https://github.com/rafandoo/predicao-avc'
                         },
                         'SpeedTest': {
                             'title': $t('personal.projects.speed_test.title'),
                             'subtitle': $t('personal.projects.speed_test.subtitle'),
-                            'category': ['CLI', 'Python'],
+                            'category': ['Python'],
                             'img': 'img/speed-test.webp',
                             'link': 'https://github.com/rafandoo/speedtest'
                         },
                         'EightQueens': {
                             'title': $t('personal.projects.eight_queens.title'),
                             'subtitle': $t('personal.projects.eight_queens.subtitle'),
-                            'category': ['AI', 'Python'],
+                            'category': ['AI', 'Genetic Algorithm', 'Python'],
                             'img': 'img/8-rainhas.webp',
                             'link': 'https://github.com/rafandoo/8-rainhas'
                         },
@@ -113,6 +112,18 @@
                             'title': $t('personal.skills.frameworks'),
                             'items': [
                                 {
+                                    'title': 'Django',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg'
+                                },
+                                {
+                                    'title': 'TensorFlow',
+                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg'
+                                },
+                                {
+                                    'title': 'JUnit 5',
+                                    'logo': 'img/logo/junit5.svg'
+                                },
+                                {
                                     'title': 'Selenium',
                                     'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg'
                                 },
@@ -124,10 +135,6 @@
                                     'title': 'Vue.JS',
                                     'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
                                 },
-                                {
-                                    'title': 'Django',
-                                    'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg'
-                                }
                             ]
                         },
                         'tools': {
@@ -139,7 +146,11 @@
                                 },
                                 {
                                     'title': 'Insomnia',
-                                    'logo': 'img/insomnia.svg'
+                                    'logo': 'img/logo/insomnia.svg'
+                                },
+                                {
+                                    'title': 'Postman',
+                                    'logo': 'img/logo/postman.svg'
                                 }
                             ]
                         },
