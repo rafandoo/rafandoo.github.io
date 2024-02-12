@@ -2,11 +2,11 @@
     <aside class="sidebar" data-sidebar>
         <div class="sidebar-info">
             <figure class="avatar-box">
-                <img class="avatar-picture" :src="gravatar" :alt="my_name" width="80">
+                <img class="avatar-picture" :src="gravatar" :alt="personalInfo.name" width="80">
             </figure>
             <div class="info-content">
-                <h1 class="name">{{ my_name }}</h1>
-                <p class="title">{{ sub_title }}</p>
+                <h1 class="name">{{ personalInfo.name }}</h1>
+                <p class="title">{{ $t(personalInfo.subTitle) }}</p>
             </div>
             <button class="info_more-btn" data-sidebar-btn>
                 <span>{{ $t('elements.show_contacts') }}</span>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="contact-info">
                         <p class="contact-title">E-mail</p>
-                        <a :href="'mailto:' + email" class="contact-link" target="_blank">{{ email }}</a>
+                        <a :href="'mailto:' + personalInfo.email" class="contact-link" target="_blank">{{ personalInfo.email }}</a>
                     </div>
                 </li>
                 <li class="contact-item">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="contact-info">
                         <p class="contact-title">{{ $t('elements.phone') }}</p>
-                        <a :href="whatsLink()" class="contact-link" target="_blank">{{ phone }}</a>
+                        <a :href="whatsLink()" class="contact-link" target="_blank">{{ personalInfo.phone }}</a>
                     </div>
                 </li>
                 <li class="contact-item">
@@ -40,24 +40,24 @@
                     </div>
                     <div class="contact-info">
                         <p class="contact-title">{{ $t('elements.location') }}</p>
-                        <address>{{ location }}</address>
+                        <address>{{ $t(personalInfo.location) }}</address>
                     </div>
                 </li>
             </ul>
             <div class="separator"></div>
             <ul class="social-list">
                 <li class="social-item">
-                    <a :href="'https://github.com/' + github_user" class="social-link" target="_blank">
+                    <a :href="'https://github.com/' + personalInfo.githubUser" class="social-link" target="_blank">
                         <ion-icon name="logo-github"></ion-icon>
                     </a>
                 </li>
                 <li class="social-item">
-                    <a :href="linkedin_link" class="social-link" target="_blank">
+                    <a :href="personalInfo.linkedinLink" class="social-link" target="_blank">
                         <ion-icon name="logo-linkedin"></ion-icon>
                     </a>
                 </li>
                 <li class="social-item">
-                    <a :href="'https://www.instagram.com/' + instagram_user" class="social-link" target="_blank">
+                    <a :href="'https://www.instagram.com/' + personalInfo.instagramUser" class="social-link" target="_blank">
                         <ion-icon name="logo-instagram"></ion-icon>
                     </a>
                 </li>
@@ -72,17 +72,12 @@ import md5 from 'md5';
 export default {
     name: 'SideBar',
 
-    props: [
-        'my_name',
-        'sub_title',
-        'email',
-        'whatsapp_message',
-        'phone',
-        'location',
-        'github_user',
-        'instagram_user',
-        'linkedin_link',
-    ],
+    props: {
+        personalInfo: {
+            type: Object,
+            required: true
+        }
+    },
 
     methods: {
         toggleSidebar() {
@@ -99,11 +94,11 @@ export default {
         },
 
         whatsLink() {
-            if (this.phone) {
+            if (this.personalInfo.phone) {
                 let whatsLink = "https://api.whatsapp.com/send/?phone=";
-                whatsLink += this.phone.replace(/\D/g, '');
-                if (this.whatsapp_message) {
-                    whatsLink += "&text=" + this.whatsapp_message;
+                whatsLink += this.personalInfo.phone.replace(/\D/g, '');
+                if (this.personalInfo.whatsappMessage) {
+                    whatsLink += "&text=" + this.personalInfo.whatsappMessage;
                 }
                 return whatsLink
             } 
@@ -113,7 +108,7 @@ export default {
 
     computed: {
         gravatar() {
-            const hash = md5(this.email.trim().toLowerCase());
+            const hash = md5(this.personalInfo.email.trim().toLowerCase());
             return `https://www.gravatar.com/avatar/${hash}?s=200&d=retro`;
         }
     },
