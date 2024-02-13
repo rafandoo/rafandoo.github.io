@@ -7,10 +7,6 @@ export default {
                 'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
             },
             {
-                'title': 'Python',
-                'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
-            },
-            {
                 'title': 'Java',
                 'logo': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
             },
