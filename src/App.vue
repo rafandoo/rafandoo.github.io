@@ -5,11 +5,12 @@
             <NavBar />
             <div class="tab-content active" id="about">
                 <AboutMe 
-                    :about_me_paragraphs="[
+                    :about-me-paragraphs="[
                         $t('personal.about_me_one'),
                         $t('personal.about_me_two'),
                         $t('personal.about_me_three'),
                     ]"
+                    :what-im-doing="whatImDoing"
                 />
             </div>
             <div class="tab-content" id="portfolio">
@@ -38,6 +39,7 @@ import ContactMe from './components/ContactMe.vue'
 import personalInfo from '@/data/personalInfo';
 import projects from '@/data/projects';
 import skills from '@/data/skills';
+import whatImDoing from '@/data/whatImDoing';
 
 export default {
     name: 'App',
@@ -53,7 +55,8 @@ export default {
         return {
             personalInfo,
             skills,
-            projects
+            projects,
+            whatImDoing
         }
     }
 }

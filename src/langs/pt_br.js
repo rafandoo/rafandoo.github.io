@@ -1,6 +1,7 @@
 export default {
     main: {
         about_me: 'Sobre mim',
+        what_im_doing: 'O que estou fazendo',
         about: 'Sobre',
         portfolio: 'Portfólio',
         skills: 'Habilidades',
@@ -59,6 +60,16 @@ export default {
             frameworks: 'Frameworks e bibliotecas',
             tools: 'Ferramentas',
             databases: 'Bancos de dados',
+        },
+        what_im_doing: {
+            one: {
+                title: 'Projetos em andamento',
+                description: 'Atualmente estou trabalhando no desenvolvimento de alguns projetos (que você pode conferir na aba "Portfólio"), entre eles: FInv e Predição de ações.',
+            },
+            two: {
+                title: 'Estudos',
+                description: 'Estou focado em aprender mais sobre o ecossistema das linguagens Python e Java, bem como as bibliotecas e frameworks de cada.',
+            }
         }
     }
 }

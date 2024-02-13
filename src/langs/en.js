@@ -1,6 +1,7 @@
 export default {
     main: {
         about_me: 'About me',
+        what_im_doing: 'What I\'m doing',
         about: 'About',
         portfolio: 'Portfolio',
         skills: 'Skills',
@@ -59,6 +60,16 @@ export default {
             frameworks: 'Frameworks and libraries',
             tools: 'Tools',
             databases: 'Databases',
+        },
+        what_im_doing: {
+            one: {
+                title: 'Projects in progress',
+                description: 'I am currently working on the development of some projects (which you can check in the "Portfolio" tab), among them: FInv and Stock Prediction.',
+            },
+            two: {
+                title: 'Studies',
+                description: 'I am focused on learning more about the ecosystem of the Python and Java languages, as well as the libraries and frameworks of each.',
+            }
         }
     }
 }
