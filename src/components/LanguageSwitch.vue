@@ -32,7 +32,6 @@ export default {
 
 <style scoped>
 .language-switch {
-    /* display: inline-block; */
     padding: 20px 7px;
 }
 
