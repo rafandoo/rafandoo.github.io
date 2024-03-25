@@ -32,13 +32,13 @@
 </template>
 
 <script>
-import SideBar from './components/SideBar.vue'
-import NavBar from './components/NavBar.vue'
-import AboutMe from './components/AboutMe.vue'
-import ExperiencesPage from './components/Experiences.vue'
-import PortfolioPage from './components/Portfolio.vue'
-import SkillsPage from './components/Skills.vue'
-import ContactMe from './components/ContactMe.vue'
+import SideBar from '@/components/SideBar.vue'
+import NavBar from '@/components/NavBar.vue'
+import AboutMe from '@/components/AboutMe.vue'
+import ExperiencesPage from '@/components/Experiences.vue'
+import PortfolioPage from '@/components/Portfolio.vue'
+import SkillsPage from '@/components/Skills.vue'
+import ContactMe from '@/components/ContactMe.vue'
 
 import personalInfo from '@/data/personalInfo';
 import experiences from '@/data/experiences'
@@ -70,5 +70,5 @@ export default {
 </script>
 
 <style>
-    @import './assets/css/style.css';
-</style>./components/Portfolio.vue
+    @import '@/assets/css/style.min.css';
+</style>
