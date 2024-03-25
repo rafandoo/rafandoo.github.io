@@ -6,6 +6,7 @@ export default {
         portfolio: 'Portfolio',
         skills: 'Skills',
         contact: 'Contact',
+        experience: 'Experience',
     },
     elements : {
         show_contacts: 'Show contacts',
@@ -69,6 +70,32 @@ export default {
             two: {
                 title: 'Studies',
                 description: 'I am focused on learning more about the ecosystem of the Python and Java languages, as well as the libraries and frameworks of each.',
+            }
+        },
+        experiences: {
+            ipm: {
+                title: 'Java Apprentice Programmer',
+                date: 'Jan/2024 - Currently',
+                description: '',
+            },
+            newtech: {
+                items: [
+                    {
+                        title: 'Technical support analyst internship', 
+                        date: 'Sep/2021 - May/2022',
+                        description: 'Provide support and provide solutions to customer problems in management software. Realization of deployment, conversion and training of new customers. Organization and documentation of knowledge bases.',
+                    },
+                    {
+                        title: 'Deployment Analyst',
+                        date: 'May/2022 - Dec/2023',
+                        description: 'Develop customized deployment strategies according to customer needs. Analyze and understand customer requirements regarding data conversion, identifying the formats and structures needed for migration.',
+                    }
+                ]
+            },
+            luxpoli: {
+                title: 'Administrative assistant',
+                date: 'Dec/2019 - Aug/2021',
+                description: 'Performance in the registration of products, customers and suppliers. Control of entry and exit of goods. Issuance and entry of invoices. Customer service.',
             }
         }
     }

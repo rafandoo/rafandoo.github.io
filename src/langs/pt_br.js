@@ -6,6 +6,7 @@ export default {
         portfolio: 'Portfólio',
         skills: 'Habilidades',
         contact: 'Contato',
+        experience: 'Experiência',
     },
     elements : {
         show_contacts: 'Mostrar contatos',
@@ -69,6 +70,32 @@ export default {
             two: {
                 title: 'Estudos',
                 description: 'Estou focado em aprender mais sobre o ecossistema das linguagens Python e Java, bem como as bibliotecas e frameworks de cada.',
+            }
+        },
+        experiences: {
+            ipm: {
+                title: 'Programador Aprendiz Java',
+                date: 'Jan/2024 - Atualmente',
+                description: '',
+            },
+            newtech: {
+                items: [
+                    {
+                        title: 'Estágio analista de suporte técnico', 
+                        date: 'Set/2021 - Mai/2022',
+                        description: 'Fornecer suporte e apresentar soluções para problemas do cliente nos softwares de gestão. Realização de implantação, conversão e treinamento de novos clientes. Organização e documentação de bases de conhecimento.',
+                    },
+                    {
+                        title: 'Analista de implantação',
+                        date: 'Mai/2022 - Dez/2023',
+                        description: 'Desenvolver estratégias de implantação personalizadas de acordo com as necessidades do cliente. Analisar e compreender os requisitos dos clientes em relação à conversão de dados, identificando os formatos e estruturas necessários para a migração.',
+                    }
+                ]
+            },
+            luxpoli: {
+                title: 'Auxiliar administrativo',
+                date: 'Dez/2019 - Ago/2021',
+                description: 'Atuação na realização de cadastros de produtos, clientes e fornecedores. Controle de entrada e saída de mercadorias. Emissão e entrada de notas fiscais. Atendimento ao cliente.',
             }
         }
     }
