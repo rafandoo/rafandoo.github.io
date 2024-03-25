@@ -25,5 +25,5 @@ O presente projeto apresenta o desenvolvimento do meu portfólio, com o objetivo
 
 The [MIT License](https://github.com/rafandoo/rafandoo.github.io/blob/451b19f0440123211b405fd7db90d9ee91ff9a6d/LICENSE) (MIT)
 
-Copyright :copyright: 2023 - Rafael Camargo
+Copyright :copyright: 2022-2024 - Rafael Camargo
 
