@@ -5,6 +5,9 @@
                 <button class="navbar-link active" id="about" data-bs-toggle="tab">{{ $t('main.about') }}</button>
             </li>
             <li class="navbar-item">
+                <button class="navbar-link" id="experience" data-bs-toggle="tab">{{ $t('main.experience') }}</button>
+            </li>
+            <li class="navbar-item">
                 <button class="navbar-link" id="portfolio" data-bs-toggle="tab">{{ $t('main.portfolio') }}</button>
             </li>
             <li class="navbar-item">

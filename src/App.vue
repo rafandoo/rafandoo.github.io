@@ -13,6 +13,9 @@
                     :what-im-doing="whatImDoing"
                 />
             </div>
+            <div class="tab-content" id="experience">
+                <ExperiencesPage :experiences="experiences" />
+            </div>
             <div class="tab-content" id="portfolio">
                 <PortfolioPage :projects="projects" />
             </div>
@@ -32,11 +35,13 @@
 import SideBar from './components/SideBar.vue'
 import NavBar from './components/NavBar.vue'
 import AboutMe from './components/AboutMe.vue'
-import PortfolioPage from './components/PortfolioPage.vue'
+import ExperiencesPage from './components/Experiences.vue'
+import PortfolioPage from './components/Portfolio.vue'
 import SkillsPage from './components/Skills.vue'
 import ContactMe from './components/ContactMe.vue'
 
 import personalInfo from '@/data/personalInfo';
+import experiences from '@/data/experiences'
 import projects from '@/data/projects';
 import skills from '@/data/skills';
 import whatImDoing from '@/data/whatImDoing';
@@ -47,6 +52,7 @@ export default {
         SideBar,
         NavBar,
         AboutMe,
+        ExperiencesPage,
         PortfolioPage,
         SkillsPage,
         ContactMe
@@ -54,6 +60,7 @@ export default {
     data () {
         return {
             personalInfo,
+            experiences,
             skills,
             projects,
             whatImDoing
@@ -64,4 +71,4 @@ export default {
 
 <style>
     @import './assets/css/style.css';
-</style>
+</style>./components/Portfolio.vue
