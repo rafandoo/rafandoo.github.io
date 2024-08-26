@@ -10,7 +10,6 @@
                         $t('personal.about_me_two'),
                         $t('personal.about_me_three'),
                     ]"
-                    :what-im-doing="whatImDoing"
                 />
             </div>
             <div class="tab-content" id="experience">
@@ -44,7 +43,6 @@ import personalInfo from '@/data/personalInfo';
 import experiences from '@/data/experiences'
 import projects from '@/data/projects';
 import skills from '@/data/skills';
-import whatImDoing from '@/data/whatImDoing';
 
 export default {
     name: 'App',
@@ -62,8 +60,7 @@ export default {
             personalInfo,
             experiences,
             skills,
-            projects,
-            whatImDoing
+            projects
         }
     }
 }

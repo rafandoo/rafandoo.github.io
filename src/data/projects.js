@@ -47,12 +47,5 @@ export default {
         'category': ['Web App', 'Laravel', 'PHP'],
         'img': require('@/assets/img/projects/helpdesk.webp'),
         'link': 'https://github.com/rafandoo/HelpDeskRplus'
-    },
-    CLIProject: {
-        'title': 'personal.projects.cli_project.title',
-        'subtitle': 'personal.projects.cli_project.subtitle',
-        'category': ['Python'],
-        'img': require('@/assets/img/projects/cli-project.webp'),
-        'link': 'https://github.com/rafandoo/project-cli'
     }
 }
