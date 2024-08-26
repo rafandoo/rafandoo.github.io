@@ -4,9 +4,14 @@ export default {
         'logo': require('@/assets/img/experiences/ipm.webp'),
         'items': [
             {
-                'title': 'personal.experiences.ipm.title',
-                'date': 'personal.experiences.ipm.date',
-                'description': 'personal.experiences.ipm.description',
+                'title': 'personal.experiences.ipm.items[1].title',
+                'date': 'personal.experiences.ipm.items[1].date',
+                'description': 'personal.experiences.ipm.items[1].description',
+            },
+            {
+                'title': 'personal.experiences.ipm.items[0].title',
+                'date': 'personal.experiences.ipm.items[0].date',
+                'description': 'personal.experiences.ipm.items[0].description',
             },
         ]
     },

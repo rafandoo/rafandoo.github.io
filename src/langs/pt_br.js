@@ -1,7 +1,6 @@
 export default {
     main: {
         about_me: 'Sobre mim',
-        what_im_doing: 'O que estou fazendo',
         about: 'Sobre',
         portfolio: 'Portfólio',
         skills: 'Habilidades',
@@ -19,7 +18,7 @@ export default {
     personal: {
         sub_title: 'Estudante de Ciência da Computação',
         location: 'Santa Catarina, Brasil',
-        about_me_one: 'Olá, me chamo Rafael, tenho 21 anos e sou estudante de Ciência da Computação no Instituto Federal Catarinense (IFC).',
+        about_me_one: 'Olá, me chamo Rafael, tenho 22 anos e sou estudante de Ciência da Computação no Instituto Federal Catarinense (IFC).',
         about_me_two: 'Minha paixão pela tecnologia e programação me impulsiona a buscar constantemente novos conhecimentos e enfrentar desafios estimulantes. Atualmente, estou concentrado em explorar profundamente o ecossistema das linguagens Python e Java, com suas inúmeras possibilidades.', 
         about_me_three: 'Minha experiência abrange várias linguagens, incluindo Python, Java e PHP, além de estar familiarizado com o gerenciamento de bancos de dados MySQL e a utilização do Git para controle de versão. Estou ansioso para continuar a aprimorar minhas habilidades e contribuir para o mundo da tecnologia de maneiras significativas.',
         projects: {
@@ -50,33 +49,30 @@ export default {
             helpdesk: {
                 title: 'Help Desk',
                 subtitle: 'Sistema de Help Desk para suporte técnico.',
-            },
-            cli_project: {
-                title: 'Projeto CLI',
-                subtitle: 'Automatização de criação de estrutura de projetos.',
             }
         },
         skills: {
             programming_languages: 'Linguagens de programação',
             frameworks: 'Frameworks e bibliotecas',
+            ai: 'Inteligência Artificial',
             tools: 'Ferramentas',
+            devops: 'DevOps',
             databases: 'Bancos de dados',
-        },
-        what_im_doing: {
-            one: {
-                title: 'Projetos em andamento',
-                description: 'Atualmente estou trabalhando no desenvolvimento de alguns projetos (que você pode conferir na aba "Portfólio"), entre eles: FInv e Predição de ações.',
-            },
-            two: {
-                title: 'Estudos',
-                description: 'Estou focado em aprender mais sobre o ecossistema das linguagens Python e Java, bem como as bibliotecas e frameworks de cada.',
-            }
         },
         experiences: {
             ipm: {
-                title: 'Programador Aprendiz Java',
-                date: 'Jan/2024 - Atualmente',
-                description: '',
+                items: [
+                    {
+                        title: 'Programador Aprendiz Java',
+                        date: 'Jan/2024 - Jul/2024',
+                        description: 'Colaborar no desenvolvimento e implementação de microsserviços Java, adquirindo experiência prática em arquiteturas de microsserviços. Apoiar na criação de novas funcionalidades, realizar testes e garantir a integração adequada com outros serviços. Manter e refatorar o código existente para melhorar a eficiência e a escalabilidade dos microsserviços.',
+                    },
+                    {
+                        title: 'Desenvolvedor Java',
+                        date: 'Jul/2024 - Atualmente',
+                        description: 'Desenvolver e otimizar microsserviços Java, focando na criação de novas funcionalidades e na melhoria contínua dos serviços existentes. Implementar práticas de desenvolvimento ágil e garantir a integração eficiente entre microsserviços. Realizar manutenção e atualização do código para garantir a alta disponibilidade e a performance dos sistemas. Trabalhar na resolução de problemas complexos e na melhoria da arquitetura dos microsserviços para suportar o crescimento e a escalabilidade.',
+                    }
+                ]
             },
             newtech: {
                 items: [
@@ -86,16 +82,16 @@ export default {
                         description: 'Fornecer suporte e apresentar soluções para problemas do cliente nos softwares de gestão. Realização de implantação, conversão e treinamento de novos clientes. Organização e documentação de bases de conhecimento.',
                     },
                     {
-                        title: 'Analista de implantação',
+                        title: 'Gestor de implantação',
                         date: 'Mai/2022 - Dez/2023',
-                        description: 'Desenvolver estratégias de implantação personalizadas de acordo com as necessidades do cliente. Analisar e compreender os requisitos dos clientes em relação à conversão de dados, identificando os formatos e estruturas necessários para a migração.',
+                        description: 'Desenvolver estratégias de implantação personalizadas de acordo com as necessidades do cliente. Analisar e compreender os requisitos dos clientes em relação à conversão de dados, identificando os formatos e estruturas necessários para a migração. Gerenciar o planejamento, alocação de recursos, cronogramas e riscos associados aos projetos de implantação.',
                     }
                 ]
             },
             luxpoli: {
                 title: 'Auxiliar administrativo',
-                date: 'Dez/2019 - Ago/2021',
-                description: 'Atuação na realização de cadastros de produtos, clientes e fornecedores. Controle de entrada e saída de mercadorias. Emissão e entrada de notas fiscais. Atendimento ao cliente.',
+                date: 'Dez/2018 - Ago/2021',
+                description: 'Responsável pelo cadastro e gestão de produtos, clientes e fornecedores, garantindo a precisão das informações. Gerenciar o controle de entrada e saída de mercadorias, incluindo a emissão e recebimento de notas fiscais. Administrar contas a receber e realizar o controle de faturamento, assegurando que todas as transações financeiras sejam registradas corretamente. Monitorar e controlar serviços bancários, realizando conciliações e pagamentos. Coordenar processos de compras e realizar atendimento ao cliente, garantindo a satisfação e o suporte necessário.',
             }
         }
     }
