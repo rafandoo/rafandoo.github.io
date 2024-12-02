@@ -1,3 +1,12 @@
+<script setup>
+defineProps({
+    skills: {
+        type: Object,
+        required: true,
+    },
+})
+</script>
+
 <template>
     <article class="skills-page" data-page="skills">
         <h2 class="h2 article-title">{{ $t('main.skills') }}</h2>
@@ -6,7 +15,7 @@
             <ul class="skill-list">
                 <li class="skill-item" v-for="(item, index) in skill.items" :key="index">
                     <div class="skill-logo">
-                        <img :src="item.logo" alt="" loading="lazy">
+                        <img :src="item.logo" alt="" loading="lazy" />
                     </div>
                     <span class="skill-title">{{ item.title }}</span>
                 </li>
@@ -14,15 +23,3 @@
         </div>
     </article>
 </template>
-
-<script>
-export default {
-    name: 'SkillsPage',
-    props: {
-        skills: {
-            type: Array,
-            required: true
-        }
-    },
-}
-</script>

@@ -1,31 +1,23 @@
-.DS_Store
-node_modules
-/dist
+### Vuejs ###
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
 
+### WebStorm ###
+.idea/
 
-# local env files
-.env.local
-.env.*.local
+# CMake
+cmake-build-*/
 
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+# File-based project format
+*.iws
 
-### VisualStudioCode ###
-.vscode/
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
+# mpeltonen/sbt-idea plugin
+.idea_modules/
 
-# Local History for Visual Studio Code
-.history/
+# Editor-based Rest Client
+.idea/httpRequests
 
-# Ignore temp files and folders
-.tmp/
-.temp/
-*.tmp
-*.tmp.*
+# Cache file creation bug
+.idea/$CACHE_FILE$
