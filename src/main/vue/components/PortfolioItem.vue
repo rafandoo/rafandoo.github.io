@@ -1,3 +1,12 @@
+<script setup>
+defineProps({
+    projects: {
+        type: Object,
+        required: true,
+    },
+})
+</script>
+
 <template>
     <article class="portfolio" data-page="portfolio">
         <h2 class="h2 article-title">{{ $t('main.portfolio') }}</h2>
@@ -9,11 +18,16 @@
                             <div class="project-item-icon-box">
                                 <ion-icon name="eye-outline"></ion-icon>
                             </div>
-                            <img :src="project.img" alt="" loading="lazy">
+                            <img :src="project.img" alt="" loading="lazy" />
                         </figure>
                         <h3 class="project-title">{{ $t(project.title) }}</h3>
                         <div class="project-categories">
-                            <span class="project-category" v-for="(category, index) in project.category" :key="index">{{ category }}</span>
+                            <span
+                                class="project-category"
+                                v-for="(category, index) in project.category"
+                                :key="index"
+                                >{{ category }}</span
+                            >
                         </div>
                         <p class="project-subtitle">{{ $t(project.subtitle) }}</p>
                     </a>
@@ -22,15 +36,3 @@
         </div>
     </article>
 </template>
-
-<script>
-export default {
-    name: 'PortfolioPage',
-    props: {
-        projects: {
-            type: Array,
-            required: true
-        }
-    },
-}
-</script>

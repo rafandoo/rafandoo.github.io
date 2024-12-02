@@ -7,5 +7,5 @@ export default {
     location: 'personal.location',
     githubUser: 'rafandoo',
     instagramUser: 'rafandoo',
-    linkedinLink: 'https://www.linkedin.com/in/rafaelcamargob'
-};
+    linkedinLink: 'https://www.linkedin.com/in/rafaelcamargob',
+}

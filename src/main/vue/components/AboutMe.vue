@@ -1,3 +1,12 @@
+<script setup>
+defineProps({
+    aboutMeParagraphs: {
+        type: Array,
+        required: true,
+    },
+})
+</script>
+
 <template>
     <article class="about" data-page="about">
         <h2 class="h2 article-title">{{ $t('main.about_me') }}</h2>
@@ -8,16 +17,3 @@
         </div>
     </article>
 </template>
-
-<script>
-
-export default {
-    name: 'AboutMe',
-    props: {
-        aboutMeParagraphs: {
-            type: Array,
-            required: true
-        }
-    }
-}
-</script>
