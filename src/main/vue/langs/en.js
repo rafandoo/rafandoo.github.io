@@ -16,14 +16,14 @@ export default {
         location: 'Location',
     },
     personal: {
-        sub_title: 'Student of Computer Science',
+        sub_title: 'Student of Computer Science and Dev',
         location: 'Santa Catarina, Brazil',
         about_me_one:
-            "Hey, I'm Rafael, 22 years old, and I'm studying Computer Science at the Federal Institute of Santa Catarina (IFC).",
+            "Hey, my name is Rafael. I'm 22 years old a student of Computer Science at the Federal Institute of Santa Catarina, in addition to working in the area of development.",
         about_me_two:
-            "My passion for technology and programming drives me to constantly seek new knowledge and take on exciting challenges. Currently, I'm focused on delving deep into the ecosystem of Python and Java languages, exploring their numerous possibilities.",
+            "I'm passionate about technology and programming, which motivates me to constantly seek new knowledge and face challenges. Currently, I'm focused on deepening my understanding of microservices architectures and their application in modern solutions.",
         about_me_three:
-            "My experience covers various languages, including Python, Java, and PHP, in addition to being familiar with MySQL database management and the use of Git for version control. I'm eager to continue enhancing my skills and contributing to the world of technology in meaningful ways.",
+            "I have experience with several programming languages, such as Python, Java and PHP, and am also familiar with database management and version control using Git. My goal is to continue improving my skills and contribute significantly to the advancement of technology and innovation.",
         projects: {
             stock_prediction: {
                 title: 'Stock Prediction',

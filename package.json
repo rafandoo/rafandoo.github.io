@@ -1,6 +1,6 @@
 {
     "name": "rafandoo",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "author": "Rafael Camargo <rafaelcamargo.inf@gmail.com>",
     "private": true,
@@ -15,7 +15,7 @@
     "dependencies": {
         "md5": "2.3.0",
         "vue": "^3.5.12",
-        "vue-i18n": "9.14.0",
+        "vue-i18n": "10.0.5",
         "vue-toastification": "^2.0.0-rc.5"
     },
     "devDependencies": {

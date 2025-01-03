@@ -100,16 +100,12 @@ onMounted(() => {
             <div class="separator"></div>
             <ul class="social-list">
                 <li class="social-item">
-                    <a
-                        :href="'https://github.com/' + personalInfo.githubUser"
-                        class="social-link"
-                        target="_blank"
-                    >
+                    <a :href="'https://github.com/' + personalInfo.githubUser" class="social-link" target="_blank">
                         <ion-icon name="logo-github"></ion-icon>
                     </a>
                 </li>
                 <li class="social-item">
-                    <a :href="personalInfo.linkedinLink" class="social-link" target="_blank">
+                    <a :href="'https://www.linkedin.com/in/' + personalInfo.linkedinUser" class="social-link" target="_blank">
                         <ion-icon name="logo-linkedin"></ion-icon>
                     </a>
                 </li>
