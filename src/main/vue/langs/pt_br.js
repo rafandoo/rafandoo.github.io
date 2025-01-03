@@ -16,14 +16,14 @@ export default {
         location: 'Localização',
     },
     personal: {
-        sub_title: 'Estudante de Ciência da Computação',
+        sub_title: 'Estudante de Ciência da Computação e Dev',
         location: 'Santa Catarina, Brasil',
         about_me_one:
-            'Olá, me chamo Rafael, tenho 22 anos e sou estudante de Ciência da Computação no Instituto Federal Catarinense (IFC).',
+            'Olá, meu nome é Rafael, tenho 22 anos e sou estudante de Ciência da Computação no Instituto Federal Catarinense, além de atuante na área de desenvolvimento.',
         about_me_two:
-            'Minha paixão pela tecnologia e programação me impulsiona a buscar constantemente novos conhecimentos e enfrentar desafios estimulantes. Atualmente, estou concentrado em explorar profundamente o ecossistema das linguagens Python e Java, com suas inúmeras possibilidades.',
+            'Sou apaixonado por tecnologia e programação, o que me motiva a buscar constantemente novos conhecimentos e enfrentar desafios. Atualmente, estou focado em aprofundar meu entendimento sobre arquiteturas de microsserviços e sua aplicação em soluções modernas.',
         about_me_three:
-            'Minha experiência abrange várias linguagens, incluindo Python, Java e PHP, além de estar familiarizado com o gerenciamento de bancos de dados MySQL e a utilização do Git para controle de versão. Estou ansioso para continuar a aprimorar minhas habilidades e contribuir para o mundo da tecnologia de maneiras significativas.',
+            'Possuo experiência com diversas linguagens de programação, como Python, Java e PHP, e também sou familiarizado com gerenciamento de bancos de dados e controle de versão utilizando Git. Meu objetivo é continuar aprimorando minhas habilidades e contribuir de forma significativa para o avanço da tecnologia e inovação.',
         projects: {
             stock_prediction: {
                 title: 'Predição de ações',

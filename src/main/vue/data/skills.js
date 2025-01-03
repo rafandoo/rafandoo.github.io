@@ -24,21 +24,17 @@ export default {
         title: 'personal.skills.frameworks',
         items: [
             {
-                title: 'Tomcat',
-                logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tomcat/tomcat-original.svg',
-            },
-            {
                 title: 'Quarkus',
                 logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/quarkus/quarkus-original.svg',
+            },
+            {
+                title: 'Tomcat',
+                logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tomcat/tomcat-original.svg',
             },
             {
                 title: 'JUnit 5',
                 logo: new URL('@/main/resources/assets/img/skills/junit5.svg', import.meta.url)
                     .href,
-            },
-            {
-                title: 'Django',
-                logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',
             },
             {
                 title: 'Pandas',
