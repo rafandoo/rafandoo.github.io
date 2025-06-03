@@ -1,6 +1,13 @@
 import type { Projects } from '@/types/Project'
 
 const projects: Projects = {
+  Tasker: {
+    title: 'personal.projects.tasker.title',
+    subtitle: 'personal.projects.tasker.subtitle',
+    category: ['Microservice', 'Quarkus', 'Java'],
+    img: new URL('#/assets/img/projects/tasker.webp', import.meta.url).href,
+    link: 'https://github.com/rafandoo/tasker'
+  },
   StockPrediction: {
     title: 'personal.projects.stock_prediction.title',
     subtitle: 'personal.projects.stock_prediction.subtitle',

@@ -22,6 +22,10 @@
     "location": "Santa Catarina, Brazil",
     "about_me": "Hello, my name is Rafael. I'm a student of Computer Science at the Federal Institute of Santa Catarina and work as a software developer.\n Since I got in touch with programming, I developed a real passion for technology. This motivation leads me to always be in search of new knowledge, exploring tools, languages and architectures that challenge me and make me evolve as a developer. Currently, I’m focused on deepening my understanding of microservice-based architectures by exploring concepts such as scalability, resilience, asynchronous communication and observability.\n I have experience with several programming languages, such as Java, Python and PHP, which allows me to adapt solutions according to the needs of the project. I am also familiar with modern development practices such as version control with Git, containerization with Docker and relational database management.\n Follow good development practices such as automated testing, code organization and use of continuous integration pipelines. I like to solve problems objectively and learn from practice in everyday development.",
     "projects": {
+      "tasker": {
+        "title": "Tasker",
+        "subtitle": "Microservice for task management."
+      },
       "stock_prediction": {
         "title": "Stock Prediction",
         "subtitle": "Machine Learning techniques for stock prediction."

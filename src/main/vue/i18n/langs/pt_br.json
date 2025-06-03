@@ -22,6 +22,10 @@
     "location": "Santa Catarina, Brasil",
     "about_me": "Olá, meu nome é Rafael. Sou estudante de Ciência da Computação no Instituto Federal Catarinense e atuo como desenvolvedor de software.\nDesde que entrei em contato com a programação, desenvolvi uma verdadeira paixão por tecnologia. Essa motivação me leva a estar sempre em busca de novos conhecimentos, explorando ferramentas, linguagens e arquiteturas que me desafiem e me façam evoluir como desenvolvedor. Atualmente, estou focado em aprofundar meu entendimento sobre arquiteturas baseadas em microsserviços, explorando conceitos como escalabilidade, resiliência, comunicação assíncrona e observabilidade.\nTenho experiência com várias linguagens de programação, como Java, Python e PHP, o que me permite adaptar soluções conforme as necessidades do projeto. Também sou familiarizado com práticas modernas de desenvolvimento, como controle de versão com Git, conteinerização com Docker e gerenciamento de bancos de dados relacionais.\nProcuro seguir boas práticas de desenvolvimento, como testes automatizados, organização de código e uso de pipelines de integração contínua. Gosto de resolver problemas de forma objetiva e aprender com a prática no dia a dia do desenvolvimento.",
     "projects": {
+      "tasker": {
+        "title": "Tasker",
+        "subtitle": "Microsserviço para gerenciamento de tarefas."
+      },
       "stock_prediction": {
         "title": "Predição de ações",
         "subtitle": "Técnicas de Machine Learning para predição de ações."
