@@ -1,61 +1,66 @@
-<script setup>
-import LanguageSwitch from './LanguageSwitch.vue'
+<script setup lang="ts">
+import { $t } from '@/i18n'
 import { onMounted } from 'vue'
+import LanguageSwitch from '@/components/elements/LanguageSwitch.vue'
+import {
+  PAGE_ABOUT_ME,
+  PAGE_CONTACT,
+  PAGE_EXPERIENCE,
+  PAGE_PROJECTS,
+  PAGE_SKILLS,
+} from '@/constants/pages.ts'
 
 const changeTab = () => {
-    let tabs = document.querySelectorAll('.tab-content'),
-        navLinks = document.querySelectorAll('.navbar-link')
-    for (let i = 0; i < navLinks.length; i++) {
-        navLinks[i].addEventListener('click', function () {
-            for (let i = 0; i < tabs.length; i++) {
-                if (this.id === tabs[i].id) {
-                    tabs[i].classList.add('active')
-                    navLinks[i].classList.add('active')
-                } else {
-                    tabs[i].classList.remove('active')
-                    navLinks[i].classList.remove('active')
-                }
-            }
-        })
-    }
+  const tabs = document.querySelectorAll('.tab-content')
+  const navLinks = document.querySelectorAll('.navbar-link')
+
+  for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click', () => {
+      const clickedId = navLinks[i].id
+
+      for (let j = 0; j < tabs.length; j++) {
+        const isActive = clickedId === tabs[j].id
+        tabs[j].classList.toggle('active', isActive)
+        navLinks[j].classList.toggle('active', isActive)
+      }
+    })
+  }
 }
 
-onMounted(() => {
-    changeTab()
-})
+onMounted(changeTab)
 </script>
 
 <template>
-    <nav class="navbar">
-        <ul class="navbar-list">
-            <li class="navbar-item">
-                <button class="navbar-link active" id="about" data-bs-toggle="tab">
-                    {{ $t('main.about') }}
-                </button>
-            </li>
-            <li class="navbar-item">
-                <button class="navbar-link" id="experience" data-bs-toggle="tab">
-                    {{ $t('main.experience') }}
-                </button>
-            </li>
-            <li class="navbar-item">
-                <button class="navbar-link" id="portfolio" data-bs-toggle="tab">
-                    {{ $t('main.portfolio') }}
-                </button>
-            </li>
-            <li class="navbar-item">
-                <button class="navbar-link" id="skills" data-bs-toggle="tab">
-                    {{ $t('main.skills') }}
-                </button>
-            </li>
-            <li class="navbar-item">
-                <button class="navbar-link" id="contact" data-bs-toggle="tab">
-                    {{ $t('main.contact') }}
-                </button>
-            </li>
-            <li class="navbar-item">
-                <LanguageSwitch />
-            </li>
-        </ul>
-    </nav>
+  <nav class="navbar">
+    <ul class="navbar-list">
+      <li class="navbar-item">
+        <button class="navbar-link active" :id="PAGE_ABOUT_ME" data-bs-toggle="tab">
+          {{ $t('main.about') }}
+        </button>
+      </li>
+      <li class="navbar-item">
+        <button class="navbar-link" :id="PAGE_EXPERIENCE" data-bs-toggle="tab">
+          {{ $t('main.experience') }}
+        </button>
+      </li>
+      <li class="navbar-item">
+        <button class="navbar-link" :id="PAGE_PROJECTS" data-bs-toggle="tab">
+          {{ $t('main.portfolio') }}
+        </button>
+      </li>
+      <li class="navbar-item">
+        <button class="navbar-link" :id="PAGE_SKILLS" data-bs-toggle="tab">
+          {{ $t('main.skills') }}
+        </button>
+      </li>
+      <li class="navbar-item">
+        <button class="navbar-link" :id="PAGE_CONTACT" data-bs-toggle="tab">
+          {{ $t('main.contact') }}
+        </button>
+      </li>
+      <li class="navbar-item">
+        <LanguageSwitch />
+      </li>
+    </ul>
+  </nav>
 </template>

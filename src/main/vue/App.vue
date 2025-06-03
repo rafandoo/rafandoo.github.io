@@ -1,50 +1,51 @@
-<script setup>
-import SideBar from '@/main/vue/components/SideBar.vue'
-import NavBar from '@/main/vue/components/NavBar.vue'
-import AboutMe from '@/main/vue/components/AboutMe.vue'
-import ExperiencesItem from '@/main/vue/components/ExperiencesItem.vue'
-import PortfolioItem from '@/main/vue/components/PortfolioItem.vue'
-import SkillsItem from '@/main/vue/components/SkillsItem.vue'
-import ContactMe from '@/main/vue/components/ContactMe.vue'
+<script setup lang="ts">
+import { $t } from '@/i18n'
+import { defineAsyncComponent } from 'vue'
 
-import personalInfo from '@/main/vue/data/personalInfo'
-import experiences from '@/main/vue/data/experiences'
-import projects from '@/main/vue/data/projects'
-import skills from '@/main/vue/data/skills'
+import SideBar from '@/components/SideBar.vue'
+import NavBar from '@/components/NavBar.vue'
+
+import AboutMe from '@/components/pages/AboutMePage.vue'
+
+const Experiences = defineAsyncComponent(() => import('@/components/pages/ExperiencesPage.vue'))
+const Projects = defineAsyncComponent(() => import('@/components/pages/ProjectsPage.vue'))
+const Skills = defineAsyncComponent(() => import('@/components/pages/SkillsPage.vue'))
+const ContactMe = defineAsyncComponent(() => import('@/components/pages/ContactMe.vue'))
+
+import personalInfo from '@/data/PersonalInfo'
+import experiences from '@/data/Experiences'
+import projects from '@/data/Projects'
+import skills from '@/data/Skills'
+
+import {
+  PAGE_ABOUT_ME,
+  PAGE_CONTACT,
+  PAGE_EXPERIENCE,
+  PAGE_PROJECTS,
+  PAGE_SKILLS,
+} from '@/constants/pages.ts'
 </script>
 
 <template>
-    <div class="main">
-        <SideBar :personal-info="personalInfo" />
-        <div class="main-content">
-            <NavBar />
-            <div class="tab-content active" id="about">
-                <AboutMe
-                    :about-me-paragraphs="[
-                        $t('personal.about_me_one'),
-                        $t('personal.about_me_two'),
-                        $t('personal.about_me_three'),
-                    ]"
-                />
-            </div>
-            <div class="tab-content" id="experience">
-                <ExperiencesItem :experiences="experiences" />
-            </div>
-            <div class="tab-content" id="portfolio">
-                <PortfolioItem :projects="projects" />
-            </div>
-            <div class="tab-content" id="skills">
-                <SkillsItem :skills="skills" />
-            </div>
-            <div class="tab-content" id="contact">
-                <ContactMe
-                    integration_link="https://send.pageclip.co/PFWf4lo5hFmU0tI2gNrf7nsRJCeMGh8b/contact-gh-pages"
-                />
-            </div>
-        </div>
+  <div class="main">
+    <SideBar :personal-info="personalInfo" />
+    <div class="main-content">
+      <NavBar />
+      <div class="tab-content active" :id="PAGE_ABOUT_ME">
+        <AboutMe :about-me-text="$t('personal.about_me')" />
+      </div>
+      <div class="tab-content" :id="PAGE_EXPERIENCE">
+        <Experiences :experiences="experiences" />
+      </div>
+      <div class="tab-content" :id="PAGE_PROJECTS">
+        <Projects :projects="projects" />
+      </div>
+      <div class="tab-content" :id="PAGE_SKILLS">
+        <Skills :skills="skills" />
+      </div>
+      <div class="tab-content" :id="PAGE_CONTACT">
+        <ContactMe :page-clip="personalInfo.pageClip" />
+      </div>
     </div>
+  </div>
 </template>
-
-<style>
-@import '@/main/resources/assets/css/style.css';
-</style>
