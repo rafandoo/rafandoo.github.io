@@ -5,8 +5,11 @@ export type PersonalInfo = {
   whatsappMessage: string
   phone: string
   location: string
-  githubUser: string
-  instagramUser: string
-  linkedinUser: string
+  social: SocialNetwork[]
   pageClip: string
+}
+
+export type SocialNetwork = {
+  name: string
+  link: string
 }

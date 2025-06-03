@@ -489,7 +489,7 @@
   }
 
   .skill-item {
-    @apply flex flex-wrap justify-evenly;
+    @apply flex flex-wrap justify-center;
   }
 
   .skill-logo img {

@@ -2,8 +2,8 @@
 import { $t } from '@/i18n'
 import { defineAsyncComponent } from 'vue'
 
-import SideBar from '@/components/elements/SideBar.vue'
-import NavBar from '@/components/elements/NavBar.vue'
+import SideBar from '@/components/SideBar.vue'
+import NavBar from '@/components/NavBar.vue'
 
 import AboutMe from '@/components/pages/AboutMePage.vue'
 

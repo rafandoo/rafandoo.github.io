@@ -7,9 +7,20 @@ const personal: PersonalInfo = {
   whatsappMessage: 'Ol%C3%A1!',
   phone: '+55 (47) 99166-4002',
   location: 'personal.location',
-  githubUser: 'rafandoo',
-  instagramUser: 'rafandoo',
-  linkedinUser: 'rafaelcamargob',
+  social: [
+    {
+      name: 'Github',
+      link: 'https://github.com/rafandoo/',
+    },
+    {
+      name: 'Instagram',
+      link: 'https://www.instagram.com/rafandoo/',
+    },
+    {
+      name: 'Linkedin',
+      link: 'https://www.linkedin.com/in/rafaelcamargob/',
+    },
+  ],
   pageClip: 'https://send.pageclip.co/PFWf4lo5hFmU0tI2gNrf7nsRJCeMGh8b/contact-gh-pages',
 }
 
