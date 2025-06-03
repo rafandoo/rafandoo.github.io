@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import type { SocialNetwork } from '@/types/PersonalInfo.ts'
-import { Github, Instagram, Linkedin } from 'lucide-vue-next'
+import { AtSign, Github, Instagram, Linkedin } from 'lucide-vue-next'
 
 defineProps<{
   socialNetworks: SocialNetwork[]
 }>()
 
+/**
+ * Retorna o ícone conforme o nome da rede social.
+ * @param name nome da rede social
+ */
 const getIcon = (name: string) => {
   switch (name.toLowerCase()) {
     case 'github':
@@ -14,6 +18,8 @@ const getIcon = (name: string) => {
       return Instagram
     case 'linkedin':
       return Linkedin
+    default:
+      return AtSign
   }
 }
 </script>

@@ -6,7 +6,7 @@ const projects: Projects = {
     subtitle: 'personal.projects.tasker.subtitle',
     category: ['Microservice', 'Quarkus', 'Java'],
     img: new URL('#/assets/img/projects/tasker.webp', import.meta.url).href,
-    link: 'https://github.com/rafandoo/tasker'
+    link: 'https://github.com/rafandoo/tasker',
   },
   StockPrediction: {
     title: 'personal.projects.stock_prediction.title',

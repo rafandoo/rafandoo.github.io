@@ -1,10 +1,7 @@
 import md5 from 'blueimp-md5'
 import type { PersonalInfo } from '@/types/PersonalInfo'
 
-import {
-  BASE_GRAVATAR,
-  BASE_WHATSAPP,
-} from '@/constants/baseLinks.ts'
+import { BASE_GRAVATAR, BASE_WHATSAPP } from '@/constants/baseLinks.ts'
 
 /**
  * Generates social media and contact links based on personal information.
@@ -29,6 +26,6 @@ export function useLinks(info: PersonalInfo) {
 
   return {
     gravatar,
-    whatsLink
+    whatsLink,
   }
 }

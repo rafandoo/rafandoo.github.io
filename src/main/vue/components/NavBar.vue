@@ -10,21 +10,28 @@ import {
   PAGE_SKILLS,
 } from '@/constants/pages.ts'
 
+/**
+ * Realiza a mudança de tab quando um link da navbar é clicado.
+ */
 const changeTab = () => {
   const tabs = document.querySelectorAll('.tab-content')
   const navLinks = document.querySelectorAll('.navbar-link')
 
-  for (let i = 0; i < navLinks.length; i++) {
-    navLinks[i].addEventListener('click', () => {
-      const clickedId = navLinks[i].id
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      const clickedId = link.id
 
-      for (let j = 0; j < tabs.length; j++) {
-        const isActive = clickedId === tabs[j].id
-        tabs[j].classList.toggle('active', isActive)
-        navLinks[j].classList.toggle('active', isActive)
-      }
+      tabs.forEach((tab) => {
+        const isActive = tab.id === clickedId
+        tab.classList.toggle('active', isActive)
+      })
+
+      navLinks.forEach((nav) => {
+        const isActive = nav.id === clickedId
+        nav.classList.toggle('active', isActive)
+      })
     })
-  }
+  })
 }
 
 onMounted(changeTab)

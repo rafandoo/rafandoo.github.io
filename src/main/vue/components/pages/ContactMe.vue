@@ -9,17 +9,25 @@ const props = defineProps<{
   pageClip: string
 }>()
 
+/**
+ * Realiza o disparo de uma notificação toast.
+ * @param message mensagem a ser exibida na notificação.
+ * @param type tipo de notificação a ser exibida.
+ */
 const notify = (message: string, type: string) => {
   toast(message, {
     autoClose: 1000,
     position: toast.POSITION.TOP_RIGHT,
     hideProgressBar: true,
     closeOnClick: true,
-    type: type,
+    type,
     theme: 'dark'
   } as ToastOptions)
 }
 
+/**
+ * Realiza o envio do formulário de contato.
+ */
 const ctrlForm = () => {
   const form = document.querySelector<HTMLFormElement>('[data-form]')
   const formInputs = document.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(
@@ -29,8 +37,8 @@ const ctrlForm = () => {
 
   if (!form || !formBtn) return
 
-  for (let i = 0; i < formInputs.length; i++) {
-    formInputs[i].addEventListener('input', () => {
+  for (const input of formInputs) {
+    input.addEventListener('input', () => {
       if (form.checkValidity()) {
         formBtn.removeAttribute('disabled')
       } else {

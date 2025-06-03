@@ -1,19 +1,18 @@
 <script lang="ts" setup>
 import { AVAILABLE_LOCALES, toggleLanguage } from '@/i18n'
 import { Earth } from 'lucide-vue-next'
-
 </script>
 
 <template>
   <div class="language-switch">
     <button @click="toggleLanguage(AVAILABLE_LOCALES)" class="language-button">
-      <Earth class="language-icon"/>
+      <Earth class="language-icon" />
     </button>
   </div>
 </template>
 
 <style scoped>
-@import "tailwindcss";
+@import 'tailwindcss';
 @layer theme, base, components, utilities;
 
 .language-switch {

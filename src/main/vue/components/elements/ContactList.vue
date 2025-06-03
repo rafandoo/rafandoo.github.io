@@ -8,32 +8,30 @@ const props = defineProps<{
   personalInfo: PersonalInfo
 }>()
 
-const { whatsLink } = useLinks(
-  props.personalInfo
-)
+const { whatsLink } = useLinks(props.personalInfo)
 
 const contacts = [
   {
     icon: Mail,
     title: 'E-mail',
     value: props.personalInfo.email,
-    href: 'mailto:' + props.personalInfo.email,
-    isAddress: false
+    href: `mailto:${props.personalInfo.email}`,
+    isAddress: false,
   },
   {
     icon: Phone,
     title: $t('elements.phone'),
     value: props.personalInfo.phone,
     href: whatsLink,
-    isAddress: false
+    isAddress: false,
   },
   {
     icon: MapPin,
     title: $t('elements.location'),
     value: $t(props.personalInfo.location),
     href: '',
-    isAddress: true
-  }
+    isAddress: true,
+  },
 ]
 </script>
 

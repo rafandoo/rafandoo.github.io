@@ -12,12 +12,13 @@ const props = defineProps<{
   personalInfo: PersonalInfo
 }>()
 
-const { gravatar } = useLinks(
-  props.personalInfo,
-)
+const { gravatar } = useLinks(props.personalInfo)
 
 const sidebarActive = ref(false)
 
+/**
+ * Expande ou recolhe o sidebar secundário.
+ */
 const toggleSidebar = () => {
   const sidebar = document.querySelector('[data-sidebar]')
   const sidebarButton = document.querySelector('[data-sidebar-button]')

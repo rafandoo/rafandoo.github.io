@@ -14,7 +14,7 @@ defineProps<{
     <header>
       <h2 class="article-title">{{ $t('main.experience') }}</h2>
     </header>
-    <section class="timeline" v-for="(experience, index) in experiences" :key="index">
+    <section class="timeline" v-for="(experience, i) in experiences" :key="i">
       <div class="title-wrapper">
         <div class="timeline-logo-box">
           <img
@@ -29,7 +29,7 @@ defineProps<{
         <h3>{{ experience.title }}</h3>
       </div>
       <ol class="timeline-list">
-        <li class="timeline-item" v-for="(item, index) in experience.items" :key="index">
+        <li class="timeline-item" v-for="(item, j) in experience.items" :key="j">
           <h4 class="timeline-item-title">{{ $t(item.title) }}</h4>
           <span>{{ $t(item.date) }}</span>
           <p class="timeline-text">{{ $t(item.description) }}</p>
