@@ -903,11 +903,11 @@
       @apply w-38;
     }
 
-    .info-content .name {
+    .sidebar-main-content .name {
       @apply whitespace-nowrap text-center;
     }
 
-    .info-content .subtitle {
+    .sidebar-main-content .subtitle {
       @apply m-auto;
     }
 

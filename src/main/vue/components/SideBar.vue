@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { $t } from '@/i18n'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
 import { onMounted, ref } from 'vue'
 import { useLinks } from '@/composables/useLinks.ts'
 import { Maximize2, Minimize2 } from 'lucide-vue-next'
@@ -42,10 +44,10 @@ onMounted(toggleSidebar)
       </figure>
       <div class="sidebar-main-content">
         <h1 class="name">{{ personalInfo.name }}</h1>
-        <p class="subtitle">{{ $t(personalInfo.subTitle) }}</p>
+        <p class="subtitle">{{ t(personalInfo.subTitle) }}</p>
       </div>
       <button class="sidebar-show-more-button" data-sidebar-button>
-        <span>{{ $t('elements.show_contacts') }}</span>
+        <span>{{ t('elements.show_contacts') }}</span>
         <Maximize2 v-if="!sidebarActive" :size="15" />
         <Minimize2 v-else :size="15" />
       </button>

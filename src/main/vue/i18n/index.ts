@@ -63,8 +63,6 @@ const i18n = createI18n({
   messages,
 })
 
-export const $t = i18n.global.t
-
 const composer = i18n.global as unknown as Composer
 
 /**
