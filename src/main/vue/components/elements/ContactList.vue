@@ -20,15 +20,15 @@ const contacts = [
   },
   {
     icon: Phone,
-    title: $t('elements.phone'),
+    title: 'elements.phone',
     value: props.personalInfo.phone,
     href: whatsLink,
     isAddress: false,
   },
   {
     icon: MapPin,
-    title: $t('elements.location'),
-    value: $t(props.personalInfo.location),
+    title: 'elements.location',
+    value: props.personalInfo.location,
     href: '',
     isAddress: true,
   },
@@ -42,9 +42,9 @@ const contacts = [
         <component :is="contact.icon" />
       </div>
       <div class="contact-info">
-        <p class="contact-title">{{ contact.title }}</p>
+        <p class="contact-title">{{ $t(contact.title) }}</p>
         <template v-if="contact.isAddress">
-          <address>{{ contact.value }}</address>
+          <address>{{ $t(contact.value) }}</address>
         </template>
         <template v-else>
           <a :href="contact.href" class="contact-link" target="_blank" rel="noopener noreferrer">
