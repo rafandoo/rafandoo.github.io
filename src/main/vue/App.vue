@@ -46,7 +46,7 @@ import {
         <Skills :skills="skills" />
       </div>
       <div class="tab-content" :id="PAGE_CONTACT">
-        <ContactMe :page-clip="personalInfo.pageClip" />
+        <ContactMe :email="personalInfo.email" />
       </div>
     </div>
   </div>

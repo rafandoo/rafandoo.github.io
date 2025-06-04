@@ -6,9 +6,10 @@ import { onMounted } from 'vue'
 import { toast, type ToastOptions } from 'vue3-toastify'
 import { PAGE_CONTACT } from '@/constants/pages.ts'
 import { SendHorizontal } from 'lucide-vue-next'
+import { BASE_FORM_SUBMIT } from '@/constants/baseLinks.ts'
 
 const props = defineProps<{
-  pageClip: string
+  email: string
 }>()
 
 /**
@@ -54,7 +55,8 @@ const ctrlForm = () => {
 
     const formData = new FormData(form)
     try {
-      const response = await fetch(props.pageClip, {
+      const url = `${BASE_FORM_SUBMIT}${props.email}`
+      const response = await fetch(url, {
         method: 'POST',
         body: formData
       })
