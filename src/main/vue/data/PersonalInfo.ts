@@ -20,8 +20,7 @@ const personal: PersonalInfo = {
       name: 'Linkedin',
       link: 'https://www.linkedin.com/in/rafaelcamargob/',
     },
-  ],
-  pageClip: 'https://send.pageclip.co/PFWf4lo5hFmU0tI2gNrf7nsRJCeMGh8b/contact-gh-pages',
+  ]
 }
 
 export default personal
