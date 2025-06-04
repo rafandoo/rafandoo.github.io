@@ -6,7 +6,6 @@ export type PersonalInfo = {
   phone: string
   location: string
   social: SocialNetwork[]
-  pageClip: string
 }
 
 export type SocialNetwork = {
