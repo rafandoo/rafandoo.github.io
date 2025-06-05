@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { $t } from '@/i18n'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
 import { defineAsyncComponent } from 'vue'
 
 import SideBar from '@/components/SideBar.vue'
@@ -32,7 +34,7 @@ import {
     <div class="main-content">
       <NavBar />
       <div class="tab-content active" :id="PAGE_ABOUT_ME">
-        <AboutMe :about-me-text="$t('personal.about_me')" />
+        <AboutMe :about-me-text="t('personal.about_me')" />
       </div>
       <div class="tab-content" :id="PAGE_EXPERIENCE">
         <Experiences :experiences="experiences" />

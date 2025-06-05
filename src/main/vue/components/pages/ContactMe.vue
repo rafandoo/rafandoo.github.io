@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { $t } from '@/i18n'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
 import { onMounted } from 'vue'
 import { toast, type ToastOptions } from 'vue3-toastify'
 import { PAGE_CONTACT } from '@/constants/pages.ts'
@@ -60,13 +62,13 @@ const ctrlForm = () => {
       })
 
       if (response.ok) {
-        notify($t('elements.message_sent'), 'success')
+        notify(t('elements.message_sent'), 'success')
       } else {
-        notify($t('elements.error_sending'), 'error')
+        notify(t('elements.error_sending'), 'error')
       }
     } catch (error) {
       console.error(error)
-      notify($t('elements.error_sending'), 'error')
+      notify(t('elements.error_sending'), 'error')
     } finally {
       form.reset()
     }
@@ -78,7 +80,7 @@ onMounted(ctrlForm)
 
 <template>
   <article class="contact" :data-page="PAGE_CONTACT">
-    <h2 class="article-title">{{ $t('main.contact') }}</h2>
+    <h2 class="article-title">{{ t('main.contact') }}</h2>
     <section class="contact-form">
       <form data-form method="post">
         <div class="form-input-wrapper">
@@ -86,7 +88,7 @@ onMounted(ctrlForm)
             type="text"
             name="name"
             class="form-input"
-            :placeholder="$t('elements.name')"
+            :placeholder="t('elements.name')"
             required
             data-form-input
           />
@@ -102,14 +104,14 @@ onMounted(ctrlForm)
         <textarea
           name="message"
           class="form-input"
-          :placeholder="$t('elements.message')"
+          :placeholder="t('elements.message')"
           required
           data-form-input
         ></textarea>
         <div class="form-button-wrapper">
           <button class="form-button" disabled data-form-btn type="submit">
             <SendHorizontal :size="20" />
-            <span>{{ $t('elements.send') }}</span>
+            <span>{{ t('elements.send') }}</span>
           </button>
         </div>
       </form>

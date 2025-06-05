@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { $t } from '@/i18n'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
 import type { SkillCategory } from '@/types/Skills'
 import { PAGE_SKILLS } from '@/constants/pages.ts'
 
@@ -10,9 +12,9 @@ defineProps<{
 
 <template>
   <article class="skills" :data-page="PAGE_SKILLS">
-    <h2 class="article-title">{{ $t('main.skills') }}</h2>
+    <h2 class="article-title">{{ t('main.skills') }}</h2>
     <div v-for="(skill, key) in skills" :key="key">
-      <h4 class="skill-category">{{ $t(skill.title) }}</h4>
+      <h4 class="skill-category">{{ t(skill.title) }}</h4>
       <ul class="skills-list">
         <li class="skill-item animate-scaleUp" v-for="item in skill.items" :key="item.title">
           <div class="skill-logo">
