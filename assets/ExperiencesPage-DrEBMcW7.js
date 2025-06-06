@@ -1,7 +1,0 @@
-import{c as e,d as s,a,o as l,b as i,t,u as c,$ as n,F as r,r as o,e as p,P as m}from"./index-1WS_gurP.js";
-/**
- * @license lucide-vue-next v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */const d=e("briefcase-business",[["path",{d:"M12 12h.01",key:"1mp3jc"}],["path",{d:"M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2",key:"1ksdt3"}],["path",{d:"M22 13a18.15 18.15 0 0 1-20 0",key:"12hx5q"}],["rect",{width:"20",height:"14",x:"2",y:"6",rx:"2",key:"i6l2r4"}]]),h=["data-page"],x={class:"article-title"},g={class:"title-wrapper"},u={class:"timeline-logo-box"},y=["src","alt"],k={class:"timeline-list"},b={class:"timeline-item-title"},f={class:"timeline-text"},v=s({__name:"ExperiencesPage",props:{experiences:{}},setup:e=>(e,s)=>(l(),a("article",{class:"resume","data-page":c(m)},[i("header",null,[i("h2",x,t(c(n)("main.experience")),1)]),(l(!0),a(r,null,o(e.experiences,((e,s)=>(l(),a("section",{class:"timeline",key:s},[i("div",g,[i("div",u,[e.logo?(l(),a("img",{key:0,class:"timeline-logo",src:e.logo,alt:e.title,loading:"lazy"},null,8,y)):(l(),p(c(d),{key:1,class:"timeline-logo experience-briefcase"}))]),i("h3",null,t(e.title),1)]),i("ol",k,[(l(!0),a(r,null,o(e.items,((e,s)=>(l(),a("li",{class:"timeline-item",key:s},[i("h4",b,t(c(n)(e.title)),1),i("span",null,t(c(n)(e.date)),1),i("p",f,t(c(n)(e.description)),1)])))),128))])])))),128))],8,h))});export{v as default};
