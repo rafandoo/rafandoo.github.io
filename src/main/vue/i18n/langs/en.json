@@ -13,6 +13,7 @@
     "message": "Your message",
     "send": "Send",
     "phone": "Phone",
+    "email": "E-mail",
     "location": "Location",
     "message_sent": "Message sent successfully!",
     "error_sending": "Error sending message."

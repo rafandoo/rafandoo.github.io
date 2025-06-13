@@ -48,8 +48,8 @@ onMounted(toggleSidebar)
       </div>
       <button class="sidebar-show-more-button" data-sidebar-button>
         <span>{{ t('elements.show_contacts') }}</span>
-        <Maximize2 v-if="!sidebarActive" :size="15" />
-        <Minimize2 v-else :size="15" />
+        <Maximize2 v-if="!sidebarActive" />
+        <Minimize2 v-else />
       </button>
     </div>
     <div class="sidebar-secondary">

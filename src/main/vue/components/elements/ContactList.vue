@@ -15,7 +15,7 @@ const { whatsLink } = useLinks(props.personalInfo)
 const contacts = [
   {
     icon: Mail,
-    title: 'E-mail',
+    title: 'elements.email',
     value: props.personalInfo.email,
     href: `mailto:${props.personalInfo.email}`,
     isAddress: false,

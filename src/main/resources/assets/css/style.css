@@ -268,6 +268,10 @@
     @apply hidden;
   }
 
+  .sidebar-show-more-button .lucide {
+    @apply size-4;
+  }
+
   .sidebar-secondary {
     @apply opacity-0 invisible transition-all ease-in-out duration-500;
   }
@@ -739,7 +743,7 @@
     }
 
     .social-item .lucide {
-      @apply size-7;
+      @apply size-6.5;
     }
 
     .contacts-list {
