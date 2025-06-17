@@ -5,7 +5,7 @@ import { Earth } from 'lucide-vue-next'
 
 <template>
   <div class="language-switch">
-    <button @click="toggleLanguage(AVAILABLE_LOCALES)" class="language-button">
+    <button class="language-button" @click="toggleLanguage(AVAILABLE_LOCALES)">
       <Earth class="language-icon" />
     </button>
   </div>

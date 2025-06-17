@@ -1,0 +1,20 @@
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: '**/*.md'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file: './.github/*'
+
+config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '*.config.{js,ts}'
+          - '.prettierrc*'
+          - 'tsconfig*.json'
+
+enhancement:
+  - head-branch: ['^feature', 'feature']
+
+fix:
+  - head-branch: ['^fix', 'fix']

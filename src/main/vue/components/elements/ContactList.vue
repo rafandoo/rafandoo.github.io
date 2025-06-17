@@ -39,7 +39,7 @@ const contacts = [
 
 <template>
   <ul class="contacts-list">
-    <li class="contact-item" v-for="(contact, key) in contacts" :key="key">
+    <li v-for="(contact, key) in contacts" :key="key" class="contact-item">
       <div class="icon-box">
         <component :is="contact.icon" />
       </div>
