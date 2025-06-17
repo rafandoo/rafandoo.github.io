@@ -1,0 +1,7 @@
+import{c as e,d as a,u as t,a as s,o as l,b as r,t as c,e as o,F as i,r as p,g as n,h as g}from"./index-PSHUM1ct.js";
+/**
+ * @license lucide-vue-next v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const j=e("eye",[["path",{d:"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",key:"1nclc0"}],["circle",{cx:"12",cy:"12",r:"3",key:"1v7zrd"}]]),u=["data-page"],d={class:"article-title"},m={class:"project-list"},y=["href"],f={class:"project-image"},h={class:"project-item-view-icon"},k=["src","alt"],v={class:"project-title"},b={class:"project-categories"},x={class:"project-subtitle"},_=a({__name:"ProjectsPage",props:{projects:{}},setup(e){const{t:a}=t();return(e,t)=>(l(),s("article",{class:"portfolio","data-page":o(g)},[r("h2",d,c(o(a)("main.portfolio")),1),r("div",null,[r("ul",m,[(l(!0),s(i,null,p(e.projects,((e,t)=>(l(),s("li",{key:t,class:"project-item animate-scaleUp"},[r("a",{href:e.link,target:"_blank",rel:"noopener noreferrer"},[r("figure",f,[r("div",h,[n(o(j))]),r("img",{src:e.img,alt:o(a)(e.title),loading:"lazy"},null,8,k)]),r("h3",v,c(o(a)(e.title)),1),r("div",b,[(l(!0),s(i,null,p(e.category,((e,a)=>(l(),s("span",{key:a,class:"project-category"},c(e),1)))),128))]),r("p",x,c(o(a)(e.subtitle)),1)],8,y)])))),128))])])],8,u))}});export{_ as default};

@@ -1,0 +1,7 @@
+import{c as e,d as s,u as a,a as l,o as t,b as i,t as n,e as c,F as r,r as o,f as p,P as m}from"./index-PSHUM1ct.js";
+/**
+ * @license lucide-vue-next v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const d=e("briefcase-business",[["path",{d:"M12 12h.01",key:"1mp3jc"}],["path",{d:"M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2",key:"1ksdt3"}],["path",{d:"M22 13a18.15 18.15 0 0 1-20 0",key:"12hx5q"}],["rect",{width:"20",height:"14",x:"2",y:"6",rx:"2",key:"i6l2r4"}]]),h=["data-page"],u={class:"article-title"},x={class:"title-wrapper"},g={class:"timeline-logo-box"},y=["src","alt"],k={class:"timeline-list"},b={class:"timeline-item-title"},f={class:"timeline-text"},v=s({__name:"ExperiencesPage",props:{experiences:{}},setup(e){const{t:s}=a();return(e,a)=>(t(),l("article",{class:"resume","data-page":c(m)},[i("header",null,[i("h2",u,n(c(s)("main.experience")),1)]),(t(!0),l(r,null,o(e.experiences,((e,a)=>(t(),l("section",{key:a,class:"timeline"},[i("div",x,[i("div",g,[e.logo?(t(),l("img",{key:0,class:"timeline-logo",src:e.logo,alt:e.title,loading:"lazy"},null,8,y)):(t(),p(c(d),{key:1,class:"timeline-logo experience-briefcase"}))]),i("h3",null,n(e.title),1)]),i("ol",k,[(t(!0),l(r,null,o(e.items,((e,a)=>(t(),l("li",{key:a,class:"timeline-item"},[i("h4",b,n(c(s)(e.title)),1),i("span",null,n(c(s)(e.date)),1),i("p",f,n(c(s)(e.description)),1)])))),128))])])))),128))],8,h))}});export{v as default};
