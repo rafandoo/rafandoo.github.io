@@ -33,19 +33,19 @@ import {
     <SideBar :personal-info="personalInfo" />
     <div class="main-content">
       <NavBar />
-      <div class="tab-content active" :id="PAGE_ABOUT_ME">
+      <div :id="PAGE_ABOUT_ME" class="tab-content active">
         <AboutMe :about-me-text="t('personal.about_me')" />
       </div>
-      <div class="tab-content" :id="PAGE_EXPERIENCE">
+      <div :id="PAGE_EXPERIENCE" class="tab-content">
         <Experiences :experiences="experiences" />
       </div>
-      <div class="tab-content" :id="PAGE_PROJECTS">
+      <div :id="PAGE_PROJECTS" class="tab-content">
         <Projects :projects="projects" />
       </div>
-      <div class="tab-content" :id="PAGE_SKILLS">
+      <div :id="PAGE_SKILLS" class="tab-content">
         <Skills :skills="skills" />
       </div>
-      <div class="tab-content" :id="PAGE_CONTACT">
+      <div :id="PAGE_CONTACT" class="tab-content">
         <ContactMe :email="personalInfo.email" />
       </div>
     </div>

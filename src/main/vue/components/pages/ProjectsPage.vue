@@ -16,7 +16,7 @@ defineProps<{
     <h2 class="article-title">{{ t('main.portfolio') }}</h2>
     <div>
       <ul class="project-list">
-        <li class="project-item animate-scaleUp" v-for="(project, key) in projects" :key="key">
+        <li v-for="(project, key) in projects" :key="key" class="project-item animate-scaleUp">
           <a :href="project.link" target="_blank" rel="noopener noreferrer">
             <figure class="project-image">
               <div class="project-item-view-icon">
@@ -26,7 +26,7 @@ defineProps<{
             </figure>
             <h3 class="project-title">{{ t(project.title) }}</h3>
             <div class="project-categories">
-              <span class="project-category" v-for="(category, idx) in project.category" :key="idx">
+              <span v-for="(category, idx) in project.category" :key="idx" class="project-category">
                 {{ category }}
               </span>
             </div>

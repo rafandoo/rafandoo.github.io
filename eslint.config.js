@@ -1,10 +1,29 @@
-import { globalIgnores } from 'eslint/config';
-import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript';
-import pluginVue from 'eslint-plugin-vue';
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting';
-export default defineConfigWithVueTs({
-    name: 'app/files-to-lint',
-    files: ['**/*.{ts,mts,tsx,vue}']
-}, globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']), pluginVue.configs['flat/essential'], vueTsConfigs.recommended, {
-    files: ['src/**/__tests__/*'],
-}, skipFormatting);
+import eslint from '@eslint/js'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import eslintPluginVue from 'eslint-plugin-vue'
+import globals from 'globals'
+import typescriptEslint from 'typescript-eslint'
+
+export default typescriptEslint.config(
+  {
+    ignores: ['*.d.ts', '**/coverage', '**/dist'],
+  },
+  {
+    extends: [
+      eslint.configs.recommended,
+      ...typescriptEslint.configs.recommended,
+      ...eslintPluginVue.configs['flat/recommended'],
+    ],
+    files: ['**/*.{ts,vue,tsx}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: globals.browser,
+      parserOptions: {
+        parser: typescriptEslint.parser,
+      },
+    },
+    rules: {},
+  },
+  eslintConfigPrettier,
+)
