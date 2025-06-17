@@ -43,27 +43,27 @@ onMounted(changeTab)
   <nav class="navbar">
     <ul class="navbar-list">
       <li class="navbar-item">
-        <button class="navbar-link active" :id="PAGE_ABOUT_ME" data-bs-toggle="tab">
+        <button :id="PAGE_ABOUT_ME" class="navbar-link active" data-bs-toggle="tab">
           {{ t('main.about') }}
         </button>
       </li>
       <li class="navbar-item">
-        <button class="navbar-link" :id="PAGE_EXPERIENCE" data-bs-toggle="tab">
+        <button :id="PAGE_EXPERIENCE" class="navbar-link" data-bs-toggle="tab">
           {{ t('main.experience') }}
         </button>
       </li>
       <li class="navbar-item">
-        <button class="navbar-link" :id="PAGE_PROJECTS" data-bs-toggle="tab">
+        <button :id="PAGE_PROJECTS" class="navbar-link" data-bs-toggle="tab">
           {{ t('main.portfolio') }}
         </button>
       </li>
       <li class="navbar-item">
-        <button class="navbar-link" :id="PAGE_SKILLS" data-bs-toggle="tab">
+        <button :id="PAGE_SKILLS" class="navbar-link" data-bs-toggle="tab">
           {{ t('main.skills') }}
         </button>
       </li>
       <li class="navbar-item">
-        <button class="navbar-link" :id="PAGE_CONTACT" data-bs-toggle="tab">
+        <button :id="PAGE_CONTACT" class="navbar-link" data-bs-toggle="tab">
           {{ t('main.contact') }}
         </button>
       </li>

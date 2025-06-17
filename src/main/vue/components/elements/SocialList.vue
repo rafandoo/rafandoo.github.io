@@ -26,7 +26,7 @@ const getIcon = (name: string) => {
 
 <template>
   <ul class="social-list">
-    <li class="social-item" v-for="(social, key) in socialNetworks" :key="key">
+    <li v-for="(social, key) in socialNetworks" :key="key" class="social-item">
       <a :href="social.link" class="social-link" target="_blank" rel="noopener noreferrer">
         <component :is="getIcon(social.name)" />
       </a>

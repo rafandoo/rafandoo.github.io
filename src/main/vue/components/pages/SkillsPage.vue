@@ -16,7 +16,7 @@ defineProps<{
     <div v-for="(skill, key) in skills" :key="key">
       <h4 class="skill-category">{{ t(skill.title) }}</h4>
       <ul class="skills-list">
-        <li class="skill-item animate-scaleUp" v-for="item in skill.items" :key="item.title">
+        <li v-for="item in skill.items" :key="item.title" class="skill-item animate-scaleUp">
           <div class="skill-logo">
             <img :src="item.logo" :alt="item.title" loading="lazy" />
           </div>
