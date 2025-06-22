@@ -13,10 +13,10 @@ jobs:
     steps:
       - uses: actions/labeler@v5
         with:
-          repo-token: "${{ secrets.TOKEN }}"
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
           sync-labels: true
           configuration-path: .github/labeler.yml
           dot: true
 
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
