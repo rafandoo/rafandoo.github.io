@@ -29,7 +29,7 @@
     "@tsconfig/node22": "^22.0.1",
     "@types/blueimp-md5": "^2.18.2",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^24.0.13",
+    "@types/node": "^24.0.14",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.6.0",
