@@ -5,12 +5,24 @@ on:
     types: [ opened, synchronize, reopened ]
 
 jobs:
-  label:
+  labeler:
     permissions:
       contents: read
       pull-requests: write
+      issues: write
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/labeler@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Label Pull Requests
+        uses: actions/labeler@v5
         with:
-          - repo-token: ${{ secrets.TOKEN }}
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          sync-labels: true
+          configuration-path: .github/labeler.yml
+          dot: true
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
