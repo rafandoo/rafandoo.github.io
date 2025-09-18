@@ -1,0 +1,59 @@
+# Arquivo de configurações do GitWit
+# Este arquivo é usado para definir regras e opções para criar commits semânticos.
+# Mais detalhes em https://rafandoo.github.io/gitwit/
+
+---
+
+types:
+  description: "Selecione o tipo de mudança que você está commitando"
+  values:
+    ✨: "Um novo recurso"
+    🐛: "Correção de bug"
+    📝: "Alterações apenas na documentação"
+    🎨: "Mudanças que não afetam o significado do código (ex.: formatação)"
+    ♻️: "Alterações de código que não corrigem um bug nem adicionam um recurso"
+    ✅: "Adição ou correção de testes"
+    🧹: "Outras mudanças que não modificam arquivos src ou de teste"
+    👷: "Alterações de Integração Contínua"
+    📦: "Mudanças que afetam o sistema de build ou dependências externas"
+    ⏪️: "Reversão para um commit anterior"
+    ⬆️: "Atualização de dependências"
+    ⬇️: "Downgrade de dependências"
+    🔥: "Remoção de código ou arquivos"
+    🔒: "Mudanças relacionadas à segurança"
+    🌐: "Internacionalização ou localização"
+
+scope:
+  description: "Especifique o escopo da mudança (ex.: componente ou módulo)"
+  required: false
+  type: text
+
+shortDescription:
+  description: "Forneça um resumo curto da mudança (imperativo, tempo presente)"
+  required: true
+  minLength: 5
+  maxLength: 70
+
+breakingChanges:
+  enabled: true
+  description: "Liste quaisquer mudanças que quebrem compatibilidade e seu impacto"
+
+changelog:
+  title: "Registro de alterações"
+  types:
+    ✨: "Novos recursos"
+    🐛: "Correções de bugs"
+    ♻️: "Refatoração de código"
+    📝: "Atualizações de documentação"
+    ✅: "Testes adicionados ou atualizados"
+    🔒: "Correções de segurança"
+  showOtherTypes: true
+  showBreakingChanges: true
+  ignored:
+    - 🧹
+    - 👷
+  format:
+    sectionTemplate: "{scope}: {description} ({shortHash})"
+    breakingChangesTemplate: "{type} ({scope})!: {description} ({shortHash})"
+    otherTypesTemplate: "{type} ({scope}): {description} ({shortHash})"
+    defaultTemplate: "{type}: {description}"

@@ -6,10 +6,6 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  build: {
-    minify: 'terser',
-    outDir: './dist'
-  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src/main/vue', import.meta.url)),

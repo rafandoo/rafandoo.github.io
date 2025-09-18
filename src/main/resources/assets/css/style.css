@@ -131,6 +131,7 @@
   body::-webkit-scrollbar {
     @apply w-0;
   }
+
   @media (min-width: 1024px) {
     body::-webkit-scrollbar {
       @apply w-5;

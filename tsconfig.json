@@ -7,11 +7,5 @@
     {
       "path": "./tsconfig.app.json"
     }
-  ],
-  "compilerOptions": {
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "typeRoots": ["./src/main/vue/types", "./node_modules/@types"]
-  }
+  ]
 }
