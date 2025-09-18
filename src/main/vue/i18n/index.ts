@@ -41,7 +41,7 @@ function getBrowserLocale(): LocaleType | null {
       return browserLang
     }
 
-    const baseLang = browserLang.split('_')[0]
+    const baseLang = browserLang.split('_')[0] as string
     if (isValidLocale(baseLang)) {
       return baseLang
     }
@@ -115,7 +115,8 @@ export function toggleLanguage(locales?: LocaleType[]) {
 
   // Se o idioma atual não estiver na lista, usar o primeiro
   const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % validLocales.length
-  changeLanguage(validLocales[nextIndex])
+  const nextLocale = validLocales[nextIndex] as LocaleType
+  changeLanguage(nextLocale)
 }
 
 export default i18n
