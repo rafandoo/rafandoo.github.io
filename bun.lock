@@ -14,7 +14,7 @@
         "vue3-toastify": "^0.2.8",
       },
       "devDependencies": {
-        "@tsconfig/node22": "^22.0.1",
+        "@tsconfig/node22": "^22.0.5",
         "@types/blueimp-md5": "^2.18.2",
         "@types/node": "^24.10.0",
         "@vitejs/plugin-vue": "^6.0.2",
@@ -273,7 +273,7 @@
 
     "@tailwindcss/vite": ["@tailwindcss/vite@4.1.17", "", { "dependencies": { "@tailwindcss/node": "4.1.17", "@tailwindcss/oxide": "4.1.17", "tailwindcss": "4.1.17" }, "peerDependencies": { "vite": "^5.2.0 || ^6 || ^7" } }, "sha512-4+9w8ZHOiGnpcGI6z1TVVfWaX/koK7fKeSYF3qlYg2xpBtbteP2ddBxiarL+HVgfSJGeK5RIxRQmKm4rTJJAwA=="],
 
-    "@tsconfig/node22": ["@tsconfig/node22@22.0.2", "", {}, "sha512-Kmwj4u8sDRDrMYRoN9FDEcXD8UpBSaPQQ24Gz+Gamqfm7xxn+GBR7ge/Z7pK8OXNGyUzbSwJj+TH6B+DS/epyA=="],
+    "@tsconfig/node22": ["@tsconfig/node22@22.0.5", "", {}, "sha512-hLf2ld+sYN/BtOJjHUWOk568dvjFQkHnLNa6zce25GIH+vxKfvTgm3qpaH6ToF5tu/NN0IH66s+Bb5wElHrLcw=="],
 
     "@types/blueimp-md5": ["@types/blueimp-md5@2.18.2", "", {}, "sha512-dJ9yRry9Olt5GAWlgCtE5dK9d/Dfhn/V7hna86eEO2Pn76+E8Y0S0n61iEUEGhWXXgtKtHxtZLVNwL8X+vLHzg=="],
 
