@@ -42,7 +42,7 @@
     "typescript": "~5.9.3",
     "vite": "^8.0.14",
     "vite-plugin-vue-devtools": "^8.1.2",
-    "vue-tsc": "^3.3.4"
+    "vue-tsc": "^3.3.5"
   },
   "browserslist": [
     "> 1%",
