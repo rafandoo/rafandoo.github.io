@@ -6,20 +6,17 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  plugins: [
+    vue(),
+    vueDevTools({
+      launchEditor: 'webstorm'
+    }),
+    tailwindcss()
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src/main/vue', import.meta.url)),
       '#': fileURLToPath(new URL('./src/main/resources', import.meta.url))
     }
   },
-  plugins: [
-    vue({
-      template: {
-        compilerOptions: {
-        }
-      }
-    }),
-    vueDevTools(),
-    tailwindcss()
-  ]
 })

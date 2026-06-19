@@ -3,7 +3,7 @@
   "include": [
     "vite.config.ts",
     "eslint.config.ts",
-    "env.d.ts"
+    "src/main/vue/vite-env.d.ts"
   ],
   "compilerOptions": {
     "noEmit": true,
