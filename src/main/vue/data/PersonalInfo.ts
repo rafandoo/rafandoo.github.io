@@ -20,7 +20,7 @@ const personal: PersonalInfo = {
       name: 'Linkedin',
       link: 'https://www.linkedin.com/in/rafaelcamargob/',
     },
-  ]
+  ],
 }
 
 export default personal

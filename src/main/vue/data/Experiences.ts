@@ -1,4 +1,4 @@
-import type { Experiences } from '@/types/Experience.ts'
+import type { Experiences } from '@/types/Experience'
 
 const experiences: Experiences = {
   IPM: {

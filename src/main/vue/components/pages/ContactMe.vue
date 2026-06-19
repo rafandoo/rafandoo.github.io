@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-
 import { onMounted } from 'vue'
-import { toast, type ToastOptions } from 'vue3-toastify'
-import { PAGE_CONTACT } from '@/constants/pages.ts'
+import { useI18n } from 'vue-i18n'
 import { SendHorizontal } from 'lucide-vue-next'
-import { BASE_FORM_SUBMIT } from '@/constants/baseLinks.ts'
+import { toast, type ToastOptions } from 'vue3-toastify'
+
+import { PAGE_CONTACT } from '@/constants/pages'
+import { BASE_FORM_SUBMIT } from '@/constants/baseLinks'
+
+const { t } = useI18n()
 
 const props = defineProps<{
   email: string
@@ -24,7 +25,7 @@ const notify = (message: string, type: string) => {
     hideProgressBar: true,
     closeOnClick: true,
     type,
-    theme: 'dark'
+    theme: 'dark',
   } as ToastOptions)
 }
 
@@ -34,7 +35,7 @@ const notify = (message: string, type: string) => {
 const ctrlForm = () => {
   const form = document.querySelector<HTMLFormElement>('[data-form]')
   const formInputs = document.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(
-    '[data-form-input]'
+    '[data-form-input]',
   )
   const formBtn = document.querySelector<HTMLButtonElement>('[data-form-btn]')
 
@@ -58,7 +59,7 @@ const ctrlForm = () => {
       const url = `${BASE_FORM_SUBMIT}${props.email}`
       const response = await fetch(url, {
         method: 'POST',
-        body: formData
+        body: formData,
       })
 
       if (response.ok) {

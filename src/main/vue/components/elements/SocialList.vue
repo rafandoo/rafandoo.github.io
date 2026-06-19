@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import type { SocialNetwork } from '@/types/PersonalInfo.ts'
 import { AtSign, Github, Instagram, Linkedin } from 'lucide-vue-next'
+
+import type { SocialNetwork } from '@/types/PersonalInfo'
 
 defineProps<{
   socialNetworks: SocialNetwork[]

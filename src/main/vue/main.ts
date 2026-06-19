@@ -2,8 +2,9 @@ import '#/assets/css/style.css'
 import { createApp } from 'vue'
 import Vue3Toastify from 'vue3-toastify'
 import 'vue3-toastify/dist/index.css'
+
+import App from '@/App.vue'
 import i18n from '@/i18n'
-import App from './App.vue'
 
 const app = createApp(App)
 

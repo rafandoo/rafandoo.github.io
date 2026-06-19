@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-
 import { Mail, MapPin, Phone } from 'lucide-vue-next'
-import type { PersonalInfo } from '@/types/PersonalInfo.ts'
-import { useLinks } from '@/composables/useLinks.ts'
+
+import type { PersonalInfo } from '@/types/PersonalInfo'
+import { useLinks } from '@/composables/useLinks'
+
+const { t } = useI18n()
 
 const props = defineProps<{
   personalInfo: PersonalInfo

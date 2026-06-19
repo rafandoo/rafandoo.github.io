@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+import { Eye } from 'lucide-vue-next'
 
 import type { Projects } from '@/types/Project'
-import { PAGE_PROJECTS } from '@/constants/pages.ts'
-import { Eye } from 'lucide-vue-next'
+import { PAGE_PROJECTS } from '@/constants/pages'
+
+const { t } = useI18n()
 
 defineProps<{
   projects: Projects

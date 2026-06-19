@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-
 import { computed } from 'vue'
-import { PAGE_ABOUT_ME } from '@/constants/pages.ts'
+import { useI18n } from 'vue-i18n'
+
+import { PAGE_ABOUT_ME } from '@/constants/pages'
+
+const { t } = useI18n()
 
 const props = defineProps<{
   aboutMeText: string

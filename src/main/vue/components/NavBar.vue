@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-
 import { onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 import LanguageSwitch from '@/components/elements/LanguageSwitch.vue'
 import {
   PAGE_ABOUT_ME,
@@ -10,7 +9,9 @@ import {
   PAGE_EXPERIENCE,
   PAGE_PROJECTS,
   PAGE_SKILLS,
-} from '@/constants/pages.ts'
+} from '@/constants/pages'
+
+const { t } = useI18n()
 
 /**
  * Realiza a mudança de tab quando um link da navbar é clicado.

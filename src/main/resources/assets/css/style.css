@@ -1,12 +1,22 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @layer theme, base, components, utilities;
 
 @theme {
   /* Gradient Colors */
-  --color-gradient-onyx: linear-gradient(to bottom right, rgb(64, 64, 64) 0%, rgba(64, 64, 64, 0) 50%);
-  --color-gradient-jet: linear-gradient(to bottom right, rgba(45, 45, 46, 0.251) 0%, rgba(27, 27, 29, 0) 100%), hsl(240, 2%, 13%);
-  --color-gradient-orange-1: linear-gradient(135deg, rgba(255, 187, 92, 0.251) 0%, rgba(255, 187, 92, 0) 59.86%), rgb(32, 32, 34);
-  --color-gradient-orange-2: linear-gradient(135deg, rgba(255, 187, 92, 0.251) 0%, rgba(255, 187, 92, 0) 59.86%), rgb(32, 32, 34);
+  --color-gradient-onyx: linear-gradient(
+    to bottom right,
+    rgb(64, 64, 64) 0%,
+    rgba(64, 64, 64, 0) 50%
+  );
+  --color-gradient-jet:
+    linear-gradient(to bottom right, rgba(45, 45, 46, 0.251) 0%, rgba(27, 27, 29, 0) 100%),
+    hsl(240, 2%, 13%);
+  --color-gradient-orange-1:
+    linear-gradient(135deg, rgba(255, 187, 92, 0.251) 0%, rgba(255, 187, 92, 0) 59.86%),
+    rgb(32, 32, 34);
+  --color-gradient-orange-2:
+    linear-gradient(135deg, rgba(255, 187, 92, 0.251) 0%, rgba(255, 187, 92, 0) 59.86%),
+    rgb(32, 32, 34);
   --color-gradient-golden: linear-gradient(to right, rgb(255, 184, 77), rgb(255, 144, 51));
 
   /* Solid Colors */
@@ -59,12 +69,11 @@
 }
 
 @layer base {
-
   /*--- RESET ---*/
   *,
   *::before,
   *::after {
-    @apply m-0 p-0 box-border;
+    @apply m-0 box-border p-0;
   }
 
   a {
@@ -85,7 +94,7 @@
   }
 
   button {
-    @apply bg-none border-none text-left cursor-pointer;
+    @apply cursor-pointer border-none bg-none text-left;
   }
 
   input,
@@ -143,8 +152,9 @@
   }
 
   body::-webkit-scrollbar-thumb {
-    @apply border-smoky-black border-5 bg-white-10 rounded-2xl;
-    box-shadow: inset 1px 1px 0 var(--color-white-11),
+    @apply rounded-2xl border-5 border-smoky-black bg-white-10;
+    box-shadow:
+      inset 1px 1px 0 var(--color-white-11),
       inset -1px -1px 0 var(--color-white-11);
   }
 
@@ -163,16 +173,16 @@
    */
   .sidebar,
   article {
-    @apply bg-eerie-black-2 border border-jet rounded-2xl p-4 shadow-1 z-1;
+    @apply z-1 rounded-2xl border border-jet bg-eerie-black-2 p-4 shadow-1;
   }
 
   .separator {
-    @apply w-full h-px bg-jet my-4;
+    @apply my-4 h-px w-full bg-jet;
   }
 
   .icon-box {
-    @apply relative w-10 h-10 flex justify-center items-center text-golden
-      shadow-1 z-1 rounded-xl;
+    @apply relative z-1 flex h-10 w-10 items-center justify-center
+      rounded-xl text-golden shadow-1;
     background: var(--color-gradient-onyx);
   }
 
@@ -181,8 +191,8 @@
   }
 
   .icon-box::before {
-    @apply content-[""] absolute inset-[1px] bg-eerie-black-1 rounded-[inherit]
-      -z-1;
+    @apply absolute inset-[1px] -z-1 rounded-[inherit] bg-eerie-black-1
+      content-[""];
   }
 
   .tab-content {
@@ -205,17 +215,17 @@
   }
 
   .article-title {
-    @apply relative pb-2 inline-block mb-6;
+    @apply relative mb-6 inline-block pb-2;
   }
 
   .article-title::after {
-    @apply content-[""] absolute bottom-0 left-0 w-full h-1 rounded-xl;
+    @apply absolute bottom-0 left-0 h-1 w-full rounded-xl content-[""];
     background: var(--color-gradient-golden);
   }
 
   /*--- MAIN ---*/
   .main {
-    @apply mt-4 mx-3 mb-20 min-w-2xs;
+    @apply mx-3 mt-4 mb-20 min-w-2xs;
   }
 
   /*--- SIDEBAR ---*/
@@ -228,7 +238,7 @@
   }
 
   .sidebar-main {
-    @apply relative flex justify-start items-center gap-3.5;
+    @apply relative flex items-center justify-start gap-3.5;
   }
 
   .avatar-picture {
@@ -236,22 +246,22 @@
   }
 
   .sidebar-main-content .name {
-    @apply text-alabaster text-6 font-500 tracking-tight mb-2;
+    @apply mb-2 text-6 font-500 tracking-tight text-alabaster;
   }
 
   .sidebar-main-content .subtitle {
-    @apply text-white bg-onyx text-1 font-300 w-max px-3 py-1 rounded-lg;
+    @apply w-max rounded-lg bg-onyx px-3 py-1 text-1 font-300 text-white;
   }
 
   .sidebar-show-more-button {
-    @apply absolute -top-4 -right-4 rounded-bl-2xl text-3 text-golden p-2.5
-      shadow-2 transition-all ease-in-out duration-500 z-1;
+    @apply absolute -top-4 -right-4 z-1 rounded-bl-2xl p-2.5 text-3
+      text-golden shadow-2 transition-all duration-500 ease-in-out;
     background: var(--color-gradient-onyx);
   }
 
   .sidebar-show-more-button::before {
-    @apply content-[""] absolute inset-[1px] rounded-bl-2xl bg-jet -z-1
-      transition-all ease-in-out duration-500;
+    @apply absolute inset-[1px] -z-1 rounded-bl-2xl bg-jet transition-all
+      duration-500 ease-in-out content-[""];
     background: var(--color-gradient-jet);
   }
 
@@ -270,11 +280,11 @@
   }
 
   .sidebar-secondary {
-    @apply opacity-0 invisible transition-all ease-in-out duration-500;
+    @apply invisible opacity-0 transition-all duration-500 ease-in-out;
   }
 
   .sidebar.active .sidebar-secondary {
-    @apply opacity-100 visible;
+    @apply visible opacity-100;
   }
 
   .contacts-list {
@@ -282,19 +292,19 @@
   }
 
   .contact-item {
-    @apply min-w-full flex items-center gap-4;
+    @apply flex min-w-full items-center gap-4;
   }
 
   .contact-info {
-    @apply max-w-[calc(100%-50px)] w-[calc(100%-50px)];
+    @apply w-[calc(100%-50px)] max-w-[calc(100%-50px)];
   }
 
   .contact-title {
-    @apply text-light-gray-70 text-1 uppercase mb-0.5;
+    @apply mb-0.5 text-1 text-light-gray-70 uppercase;
   }
 
   .contact-info :is(.contact-link, address) {
-    @apply text-alabaster text-2;
+    @apply text-2 text-alabaster;
   }
 
   .contact-info address {
@@ -306,7 +316,7 @@
   }
 
   .social-item .social-link {
-    @apply text-light-gray-70 text-8;
+    @apply text-8 text-light-gray-70;
   }
 
   .social-item .social-link:hover {
@@ -315,16 +325,16 @@
 
   /*--- NAVBAR ---*/
   .navbar {
-    @apply fixed bottom-0 left-0 w-full bg-onyx-75 backdrop-blur-md border
-      border-jet rounded-t-xl shadow-2 z-10;
+    @apply fixed bottom-0 left-0 z-10 w-full rounded-t-xl border
+      border-jet bg-onyx-75 shadow-2 backdrop-blur-md;
   }
 
   .navbar-list {
-    @apply flex flex-wrap justify-center items-center px-2;
+    @apply flex flex-wrap items-center justify-center px-2;
   }
 
   .navbar-link {
-    @apply text-light-gray text-1 px-2 py-2 transition-colors duration-200
+    @apply px-2 py-2 text-1 text-light-gray transition-colors duration-200
       ease-in;
   }
 
@@ -339,7 +349,7 @@
 
   /*--- ABOUT ---*/
   .about-text {
-    @apply text-light-gray text-3 font-300 leading-relaxed text-justify;
+    @apply text-justify text-3 leading-relaxed font-300 text-light-gray;
   }
 
   .about-text p {
@@ -352,11 +362,11 @@
   }
 
   .timeline .title-wrapper {
-    @apply flex items-center gap-2.5 mb-3;
+    @apply mb-3 flex items-center gap-2.5;
   }
 
   .timeline-list {
-    @apply text-3 ml-12;
+    @apply ml-12 text-3;
   }
 
   .timeline-item {
@@ -368,42 +378,42 @@
   }
 
   .timeline-item-title {
-    @apply text-3 font-500 mb-1.5;
+    @apply mb-1.5 text-3 font-500;
   }
 
   .timeline-list span {
-    @apply text-golden font-400 leading-relaxed;
+    @apply leading-relaxed font-400 text-golden;
   }
 
   .timeline-item:only-child::before {
-    @apply content-[""] absolute -top-6 -left-7 w-0.5 h-10 bg-jet;
+    @apply absolute -top-6 -left-7 h-10 w-0.5 bg-jet content-[""];
   }
 
   .timeline-item:not(:last-child)::before {
-    @apply content-[""] absolute -top-6 -left-7 w-0.5 bg-jet
-      h-[calc(100%+50px)];
+    @apply absolute -top-6 -left-7 h-[calc(100%+50px)] w-0.5 bg-jet
+      content-[""];
   }
 
   .timeline-item::after {
-    @apply content-[""] absolute top-1.5 -left-7.5 h-1.5 w-1.5 rounded-[50%]
-      shadow-6;
+    @apply absolute top-1.5 -left-7.5 h-1.5 w-1.5 rounded-[50%] shadow-6
+      content-[""];
     background: var(--color-gradient-golden);
   }
 
   .timeline-text {
-    @apply text-light-gray font-300 leading-relaxed text-justify;
+    @apply text-justify leading-relaxed font-300 text-light-gray;
   }
 
   .timeline-logo-box {
-    @apply relative w-10 h-10 flex justify-center items-center z-1;
+    @apply relative z-1 flex h-10 w-10 items-center justify-center;
   }
 
   .timeline-logo-box::before {
-    @apply content-[""] absolute inset-0.5 rounded-md -z-1 bg-eerie-black-1;
+    @apply absolute inset-0.5 -z-1 rounded-md bg-eerie-black-1 content-[""];
   }
 
   .timeline-logo {
-    @apply w-3/4 h-3/4 object-cover transition duration-250 ease-in-out;
+    @apply h-3/4 w-3/4 object-cover transition duration-250 ease-in-out;
   }
 
   .experience-briefcase {
@@ -412,7 +422,7 @@
 
   /*--- PROJECTS ---*/
   .project-list {
-    @apply grid grid-cols-1 gap-8 mb-2.5;
+    @apply mb-2.5 grid grid-cols-1 gap-8;
   }
 
   .project-item {
@@ -424,12 +434,12 @@
   }
 
   .project-image {
-    @apply relative w-full h-48 rounded-2xl overflow-hidden mb-4;
+    @apply relative mb-4 h-48 w-full overflow-hidden rounded-2xl;
   }
 
   .project-image::before {
-    @apply content-[""] absolute top-0 left-0 w-full h-full bg-transparent
-    z-1 transition duration-250 ease-in;
+    @apply absolute top-0 left-0 z-1 h-full w-full bg-transparent
+    transition duration-250 ease-in content-[""];
   }
 
   .project-item > a:hover .project-image::before {
@@ -437,8 +447,8 @@
   }
 
   .project-item-view-icon {
-    @apply bg-jet text-golden absolute top-1/2 left-1/2 text-7 rounded-2xl p-4
-    opacity-0 z-1 transition duration-200 ease-in;
+    @apply absolute top-1/2 left-1/2 z-1 rounded-2xl bg-jet p-4 text-7
+    text-golden opacity-0 transition duration-200 ease-in;
 
     --scale: 0.8;
     transform: translate(-50%, -50%) scale(var(--scale));
@@ -450,11 +460,11 @@
   }
 
   .project-image img {
-    @apply w-full h-full object-cover transition duration-200 ease-in;
+    @apply h-full w-full object-cover transition duration-200 ease-in;
   }
 
   .project-item > a:hover img {
-    @apply transform-gpu scale-[1.1];
+    @apply scale-[1.1] transform-gpu;
   }
 
   .project-title,
@@ -464,11 +474,11 @@
   }
 
   .project-title {
-    @apply text-alabaster text-5 font-400 capitalize leading-snug;
+    @apply text-5 leading-snug font-400 text-alabaster capitalize;
   }
 
   .project-subtitle {
-    @apply text-light-gray-70 text-3 font-300;
+    @apply text-3 font-300 text-light-gray-70;
   }
 
   .project-categories {
@@ -476,8 +486,8 @@
   }
 
   .project-category {
-    @apply mt-2.5 mb-2.5 text-white bg-onyx text-1 font-300 w-max py-1 px-3
-    rounded-full;
+    @apply mt-2.5 mb-2.5 w-max rounded-full bg-onyx px-3 py-1 text-1 font-300
+    text-white;
   }
 
   /*--- SKILLS ---*/
@@ -486,7 +496,7 @@
   }
 
   .skills-list {
-    @apply grid grid-cols-2 gap-8 mb-2.5;
+    @apply mb-2.5 grid grid-cols-2 gap-8;
   }
 
   .skill-item {
@@ -494,12 +504,12 @@
   }
 
   .skill-logo img {
-    @apply w-10 h-10 object-cover transition duration-250 ease-in;
+    @apply h-10 w-10 object-cover transition duration-250 ease-in;
   }
 
   .skill-title {
-    @apply my-2.5 mx-1.5 text-white bg-onyx text-1 font-300 w-max py-1 px-3
-      rounded-full;
+    @apply mx-1.5 my-2.5 w-max rounded-full bg-onyx px-3 py-1 text-1 font-300
+      text-white;
   }
 
   /*--- CONTACT ---*/
@@ -508,11 +518,11 @@
   }
 
   .form-input-wrapper {
-    @apply grid grid-cols-1 gap-6 mb-6;
+    @apply mb-6 grid grid-cols-1 gap-6;
   }
 
   .form-input {
-    @apply text-alabaster text-3 font-400 py-3 px-5 border border-jet rounded-2xl
+    @apply rounded-2xl border border-jet px-5 py-3 text-3 font-400 text-alabaster
       outline-none;
   }
 
@@ -525,7 +535,7 @@
   }
 
   textarea.form-input {
-    @apply min-h-24 h-30 max-h-48 resize-y mb-6;
+    @apply mb-6 h-30 max-h-48 min-h-24 resize-y;
   }
 
   textarea.form-input::-webkit-resizer {
@@ -541,15 +551,15 @@
   }
 
   .form-button {
-    @apply relative w-2/5 text-golden flex justify-center items-center
-      gap-2.5 py-3 px-5 rounded-full text-3 capitalize shadow-3 z-1 transition
+    @apply relative z-1 flex w-2/5 items-center justify-center
+      gap-2.5 rounded-full px-5 py-3 text-3 text-golden capitalize shadow-3 transition
       duration-250 ease-in;
     background: var(--color-gradient-onyx);
   }
 
   .form-button::before {
-    @apply content-[""] absolute inset-0.5 -z-1 rounded-[inherit] transition
-      duration-250 ease-in;
+    @apply absolute inset-0.5 -z-1 rounded-[inherit] transition duration-250
+      ease-in content-[""];
     background: var(--color-gradient-jet);
   }
 
@@ -558,7 +568,7 @@
   }
 
   .form-button:hover::before {
-    @apply bg-gradient-orange-2
+    @apply bg-gradient-orange-2;
   }
 
   .form-button:disabled {
@@ -578,7 +588,6 @@
    * Responsive larger than 450px screen
    */
   @media (min-width: 450px) {
-
     /*--- PROJECTS ---*/
     .project-image {
       @apply h-auto;
@@ -589,13 +598,12 @@
    * Responsive larger than 580px screen
    */
   @media (min-width: 580px) {
-
     /*
      * REUSED STYLE
      */
     .sidebar,
     article {
-      @apply w-130 mx-auto;
+      @apply mx-auto w-130;
     }
 
     .sidebar {
@@ -611,7 +619,7 @@
     }
 
     .icon-box {
-      @apply w-12 h-12;
+      @apply h-12 w-12;
     }
 
     .lucide {
@@ -645,11 +653,11 @@
     }
 
     .sidebar-main-content .subtitle {
-      @apply py-1.5 px-4.5;
+      @apply px-4.5 py-1.5;
     }
 
     .sidebar-show-more-button {
-      @apply -top-8 -right-8 py-2.5 px-4;
+      @apply -top-8 -right-8 px-4 py-2.5;
     }
 
     .sidebar-show-more-button span {
@@ -665,7 +673,7 @@
     }
 
     .contact-info {
-      @apply max-w-[calc(100%-64px)] w-[calc(100%-64px)];
+      @apply w-[calc(100%-64px)] max-w-[calc(100%-64px)];
     }
 
     /*--- NAVBAR ---*/
@@ -683,7 +691,7 @@
 
     /*--- EXPERIENCE ---*/
     .timeline-logo-box {
-      @apply w-12 h-12 ml-2;
+      @apply ml-2 h-12 w-12;
     }
 
     .timeline-list {
@@ -691,11 +699,11 @@
     }
 
     .timeline-item::after {
-      @apply h-2 w-2 -left-[1.9rem];
+      @apply -left-[1.9rem] h-2 w-2;
     }
 
     .timeline-logo {
-      @apply w-4/5 h-4/5;
+      @apply h-4/5 w-4/5;
     }
 
     /*--- PROJECTS ---*/
@@ -705,7 +713,7 @@
 
     /*--- CONTACT ---*/
     .form-input {
-      @apply py-4 px-5;
+      @apply px-5 py-4;
     }
   }
 
@@ -713,7 +721,6 @@
    * Responsive larger than 768px screen
    */
   @media (min-width: 768px) {
-
     /*
      * REUSED STYLE
      */
@@ -732,7 +739,7 @@
     }
 
     .sidebar-show-more-button {
-      @apply py-3 px-5;
+      @apply px-5 py-3;
     }
 
     .sidebar-show-more-button span {
@@ -801,7 +808,7 @@
 
     /*--- SKILLS ---*/
     .skills-list {
-      @apply grid-cols-3 mb-5;
+      @apply mb-5 grid-cols-3;
     }
 
     .skill-title {
@@ -822,7 +829,6 @@
    * Responsive larger than 1024px screen
    */
   @media (min-width: 1024px) {
-
     /*
      * REUSED STYLEl
      */
@@ -837,13 +843,13 @@
     }
 
     .main-content {
-      @apply relative w-max m-auto;
+      @apply relative m-auto w-max;
     }
 
     /*--- NAVBAR ---*/
     .navbar {
-      @apply absolute bottom-auto top-0 left-auto right-0 w-max px-5 shadow-none
-        rounded-tl-none rounded-bl-2xl;
+      @apply absolute top-0 right-0 bottom-auto left-auto w-max rounded-tl-none rounded-bl-2xl
+        px-5 shadow-none;
     }
 
     .navbar-list {
@@ -869,7 +875,6 @@
    * Responsive larger than 1250px screen
    */
   @media (min-width: 1250px) {
-
     /*
      * REUSED STYLEl
      */
@@ -884,16 +889,16 @@
 
     /*--- MAIN ---*/
     .main {
-      @apply max-w-7xl mx-auto flex justify-center items-stretch gap-5;
+      @apply mx-auto flex max-w-7xl items-stretch justify-center gap-5;
     }
 
     .main-content {
-      @apply min-w-3/4 w-3/4 m-0;
+      @apply m-0 w-3/4 min-w-3/4;
     }
 
     /*--- SIDEBAR ---*/
     .sidebar {
-      @apply sticky top-12 max-h-max h-full mb-0 z-1;
+      @apply sticky top-12 z-1 mb-0 h-full max-h-max;
     }
 
     .sidebar-main {
@@ -905,7 +910,7 @@
     }
 
     .sidebar-main-content .name {
-      @apply whitespace-nowrap text-center;
+      @apply text-center whitespace-nowrap;
     }
 
     .sidebar-main-content .subtitle {
@@ -917,7 +922,7 @@
     }
 
     .sidebar-secondary {
-      @apply opacity-100 visible;
+      @apply visible opacity-100;
     }
 
     .contacts-list {
@@ -925,7 +930,7 @@
     }
 
     .contact-info :is(.contact-link) {
-      @apply whitespace-nowrap overflow-hidden text-ellipsis;
+      @apply overflow-hidden text-ellipsis whitespace-nowrap;
     }
 
     .contact-info :is(.contact-link, time, address) {
@@ -933,7 +938,7 @@
     }
 
     .separator:last-of-type {
-      @apply my-3.5 mx-0 opacity-0;
+      @apply mx-0 my-3.5 opacity-0;
     }
 
     .social-list {
@@ -946,7 +951,7 @@
     }
 
     .timeline-item::after {
-      @apply -left-[1.91rem];
+      @apply -left-[2rem];
     }
   }
 }

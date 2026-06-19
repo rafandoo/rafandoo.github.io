@@ -1,31 +1,29 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-
 import { defineAsyncComponent } from 'vue'
 
 import SideBar from '@/components/SideBar.vue'
 import NavBar from '@/components/NavBar.vue'
-
 import AboutMe from '@/components/pages/AboutMePage.vue'
-
-const Experiences = defineAsyncComponent(() => import('@/components/pages/ExperiencesPage.vue'))
-const Projects = defineAsyncComponent(() => import('@/components/pages/ProjectsPage.vue'))
-const Skills = defineAsyncComponent(() => import('@/components/pages/SkillsPage.vue'))
-const ContactMe = defineAsyncComponent(() => import('@/components/pages/ContactMe.vue'))
-
 import personalInfo from '@/data/PersonalInfo'
 import experiences from '@/data/Experiences'
 import projects from '@/data/Projects'
 import skills from '@/data/Skills'
-
 import {
   PAGE_ABOUT_ME,
   PAGE_CONTACT,
   PAGE_EXPERIENCE,
   PAGE_PROJECTS,
   PAGE_SKILLS,
-} from '@/constants/pages.ts'
+} from '@/constants/pages'
+
+const { t } = useI18n()
+
+const Experiences = defineAsyncComponent(() => import('@/components/pages/ExperiencesPage.vue'))
+const Projects = defineAsyncComponent(() => import('@/components/pages/ProjectsPage.vue'))
+const Skills = defineAsyncComponent(() => import('@/components/pages/SkillsPage.vue'))
+const ContactMe = defineAsyncComponent(() => import('@/components/pages/ContactMe.vue'))
+
 </script>
 
 <template>

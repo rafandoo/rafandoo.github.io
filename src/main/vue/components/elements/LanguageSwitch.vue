@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { AVAILABLE_LOCALES, toggleLanguage } from '@/i18n'
 import { Earth } from 'lucide-vue-next'
+
+import { AVAILABLE_LOCALES, toggleLanguage } from '@/i18n'
 </script>
 
 <template>
@@ -16,11 +17,11 @@ import { Earth } from 'lucide-vue-next'
 @layer theme, base, components, utilities;
 
 .language-switch {
-  @apply py-5 px-2;
+  @apply px-2 py-5;
 }
 
 .language-button {
-  @apply bg-transparent border-none cursor-pointer p-0 text-[#d6d6d6];
+  @apply cursor-pointer border-none bg-transparent p-0 text-[#d6d6d6];
 }
 
 .language-button:focus {

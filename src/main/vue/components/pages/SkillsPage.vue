@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
 
 import type { SkillCategory } from '@/types/Skills'
-import { PAGE_SKILLS } from '@/constants/pages.ts'
+import { PAGE_SKILLS } from '@/constants/pages'
+
+const { t } = useI18n()
 
 defineProps<{
   skills: Record<string, SkillCategory>

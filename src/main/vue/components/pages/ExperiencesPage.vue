@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+import { BriefcaseBusiness } from 'lucide-vue-next'
 
 import type { Experiences } from '@/types/Experience'
-import { PAGE_EXPERIENCE } from '@/constants/pages.ts'
-import { BriefcaseBusiness } from 'lucide-vue-next'
+import { PAGE_EXPERIENCE } from '@/constants/pages'
+
+const { t } = useI18n()
 
 defineProps<{
   experiences: Experiences

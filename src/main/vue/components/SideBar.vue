@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-
 import { onMounted, ref } from 'vue'
-import { useLinks } from '@/composables/useLinks.ts'
+import { useI18n } from 'vue-i18n'
 import { Maximize2, Minimize2 } from 'lucide-vue-next'
 
-import type { PersonalInfo } from '@/types/PersonalInfo.ts'
+import type { PersonalInfo } from '@/types/PersonalInfo'
+import { useLinks } from '@/composables/useLinks'
 import SocialList from '@/components/elements/SocialList.vue'
 import ContactList from '@/components/elements/ContactList.vue'
+
+const { t } = useI18n()
 
 const props = defineProps<{
   personalInfo: PersonalInfo
