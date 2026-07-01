@@ -1,8 +1,8 @@
 @import 'tailwindcss';
-@layer theme, base, components, utilities;
+@layer theme, base, components;
 
 @theme {
-  /* Gradient Colors */
+  /* Gradients */
   --color-gradient-onyx: linear-gradient(
     to bottom right,
     rgb(64, 64, 64) 0%,
@@ -17,31 +17,35 @@
   --color-gradient-orange-2:
     linear-gradient(135deg, rgba(255, 187, 92, 0.251) 0%, rgba(255, 187, 92, 0) 59.86%),
     rgb(32, 32, 34);
-  --color-gradient-golden: linear-gradient(to right, rgb(255, 184, 77), rgb(255, 144, 51));
+
+  --color-gradient-sunset: linear-gradient(to right, var(--color-ember-orange), var(--color-honey));
 
   /* Solid Colors */
-  --color-white: rgb(255, 255, 255);
-  --color-alabaster: rgb(250, 250, 250);
-  --color-white-10: rgba(255, 255, 255, 0.1);
-  --color-white-11: rgba(255, 255, 255, 0.11);
-  --color-white-15: rgba(255, 255, 255, 0.15);
-  --color-light-gray: rgb(214, 214, 214);
-  --color-light-gray-70: rgba(214, 214, 214, 0.7);
-  --color-jet: rgb(56, 56, 56);
-  --color-onyx: rgb(43, 43, 44);
-  --color-onyx-75: rgba(43, 43, 44, 0.75);
-  --color-eerie-black-1: rgb(32, 32, 34);
-  --color-eerie-black-2: rgb(30, 30, 31);
-  --color-smoky-black: rgb(18, 18, 18);
   --color-black-15: rgba(0, 0, 0, 0.15);
   --color-black-25: rgba(0, 0, 0, 0.25);
-  --color-black-50: rgba(0, 0, 0, 0.5);
-  --color-light-orange: rgb(255, 165, 89);
   --color-golden: rgb(255, 152, 67);
-  --color-bittersweet-shimmer: rgb(184, 76, 76);
+
+  --color-smoky-black: #121212;
+  --color-charcoal-black: #1d1d1f;
+  --color-onyx: #2c2c2e;
+  --color-dark-graphite: #3a3a3c;
+  --color-jet: #48484a;
+  --color-paper-dark: #a4a4a8;
+  --color-paper: #f5f5f7;
+
+  --color-blaze: #ff9500;
+  --color-ember-orange: #ff9500;
+  --color-honey: #ffaf32;
+
+  /* Shadows */
+  --shadow-1: -4px 8px 24px var(--color-black-25);
+  --shadow-2: 0 16px 30px var(--color-black-25);
+  --shadow-3: 0 16px 40px var(--color-black-25);
+  --shadow-4: 0 0 0 4px var(--color-jet);
 
   /* Font family */
-  --font-poppins: 'Poppins', sans-serif;
+  --font-display: 'Sora', 'Inter', 'Poppins', system-ui, sans-serif;
+  --font-inter: 'Inter', 'Poppins', sans-serif;
 
   /* Font size */
   --text-1: 11px;
@@ -58,18 +62,9 @@
   --font-weight-400: 400;
   --font-weight-500: 500;
   --font-weight-600: 600;
-
-  /* Shadows */
-  --shadow-1: -4px 8px 24px var(--color-black-25);
-  --shadow-2: 0 16px 30px var(--color-black-25);
-  --shadow-3: 0 16px 40px var(--color-black-25);
-  --shadow-4: 0 25px 50px var(--color-black-15);
-  --shadow-5: 0 24px 80px var(--color-black-25);
-  --shadow-6: 0 0 0 4px var(--color-jet);
 }
 
 @layer base {
-  /*--- RESET ---*/
   *,
   *::before,
   *::after {
@@ -84,12 +79,11 @@
     @apply list-none;
   }
 
-  img,
-  .lucide,
   a,
+  img,
   button,
-  time,
-  span {
+  span,
+  .lucide {
     @apply block;
   }
 
@@ -103,48 +97,28 @@
   }
 
   ::selection {
-    @apply bg-golden text-smoky-black;
+    @apply bg-ember-orange text-smoky-black;
   }
 
   :focus {
-    @apply outline-golden;
+    @apply outline-ember-orange;
   }
 
   html {
-    @apply font-poppins;
+    @apply scroll-smooth font-inter;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'cv11', 'ss01', 'ss03', 'kern';
+    scrollbar-width: none;
   }
 
   body {
     @apply bg-smoky-black;
   }
 
-  h2,
-  h3,
-  h4 {
-    @apply text-alabaster capitalize;
-  }
-
-  h2 {
-    @apply text-8;
-  }
-
-  h3 {
-    @apply text-7;
-  }
-
-  h4 {
-    @apply text-4;
-  }
-
-  /*--- SCROLLBAR ---*/
   body::-webkit-scrollbar {
     @apply w-0;
-  }
-
-  @media (min-width: 1024px) {
-    body::-webkit-scrollbar {
-      @apply w-5;
-    }
   }
 
   body::-webkit-scrollbar-track {
@@ -152,56 +126,80 @@
   }
 
   body::-webkit-scrollbar-thumb {
-    @apply rounded-2xl border-5 border-smoky-black bg-white-10;
-    box-shadow:
-      inset 1px 1px 0 var(--color-white-11),
-      inset -1px -1px 0 var(--color-white-11);
+    @apply rounded-2xl border-5 border-smoky-black bg-charcoal-black;
   }
 
   body::-webkit-scrollbar-thumb:hover {
-    @apply bg-white-15;
+    @apply bg-dark-graphite;
   }
 
   body::-webkit-scrollbar-button {
     @apply h-14;
   }
+
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-[-0.015em] text-paper capitalize;
+  }
+
+  h2 {
+    @apply text-8 leading-[1.15] tracking-tight;
+  }
+
+  h3 {
+    @apply text-7 tracking-[-0.02em];
+  }
+
+  h4 {
+    @apply text-4;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      scrollbar-width: auto;
+    }
+
+    body::-webkit-scrollbar {
+      @apply w-5;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer components {
-  /*
-   * REUSED STYLE
-   */
   .sidebar,
   article {
-    @apply z-1 rounded-2xl border border-jet bg-eerie-black-2 p-4 shadow-1;
+    @apply z-1 rounded-4xl bg-charcoal-black/90 p-4 shadow-1;
   }
 
-  .separator {
-    @apply my-4 h-px w-full bg-jet;
+  .reveal {
+    @apply translate-y-4 opacity-0 transition-all duration-500 ease-out;
   }
 
-  .icon-box {
-    @apply relative z-1 flex h-10 w-10 items-center justify-center
-      rounded-xl text-golden shadow-1;
-    background: var(--color-gradient-onyx);
+  .reveal.is-revealed {
+    @apply translate-y-0 opacity-100;
   }
 
-  .lucide {
-    @apply size-5;
+  .article-title {
+    @apply relative mb-6 inline-block pb-2 font-display;
   }
 
-  .icon-box::before {
-    @apply absolute inset-[1px] -z-1 rounded-[inherit] bg-eerie-black-1
-      content-[""];
-  }
-
-  .tab-content {
-    @apply hidden;
-  }
-
-  .tab-content.active {
-    @apply block;
-    animation: fade 0.5s ease backwards;
+  .article-title::after {
+    @apply absolute bottom-0 left-0 h-1 w-full rounded-xl content-[""];
+    background: var(--color-gradient-sunset);
+    transform-origin: 0;
+    animation: 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s backwards titleUnderline;
   }
 
   @keyframes fade {
@@ -214,393 +212,40 @@
     }
   }
 
-  .article-title {
-    @apply relative mb-6 inline-block pb-2;
-  }
-
-  .article-title::after {
-    @apply absolute bottom-0 left-0 h-1 w-full rounded-xl content-[""];
-    background: var(--color-gradient-golden);
-  }
-
-  /*--- MAIN ---*/
-  .main {
-    @apply mx-3 mt-4 mb-20 min-w-2xs;
-  }
-
-  /*--- SIDEBAR ---*/
-  .sidebar {
-    @apply mb-4 max-h-28 overflow-hidden transition-all duration-1000 ease-in-out;
-  }
-
-  .sidebar.active {
-    @apply max-h-[405px];
-  }
-
-  .sidebar-main {
-    @apply relative flex items-center justify-start gap-3.5;
-  }
-
-  .avatar-picture {
-    @apply rounded-full object-cover;
-  }
-
-  .sidebar-main-content .name {
-    @apply mb-2 text-6 font-500 tracking-tight text-alabaster;
-  }
-
-  .sidebar-main-content .subtitle {
-    @apply w-max rounded-lg bg-onyx px-3 py-1 text-1 font-300 text-white;
-  }
-
-  .sidebar-show-more-button {
-    @apply absolute -top-4 -right-4 z-1 rounded-bl-2xl p-2.5 text-3
-      text-golden shadow-2 transition-all duration-500 ease-in-out;
-    background: var(--color-gradient-onyx);
-  }
-
-  .sidebar-show-more-button::before {
-    @apply absolute inset-[1px] -z-1 rounded-bl-2xl bg-jet transition-all
-      duration-500 ease-in-out content-[""];
-    background: var(--color-gradient-jet);
-  }
-
-  .sidebar-show-more-button:hover,
-  .sidebar-show-more-button:focus {
-    background: var(--color-gradient-orange-1);
-  }
-
-  .sidebar-show-more-button:hover::before,
-  .sidebar-show-more-button:focus::before {
-    background: var(--color-gradient-orange-2);
-  }
-
-  .sidebar-show-more-button span {
-    @apply hidden;
-  }
-
-  .sidebar-secondary {
-    @apply invisible opacity-0 transition-all duration-500 ease-in-out;
-  }
-
-  .sidebar.active .sidebar-secondary {
-    @apply visible opacity-100;
-  }
-
-  .contacts-list {
-    @apply grid grid-cols-1 gap-4;
-  }
-
-  .contact-item {
-    @apply flex min-w-full items-center gap-4;
-  }
-
-  .contact-info {
-    @apply w-[calc(100%-50px)] max-w-[calc(100%-50px)];
-  }
-
-  .contact-title {
-    @apply mb-0.5 text-1 text-light-gray-70 uppercase;
-  }
-
-  .contact-info :is(.contact-link, address) {
-    @apply text-2 text-alabaster;
-  }
-
-  .contact-info address {
-    @apply not-italic;
-  }
-
-  .social-list {
-    @apply flex items-center gap-4 pb-1 pl-2;
-  }
-
-  .social-item .social-link {
-    @apply text-8 text-light-gray-70;
-  }
-
-  .social-item .social-link:hover {
-    @apply text-light-gray;
-  }
-
-  /*--- NAVBAR ---*/
-  .navbar {
-    @apply fixed bottom-0 left-0 z-10 w-full rounded-t-xl border
-      border-jet bg-onyx-75 shadow-2 backdrop-blur-md;
-  }
-
-  .navbar-list {
-    @apply flex flex-wrap items-center justify-center px-2;
-  }
-
-  .navbar-link {
-    @apply px-2 py-2 text-1 text-light-gray transition-colors duration-200
-      ease-in;
-  }
-
-  .navbar-link:hover,
-  .navbar-link:focus {
-    @apply text-light-gray-70;
-  }
-
-  .navbar-link.active {
-    @apply text-golden;
-  }
-
-  /*--- ABOUT ---*/
-  .about-text {
-    @apply text-justify text-3 leading-relaxed font-300 text-light-gray;
-  }
-
-  .about-text p {
-    @apply mb-4;
-  }
-
-  /*--- EXPERIENCE ---*/
-  .timeline {
-    @apply mb-4;
-  }
-
-  .timeline .title-wrapper {
-    @apply mb-3 flex items-center gap-2.5;
-  }
-
-  .timeline-list {
-    @apply ml-12 text-3;
-  }
-
-  .timeline-item {
-    @apply relative;
-  }
-
-  .timeline-item:not(:last-child) {
-    @apply mb-5;
-  }
-
-  .timeline-item-title {
-    @apply mb-1.5 text-3 font-500;
-  }
-
-  .timeline-list span {
-    @apply leading-relaxed font-400 text-golden;
-  }
-
-  .timeline-item:only-child::before {
-    @apply absolute -top-6 -left-7 h-10 w-0.5 bg-jet content-[""];
-  }
-
-  .timeline-item:not(:last-child)::before {
-    @apply absolute -top-6 -left-7 h-[calc(100%+50px)] w-0.5 bg-jet
-      content-[""];
-  }
-
-  .timeline-item::after {
-    @apply absolute top-1.5 -left-7.5 h-1.5 w-1.5 rounded-[50%] shadow-6
-      content-[""];
-    background: var(--color-gradient-golden);
-  }
-
-  .timeline-text {
-    @apply text-justify leading-relaxed font-300 text-light-gray;
-  }
-
-  .timeline-logo-box {
-    @apply relative z-1 flex h-10 w-10 items-center justify-center;
-  }
-
-  .timeline-logo-box::before {
-    @apply absolute inset-0.5 -z-1 rounded-md bg-eerie-black-1 content-[""];
-  }
-
-  .timeline-logo {
-    @apply h-3/4 w-3/4 object-cover transition duration-250 ease-in-out;
-  }
-
-  .experience-briefcase {
-    @apply text-golden;
-  }
-
-  /*--- PROJECTS ---*/
-  .project-list {
-    @apply mb-2.5 grid grid-cols-1 gap-8;
-  }
-
-  .project-item {
-    @apply block;
-  }
-
-  .project-item > a {
-    @apply w-full;
-  }
-
-  .project-image {
-    @apply relative mb-4 h-48 w-full overflow-hidden rounded-2xl;
-  }
-
-  .project-image::before {
-    @apply absolute top-0 left-0 z-1 h-full w-full bg-transparent
-    transition duration-250 ease-in content-[""];
-  }
-
-  .project-item > a:hover .project-image::before {
-    @apply bg-black-50;
-  }
-
-  .project-item-view-icon {
-    @apply absolute top-1/2 left-1/2 z-1 rounded-2xl bg-jet p-4 text-7
-    text-golden opacity-0 transition duration-200 ease-in;
-
-    --scale: 0.8;
-    transform: translate(-50%, -50%) scale(var(--scale));
-  }
-
-  .project-item > a:hover .project-item-view-icon {
-    @apply opacity-100;
-    --scale: 1;
-  }
-
-  .project-image img {
-    @apply h-full w-full object-cover transition duration-200 ease-in;
-  }
-
-  .project-item > a:hover img {
-    @apply scale-[1.1] transform-gpu;
-  }
-
-  .project-title,
-  .project-subtitle,
-  .project-category {
-    @apply ml-1.5;
-  }
-
-  .project-title {
-    @apply text-5 leading-snug font-400 text-alabaster capitalize;
-  }
-
-  .project-subtitle {
-    @apply text-3 font-300 text-light-gray-70;
-  }
-
-  .project-categories {
-    @apply flex flex-wrap;
-  }
-
-  .project-category {
-    @apply mt-2.5 mb-2.5 w-max rounded-full bg-onyx px-3 py-1 text-1 font-300
-    text-white;
-  }
-
-  /*--- SKILLS ---*/
-  .skill-category {
-    @apply mb-5;
-  }
-
-  .skills-list {
-    @apply mb-2.5 grid grid-cols-2 gap-8;
-  }
-
-  .skill-item {
-    @apply flex flex-wrap justify-center;
-  }
-
-  .skill-logo img {
-    @apply h-10 w-10 object-cover transition duration-250 ease-in;
-  }
-
-  .skill-title {
-    @apply mx-1.5 my-2.5 w-max rounded-full bg-onyx px-3 py-1 text-1 font-300
-      text-white;
-  }
-
-  /*--- CONTACT ---*/
-  .contact-form {
-    @apply mb-2.5;
-  }
-
-  .form-input-wrapper {
-    @apply mb-6 grid grid-cols-1 gap-6;
-  }
-
-  .form-input {
-    @apply rounded-2xl border border-jet px-5 py-3 text-3 font-400 text-alabaster
-      outline-none;
-  }
-
-  .form-input::placeholder {
-    @apply font-500;
-  }
-
-  .form-input:focus {
-    @apply border-golden;
-  }
-
-  textarea.form-input {
-    @apply mb-6 h-30 max-h-48 min-h-24 resize-y;
-  }
-
-  textarea.form-input::-webkit-resizer {
-    @apply hidden;
-  }
-
-  .form-input:focus:invalid {
-    @apply border-bittersweet-shimmer;
-  }
-
-  .form-button-wrapper {
-    @apply flex items-center justify-center;
-  }
-
-  .form-button {
-    @apply relative z-1 flex w-2/5 items-center justify-center
-      gap-2.5 rounded-full px-5 py-3 text-3 text-golden capitalize shadow-3 transition
-      duration-250 ease-in;
-    background: var(--color-gradient-onyx);
-  }
-
-  .form-button::before {
-    @apply absolute inset-0.5 -z-1 rounded-[inherit] transition duration-250
-      ease-in content-[""];
-    background: var(--color-gradient-jet);
-  }
-
-  .form-button:hover {
-    @apply bg-gradient-orange-1;
-  }
-
-  .form-button:hover::before {
-    @apply bg-gradient-orange-2;
-  }
-
-  .form-button:disabled {
-    @apply cursor-not-allowed opacity-70;
-  }
-
-  .form-button:disabled:hover {
-    background: var(--color-gradient-onyx);
-  }
-
-  .form-button:disabled:hover::before {
-    background: var(--color-gradient-jet);
-  }
-
-  /*--- RESPONSIVE ---*/
-  /*
-   * Responsive larger than 450px screen
-   */
-  @media (min-width: 450px) {
-    /*--- PROJECTS ---*/
-    .project-image {
-      @apply h-auto;
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
-  /*
-   * Responsive larger than 580px screen
-   */
+  @keyframes titleUnderline {
+    from {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    to {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
   @media (min-width: 580px) {
-    /*
-     * REUSED STYLE
-     */
     .sidebar,
     article {
       @apply mx-auto w-130;
@@ -615,269 +260,25 @@
     }
 
     .article-title {
-      @apply font-600;
-    }
-
-    .icon-box {
-      @apply h-12 w-12;
-    }
-
-    .lucide {
-      @apply size-6;
-    }
-
-    /*--- MAIN ---*/
-    .main {
-      @apply mt-12 mb-24.5;
-    }
-
-    /*--- SIDEBAR ---*/
-    .sidebar {
-      @apply max-h-44;
-    }
-
-    .sidebar.active {
-      @apply max-h-128;
-    }
-
-    .sidebar-main {
-      @apply gap-6.5;
-    }
-
-    .avatar-box img {
-      @apply w-30;
-    }
-
-    .sidebar-main-content .name {
-      @apply mb-3.5;
-    }
-
-    .sidebar-main-content .subtitle {
-      @apply px-4.5 py-1.5;
-    }
-
-    .sidebar-show-more-button {
-      @apply -top-8 -right-8 px-4 py-2.5;
-    }
-
-    .sidebar-show-more-button span {
-      @apply block text-1;
-    }
-
-    .sidebar-show-more-button .lucide {
-      @apply hidden;
-    }
-
-    .contacts-list {
-      @apply gap-5;
-    }
-
-    .contact-info {
-      @apply w-[calc(100%-64px)] max-w-[calc(100%-64px)];
-    }
-
-    /*--- NAVBAR ---*/
-    .navbar {
-      @apply rounded-t-2xl;
-    }
-
-    .navbar-list {
-      @apply gap-2;
-    }
-
-    .navbar-link {
-      @apply text-3;
-    }
-
-    /*--- EXPERIENCE ---*/
-    .timeline-logo-box {
-      @apply ml-2 h-12 w-12;
-    }
-
-    .timeline-list {
-      @apply ml-15;
-    }
-
-    .timeline-item::after {
-      @apply -left-[1.9rem] h-2 w-2;
-    }
-
-    .timeline-logo {
-      @apply h-4/5 w-4/5;
-    }
-
-    /*--- PROJECTS ---*/
-    .project-image {
-      @apply rounded-2xl;
-    }
-
-    /*--- CONTACT ---*/
-    .form-input {
-      @apply px-5 py-4;
+      @apply mb-8 font-600;
     }
   }
 
-  /*
-   * Responsive larger than 768px screen
-   */
   @media (min-width: 768px) {
-    /*
-     * REUSED STYLE
-     */
     .sidebar,
     article {
       @apply w-185;
     }
-
-    /*--- SIDEBAR ---*/
-    .sidebar-main-content .name {
-      @apply text-8;
-    }
-
-    .sidebar-main-content .subtitle {
-      @apply text-2;
-    }
-
-    .sidebar-show-more-button {
-      @apply px-5 py-3;
-    }
-
-    .sidebar-show-more-button span {
-      @apply text-3;
-    }
-
-    .social-item .lucide {
-      @apply size-7;
-    }
-
-    .contacts-list {
-      @apply grid-cols-2 gap-10;
-    }
-
-    .contact-title {
-      @apply text-3;
-    }
-
-    .contact-info :is(.contact-link, address) {
-      @apply text-3;
-    }
-
-    /*--- NAVBAR ---*/
-    .navbar-link {
-      @apply text-5;
-    }
-
-    .navbar-list {
-      @apply gap-8;
-    }
-
-    /*--- ABOUT ---*/
-    .about-text {
-      @apply text-5;
-    }
-
-    /*--- EXPERIENCE ---*/
-    .timeline-list {
-      @apply text-5;
-    }
-
-    .timeline-item-title {
-      @apply text-5;
-    }
-
-    .timeline-item {
-      @apply px-1.5;
-    }
-
-    /*--- PROJECTS ---*/
-    .project-list {
-      @apply grid-cols-2;
-    }
-
-    .project-title {
-      @apply text-4;
-    }
-
-    .project-subtitle {
-      @apply text-5;
-    }
-
-    .project-category {
-      @apply text-2;
-    }
-
-    /*--- SKILLS ---*/
-    .skills-list {
-      @apply mb-5 grid-cols-3;
-    }
-
-    .skill-title {
-      @apply text-2;
-    }
-
-    /*--- CONTACT ---*/
-    .form-input-wrapper {
-      @apply grid-cols-2;
-    }
-
-    .form-button {
-      @apply ml-auto w-1/5;
-    }
   }
 
-  /*
-   * Responsive larger than 1024px screen
-   */
   @media (min-width: 1024px) {
-    /*
-     * REUSED STYLEl
-     */
     .sidebar,
     article {
       @apply w-240;
     }
-
-    /*--- MAIN ---*/
-    .main {
-      @apply mb-15;
-    }
-
-    .main-content {
-      @apply relative m-auto w-max;
-    }
-
-    /*--- NAVBAR ---*/
-    .navbar {
-      @apply absolute top-0 right-0 bottom-auto left-auto w-max rounded-tl-none rounded-bl-2xl
-        px-5 shadow-none;
-    }
-
-    .navbar-list {
-      @apply gap-8;
-    }
-
-    .navbar-link {
-      @apply font-500;
-    }
-
-    /*--- PROJECTS ---*/
-    .project-list {
-      @apply grid-cols-3;
-    }
-
-    /*--- SKILLS ---*/
-    .skills-list {
-      @apply grid-cols-8;
-    }
   }
 
-  /*
-   * Responsive larger than 1250px screen
-   */
   @media (min-width: 1250px) {
-    /*
-     * REUSED STYLEl
-     */
     .sidebar,
     article {
       @apply w-auto;
@@ -885,73 +286,6 @@
 
     article {
       @apply min-h-full;
-    }
-
-    /*--- MAIN ---*/
-    .main {
-      @apply mx-auto flex max-w-7xl items-stretch justify-center gap-5;
-    }
-
-    .main-content {
-      @apply m-0 w-3/4 min-w-3/4;
-    }
-
-    /*--- SIDEBAR ---*/
-    .sidebar {
-      @apply sticky top-12 z-1 mb-0 h-full max-h-max;
-    }
-
-    .sidebar-main {
-      @apply flex-col;
-    }
-
-    .avatar-box img {
-      @apply w-38;
-    }
-
-    .sidebar-main-content .name {
-      @apply text-center whitespace-nowrap;
-    }
-
-    .sidebar-main-content .subtitle {
-      @apply m-auto;
-    }
-
-    .sidebar-show-more-button {
-      @apply hidden;
-    }
-
-    .sidebar-secondary {
-      @apply visible opacity-100;
-    }
-
-    .contacts-list {
-      @apply grid-cols-1;
-    }
-
-    .contact-info :is(.contact-link) {
-      @apply overflow-hidden text-ellipsis whitespace-nowrap;
-    }
-
-    .contact-info :is(.contact-link, time, address) {
-      @apply font-300;
-    }
-
-    .separator:last-of-type {
-      @apply mx-0 my-3.5 opacity-0;
-    }
-
-    .social-list {
-      @apply justify-center;
-    }
-
-    /*--- EXPERIENCE ---*/
-    .timeline-text {
-      @apply max-w-3xl;
-    }
-
-    .timeline-item::after {
-      @apply -left-[2rem];
     }
   }
 }

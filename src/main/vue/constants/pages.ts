@@ -1,12 +1,26 @@
-/**
- * Page constants for navigation.
- * @description Provides constant page keys for navigation
- * @constant
- * @type {string}
- */
+export interface NavTab {
+  id: string
+  label: string
+}
 
-export const PAGE_ABOUT_ME: string = 'about-me'
-export const PAGE_EXPERIENCE: string = 'experience'
-export const PAGE_PROJECTS: string = 'projects'
-export const PAGE_SKILLS: string = 'skills'
-export const PAGE_CONTACT: string = 'contact'
+export const PAGE_ABOUT_ME = {
+  id: 'about-me',
+  label: 'main.about',
+}
+
+export const PAGE_EXPERIENCE = {
+  id: 'experience',
+  label: 'main.experience',
+}
+
+export const PAGE_PROJECTS = {
+  id: 'projects',
+  label: 'main.portfolio',
+}
+
+export const PAGE_SKILLS = {
+  id: 'skills',
+  label: 'main.skills',
+}
+
+export const NAV_TABS: NavTab[] = [PAGE_ABOUT_ME, PAGE_EXPERIENCE, PAGE_PROJECTS, PAGE_SKILLS]

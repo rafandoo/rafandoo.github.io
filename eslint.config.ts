@@ -62,6 +62,7 @@ export default defineConfigWithVueTs(
           js: 'never',
           jsx: 'never',
           vue: 'always',
+          json: 'always',
         },
       ],
       'import/order': [
