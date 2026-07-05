@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useToggle } from '@vueuse/core'
 import { Maximize2, Minimize2 } from 'lucide-vue-next'
 
 import type { PersonalInfo } from '@/types/PersonalInfo'
@@ -14,13 +14,9 @@ const props = defineProps<{
 
 const { t } = useI18n()
 
-const sidebarActive = ref(false)
+const [sidebarActive, toggleSidebar] = useToggle()
 
 const { gravatar } = useLinks(props.personalInfo.contact)
-
-function toggleSidebar() {
-  sidebarActive.value = !sidebarActive.value
-}
 </script>
 
 <template>

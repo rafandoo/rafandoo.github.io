@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 import { ChevronDown } from 'lucide-vue-next'
+import { onClickOutside, useWindowSize, watchDebounced } from '@vueuse/core'
 
 import {
   AVAILABLE_LOCALES,
@@ -13,7 +14,18 @@ import {
 const isOpen = ref(false)
 const currentLocale = ref<LocaleType>(getCurrentLocale())
 const buttonRef = ref<HTMLElement | null>(null)
+const dropdownRef = ref<HTMLElement | null>(null)
 const dropdownStyle = ref<Record<string, string>>({})
+
+const { width: windowWidth, height: windowHeight } = useWindowSize()
+
+onClickOutside(
+  dropdownRef,
+  () => {
+    isOpen.value = false
+  },
+  { ignore: [buttonRef] }
+)
 
 function updatePosition() {
   if (!buttonRef.value) {
@@ -21,14 +33,14 @@ function updatePosition() {
   }
 
   const rect = buttonRef.value.getBoundingClientRect()
-  const openUpward = window.innerWidth < 1024
+  const openUpward = windowWidth.value < 1024
 
   dropdownStyle.value = {
     position: 'fixed',
     left: `${rect.left + rect.width / 2}px`,
     transform: 'translateX(-50%)',
     ...(openUpward
-      ? { bottom: `${window.innerHeight - rect.top + 8}px` }
+      ? { bottom: `${windowHeight.value - rect.top + 8}px` }
       : { top: `${rect.bottom + 8}px` }),
   }
 }
@@ -46,22 +58,11 @@ function selectLocale(locale: LocaleType) {
   isOpen.value = false
 }
 
-function handleClickOutside(event: MouseEvent) {
-  const target = event.target as HTMLElement
-  if (!target.closest('.language-switch') && !target.closest('.language-dropdown')) {
-    isOpen.value = false
+watchDebounced(windowWidth, () => {
+  if (isOpen.value) {
+    updatePosition()
   }
-}
-
-onMounted(() => {
-  document.addEventListener('click', handleClickOutside)
-  window.addEventListener('resize', updatePosition)
-})
-
-onUnmounted(() => {
-  document.removeEventListener('click', handleClickOutside)
-  window.removeEventListener('resize', updatePosition)
-})
+}, { debounce: 100 })
 </script>
 
 <template>
@@ -72,7 +73,7 @@ onUnmounted(() => {
     </button>
     <Teleport to="body">
       <Transition name="dropdown">
-        <div v-if="isOpen" class="language-dropdown" :style="dropdownStyle">
+        <div v-if="isOpen" ref="dropdownRef" class="language-dropdown" :style="dropdownStyle">
           <button
             v-for="locale in AVAILABLE_LOCALES"
             :key="locale"

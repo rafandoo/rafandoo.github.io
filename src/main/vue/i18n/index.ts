@@ -1,32 +1,29 @@
 import { type Composer, createI18n } from 'vue-i18n'
+import { useStorage } from '@vueuse/core'
 
 import messages from '@/i18n/langs'
 
 export type LocaleType = keyof typeof messages
 
-export const fallbackLocale: LocaleType = 'pt_br'
+export const fallbackLocale: LocaleType = 'pt'
 export const AVAILABLE_LOCALES = Object.keys(messages) as LocaleType[]
-const DEFAULT_TOGGLE_LOCALES: LocaleType[] = ['pt_br', 'en']
+const DEFAULT_TOGGLE_LOCALES: LocaleType[] = ['pt', 'en']
 
 export const LOCALE_DISPLAY_NAMES: Record<LocaleType, string> = {
-  pt_br: 'PT',
+  pt: 'PT',
   en: 'EN',
 }
 
 const STORAGE_KEY = 'language'
 
+const storedLocale = useStorage<LocaleType>(STORAGE_KEY, fallbackLocale)
+
 function isValidLocale(locale: string): locale is LocaleType {
   return locale in messages
 }
 
-function getStoredLocale(): LocaleType | null {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY)?.toLowerCase()
-    return stored && isValidLocale(stored) ? stored : null
-  } catch (error) {
-    console.warn('Failed to access localStorage:', error)
-    return null
-  }
+function isValidLocaleOrEmpty(locale: unknown): locale is LocaleType {
+  return typeof locale === 'string' && isValidLocale(locale)
 }
 
 function getBrowserLocale(): LocaleType | null {
@@ -45,7 +42,7 @@ function getBrowserLocale(): LocaleType | null {
   }
 }
 
-const initialLocale = getStoredLocale() ?? getBrowserLocale() ?? fallbackLocale
+const initialLocale = (isValidLocaleOrEmpty(storedLocale.value) ? storedLocale.value : null) ?? getBrowserLocale() ?? fallbackLocale
 
 const i18n = createI18n({
   legacy: false,
@@ -72,12 +69,7 @@ export function changeLanguage(locale: string) {
   }
 
   composer.locale.value = locale
-
-  try {
-    localStorage.setItem('language', locale)
-  } catch (error) {
-    console.warn('Failed to save language preference:', error)
-  }
+  storedLocale.value = locale as LocaleType
 }
 
 export function toggleLanguage(locales: LocaleType[] = DEFAULT_TOGGLE_LOCALES) {
