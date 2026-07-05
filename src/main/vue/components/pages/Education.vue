@@ -83,7 +83,7 @@ defineProps<{
               rel="noopener noreferrer"
               class="course-link"
             >
-              {{ t('elements.view_credential') }}
+              {{ t('common.view_credential') }}
               <ArrowUpRight class="course-link-icon" />
             </a>
           </div>

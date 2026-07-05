@@ -21,7 +21,7 @@ import education from '@/data/Education'
 
 const { t } = useI18n()
 
-const aboutMeText = computed(() => t('personal.about_me'))
+const aboutMeText = computed(() => t(personalInfo.me.bio))
 
 const Experiences = defineAsyncComponent(() => import('@/components/pages/Experiences.vue'))
 const Education = defineAsyncComponent(() => import('@/components/pages/Education.vue'))

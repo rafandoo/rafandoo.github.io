@@ -2,7 +2,7 @@ import type { SkillCategory } from '@/types/Skills'
 
 export default {
   programmingLanguages: {
-    title: 'personal.skills.programming_languages',
+    title: 'me.skills.categories.programming_languages',
     items: [
       {
         title: 'Java',
@@ -23,7 +23,7 @@ export default {
     ],
   } satisfies SkillCategory,
   frameworks: {
-    title: 'personal.skills.frameworks',
+    title: 'me.skills.categories.frameworks',
     items: [
       {
         title: 'Quarkus',
@@ -76,7 +76,7 @@ export default {
     ],
   } satisfies SkillCategory,
   ai: {
-    title: 'personal.skills.ai',
+    title: 'me.skills.categories.ai',
     items: [
       {
         title: 'TensorFlow',
@@ -89,7 +89,7 @@ export default {
     ],
   } satisfies SkillCategory,
   tools: {
-    title: 'personal.skills.tools',
+    title: 'me.skills.categories.tools',
     items: [
       {
         title: 'Git',
@@ -122,7 +122,7 @@ export default {
     ],
   } satisfies SkillCategory,
   devops: {
-    title: 'personal.skills.devops',
+    title: 'me.skills.categories.devops',
     items: [
       {
         title: 'Docker',
@@ -135,7 +135,7 @@ export default {
     ],
   } satisfies SkillCategory,
   databases: {
-    title: 'personal.skills.databases',
+    title: 'me.skills.categories.databases',
     items: [
       {
         title: 'MySQL',

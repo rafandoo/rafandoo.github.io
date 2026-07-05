@@ -6,14 +6,14 @@ const experiences: Experiences = {
     logo: new URL('#/assets/img/experiences/ipm.webp', import.meta.url).href,
     items: [
       {
-        title: 'personal.experiences.ipm.items[1].title',
-        date: 'personal.experiences.ipm.items[1].date',
-        description: 'personal.experiences.ipm.items[1].description',
+        title: 'me.experiences.companies.ipm.items[1].title',
+        date: 'me.experiences.companies.ipm.items[1].date',
+        description: 'me.experiences.companies.ipm.items[1].description',
       },
       {
-        title: 'personal.experiences.ipm.items[0].title',
-        date: 'personal.experiences.ipm.items[0].date',
-        description: 'personal.experiences.ipm.items[0].description',
+        title: 'me.experiences.companies.ipm.items[0].title',
+        date: 'me.experiences.companies.ipm.items[0].date',
+        description: 'me.experiences.companies.ipm.items[0].description',
       },
     ],
   },
@@ -22,14 +22,14 @@ const experiences: Experiences = {
     logo: new URL('#/assets/img/experiences/newtech.webp', import.meta.url).href,
     items: [
       {
-        title: 'personal.experiences.newtech.items[1].title',
-        date: 'personal.experiences.newtech.items[1].date',
-        description: 'personal.experiences.newtech.items[1].description',
+        title: 'me.experiences.companies.newtech.items[1].title',
+        date: 'me.experiences.companies.newtech.items[1].date',
+        description: 'me.experiences.companies.newtech.items[1].description',
       },
       {
-        title: 'personal.experiences.newtech.items[0].title',
-        date: 'personal.experiences.newtech.items[0].date',
-        description: 'personal.experiences.newtech.items[0].description',
+        title: 'me.experiences.companies.newtech.items[0].title',
+        date: 'me.experiences.companies.newtech.items[0].date',
+        description: 'me.experiences.companies.newtech.items[0].description',
       },
     ],
   },
@@ -37,9 +37,9 @@ const experiences: Experiences = {
     title: 'Luxpoli Tintas',
     items: [
       {
-        title: 'personal.experiences.luxpoli.title',
-        date: 'personal.experiences.luxpoli.date',
-        description: 'personal.experiences.luxpoli.description',
+        title: 'me.experiences.companies.luxpoli.title',
+        date: 'me.experiences.companies.luxpoli.date',
+        description: 'me.experiences.companies.luxpoli.description',
       },
     ],
   },

@@ -5,27 +5,27 @@ export interface NavTab {
 
 export const PAGE_ABOUT_ME = {
   id: 'about-me',
-  label: 'main.about',
+  label: 'nav.about',
 }
 
 export const PAGE_EXPERIENCE = {
   id: 'experience',
-  label: 'main.experience',
+  label: 'nav.experience',
 }
 
 export const PAGE_EDUCATION = {
   id: 'education',
-  label: 'main.education',
+  label: 'nav.education',
 }
 
 export const PAGE_PROJECTS = {
   id: 'projects',
-  label: 'main.portfolio',
+  label: 'nav.portfolio',
 }
 
 export const PAGE_SKILLS = {
   id: 'skills',
-  label: 'main.skills',
+  label: 'nav.skills',
 }
 
 export const NAV_TABS: NavTab[] = [

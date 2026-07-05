@@ -34,15 +34,15 @@ const { gravatar } = useLinks(props.personalInfo.contact)
 
       <div class="sidebar-profile">
         <h1 class="sidebar-profile-name">{{ personalInfo.name }}</h1>
-        <p class="sidebar-profile-subtitle">{{ t(personalInfo.subtitle) }}</p>
+        <p class="sidebar-profile-subtitle">{{ t(personalInfo.me.headline) }}</p>
       </div>
 
       <button
         class="sidebar-toggle"
-        :aria-label="t('elements.show_contacts')"
-        @click="toggleSidebar"
+        :aria-label="t('common.show_contacts')"
+        @click="toggleSidebar()"
       >
-        <span class="sidebar-toggle-label">{{ t('elements.show_contacts') }}</span>
+        <span class="sidebar-toggle-label">{{ t('common.show_contacts') }}</span>
         <Maximize2 v-if="!sidebarActive" class="sidebar-toggle-icon" :size="16" />
         <Minimize2 v-else class="sidebar-toggle-icon" :size="16" />
       </button>
@@ -52,7 +52,7 @@ const { gravatar } = useLinks(props.personalInfo.contact)
       <div class="sidebar-divider"></div>
       <ContactList :contact="personalInfo.contact" />
       <div class="sidebar-divider"></div>
-      <SocialList :social="personalInfo.social" />
+      <SocialList :socialLinks="personalInfo.socialLinks" />
     </div>
   </aside>
 </template>

@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "experience": "Experiência",
+    "education": "Formação",
+    "portfolio": "Portfólio",
+    "skills": "Habilidades"
+  },
+  "common": {
+    "show_contacts": "Mostrar contatos",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "location": "Localização",
+    "view_credential": "Ver credencial"
+  },
+  "cv": {
+    "summary": "Resumo",
+    "professional_experience": "Experiência profissional"
+  },
+  "me": {
+    "about": {
+      "headline": "Desenvolvedor Backend",
+      "bio": "Olá, meu nome é Rafael. Sou estudante de Ciência da Computação no Instituto Federal Catarinense e atuo como desenvolvedor de software.\nDesde que entrei em contato com a programação, desenvolvi uma verdadeira paixão por tecnologia. Essa motivação me leva a estar sempre em busca de novos conhecimentos, explorando ferramentas, linguagens e arquiteturas que me desafiem e me façam evoluir como desenvolvedor. Atualmente, estou focado em aprofundar meu entendimento sobre arquiteturas baseadas em microsserviços, explorando conceitos como escalabilidade, resiliência, comunicação assíncrona e observabilidade.\nTenho experiência com várias linguagens de programação, como Java, Python e PHP, o que me permite adaptar soluções conforme as necessidades do projeto. Também sou familiarizado com práticas modernas de desenvolvimento, como controle de versão com Git, conteinerização com Docker e gerenciamento de bancos de dados relacionais.\nProcuro seguir boas práticas de desenvolvimento, como testes automatizados, organização de código e uso de pipelines de integração contínua. Gosto de resolver problemas de forma objetiva e aprender com a prática no dia a dia do desenvolvimento.",
+      "summary": "Desenvolvedor com experiência em arquitetura de microsserviços Java (Quarkus) e front-end Vue 3, atuando desde a implantação de sistemas de gestão até a construção de serviços escaláveis e de alta disponibilidade. Complementa a atuação em produto com prática consistente em infraestrutura self-hosted (Docker, Traefik, Grafana), aplicando uma abordagem full-stack que vai do código à operação.\n\n"
+    },
+    "portfolio": {
+      "projects": {
+        "tasker": {
+          "title": "Tasker",
+          "subtitle": "Microsserviço para gerenciamento de tarefas."
+        },
+        "stock_prediction": {
+          "title": "Predição de ações",
+          "subtitle": "Técnicas de Machine Learning para predição de ações."
+        },
+        "finv": {
+          "title": "FInv",
+          "subtitle": "Biblioteca de dados de investimentos financeiros."
+        },
+        "cup": {
+          "title": "CUP",
+          "subtitle": "Biblioteca Java que fornece um conjunto de utilitários para desenvolvedores Java."
+        },
+        "pomotimer": {
+          "title": "Pomotimer",
+          "subtitle": "Aplicação da técnica Pomodoro."
+        },
+        "stroke_prediction": {
+          "title": "Predição de AVC",
+          "subtitle": "Rede Neural Arficial MLP para predição de AVC."
+        },
+        "speed_test": {
+          "title": "Speed Test",
+          "subtitle": "Speed Test CLI com persistência dos dados coletados."
+        },
+        "eight_queens": {
+          "title": "8 rainhas",
+          "subtitle": "Algoritmo genético para solucionar o problema das 8 rainhas."
+        },
+        "helpdesk": {
+          "title": "Help Desk",
+          "subtitle": "Sistema de Help Desk para suporte técnico."
+        }
+      }
+    },
+    "skills": {
+      "categories": {
+        "programming_languages": "Linguagens de programação",
+        "frameworks": "Frameworks e bibliotecas",
+        "ai": "Inteligência Artificial",
+        "tools": "Ferramentas",
+        "devops": "DevOps",
+        "databases": "Bancos de dados"
+      }
+    },
+    "experiences": {
+      "companies": {
+        "ipm": {
+          "items": [
+            {
+              "title": "Programador Aprendiz Java",
+              "date": "Jan/2024 - Jul/2024",
+              "description": "Colaborar no desenvolvimento e implementação de microsserviços Java, adquirindo experiência prática em arquiteturas de microsserviços. Apoiar na criação de novas funcionalidades, realizar testes e garantir a integração adequada com outros serviços. Manter e refatorar o código existente para melhorar a eficiência e a escalabilidade dos microsserviços."
+            },
+            {
+              "title": "Desenvolvedor Java",
+              "date": "Jul/2024 - Atualmente",
+              "description": "Desenvolver e otimizar microsserviços Java, focando na criação de novas funcionalidades e na melhoria contínua dos serviços existentes. Implementar práticas de desenvolvimento ágil e garantir a integração eficiente entre microsserviços. Realizar manutenção e atualização do código para garantir a alta disponibilidade e a performance dos sistemas. Trabalhar na resolução de problemas complexos e na melhoria da arquitetura dos microsserviços para suportar o crescimento e a escalabilidade."
+            }
+          ]
+        },
+        "newtech": {
+          "items": [
+            {
+              "title": "Estágio analista de suporte técnico",
+              "date": "Set/2021 - Mai/2022",
+              "description": "Fornecer suporte e apresentar soluções para problemas do cliente nos softwares de gestão. Realização de implantação, conversão e treinamento de novos clientes. Organização e documentação de bases de conhecimento."
+            },
+            {
+              "title": "Gestor de implantação",
+              "date": "Mai/2022 - Dez/2023",
+              "description": "Desenvolver estratégias de implantação personalizadas de acordo com as necessidades do cliente. Analisar e compreender os requisitos dos clientes em relação à conversão de dados, identificando os formatos e estruturas necessários para a migração. Gerenciar o planejamento, alocação de recursos, cronogramas e riscos associados aos projetos de implantação."
+            }
+          ]
+        },
+        "luxpoli": {
+          "title": "Auxiliar administrativo",
+          "date": "Dez/2018 - Ago/2021",
+          "description": "Responsável pelo cadastro e gestão de produtos, clientes e fornecedores, garantindo a precisão das informações. Gerenciar o controle de entrada e saída de mercadorias, incluindo a emissão e recebimento de notas fiscais. Administrar contas a receber e realizar o controle de faturamento, assegurando que todas as transações financeiras sejam registradas corretamente. Monitorar e controlar serviços bancários, realizando conciliações e pagamentos. Coordenar processos de compras e realizar atendimento ao cliente, garantindo a satisfação e o suporte necessário."
+        }
+      }
+    },
+    "education": {
+      "academic": {
+        "title": "Formação Acadêmica",
+        "computer_science": {
+          "title": "Bacharelado em Ciência da Computação",
+          "date": "2020 - 2026",
+          "description": "Bacharelado em Ciência da Computação com formação voltada ao desenvolvimento de software, engenharia de software, bancos de dados, redes de computadores e inteligência artificial. Ênfase em fundamentos de computação, pesquisa, inovação e resolução de problemas por meio de tecnologias da informação.",
+          "institution": "Instituto Federal Catarinense"
+        }
+      },
+      "courses": {
+        "title": "Cursos e Certificações",
+        "quarkus_workshop_instructor": {
+          "title": "Instrutor de Workshop em Quarkus",
+          "issuer": "Instituto Federal Catarinense",
+          "date": "Mai/2024"
+        },
+        "binary_search_algorithm": {
+          "title": "Implementação do algoritmo de busca binária em versões serial e concorrente nas linguagens de programação C++ e JAVA",
+          "issuer": "FETEC - Feira do Conhecimento Tecnológico e Científico",
+          "date": "Out/2024"
+        }
+      }
+    }
+  }
+}
