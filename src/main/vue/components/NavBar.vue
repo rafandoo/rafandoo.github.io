@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useScroll, useSwipe } from '@vueuse/core'
+import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 
 import LanguageSwitch from '@/components/elements/LanguageSwitch.vue'
 import { activeTab, setActiveTab } from '@/composables/useActiveTab'
@@ -8,11 +11,24 @@ import { NAV_TABS } from '@/constants/pages'
 
 const { t } = useI18n()
 
+const navListRef = ref<HTMLUListElement | null>(null)
+
+const { x, arrivedState } = useScroll(navListRef, { behavior: 'smooth' })
+const { isSwiping } = useSwipe(navListRef)
+
+const scrollBy = (direction: 'left' | 'right') => {
+  const el = navListRef.value
+  if (!el) {
+    return
+  }
+  const scrollAmount = Math.min(100, el.clientWidth * 0.5)
+  x.value += direction === 'left' ? -scrollAmount : scrollAmount
+}
+
 const changeTab = (id: string) => {
   if (id === activeTab.value) {
     return
   }
-
   setActiveTab(id)
   window.scrollTo({ top: 0, behavior: 'smooth' })
   resetRevealStates()
@@ -21,12 +37,20 @@ const changeTab = (id: string) => {
 
 <template>
   <nav class="navbar">
-    <ul class="navbar-list" role="tablist">
+    <button
+      v-show="!arrivedState.left"
+      class="nav-chevron left"
+      aria-label="Scroll left"
+      @click="scrollBy('left')"
+    >
+      <ChevronLeft :size="18" />
+    </button>
+    <ul ref="navListRef" class="navbar-list" role="tablist">
       <li v-for="tab in NAV_TABS" :key="tab.id" class="navbar-item" role="presentation">
         <button
           :id="`${tab.id}-tab`"
           class="navbar-link"
-          :class="{ active: activeTab === tab.id }"
+          :class="{ active: activeTab === tab.id, 'no-hover': isSwiping }"
           role="tab"
           :aria-selected="activeTab === tab.id"
           :aria-controls="`${tab.id}-panel`"
@@ -39,6 +63,14 @@ const changeTab = (id: string) => {
         <LanguageSwitch />
       </li>
     </ul>
+    <button
+      v-show="!arrivedState.right"
+      class="nav-chevron right"
+      aria-label="Scroll right"
+      @click="scrollBy('right')"
+    >
+      <ChevronRight :size="18" />
+    </button>
   </nav>
 </template>
 
@@ -49,12 +81,48 @@ const changeTab = (id: string) => {
   @apply fixed bottom-0 left-0 z-10 w-full rounded-t-xl bg-onyx/75 shadow-2 backdrop-blur-md;
 }
 
+.nav-chevron {
+  @apply absolute top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 cursor-pointer items-center justify-center
+    rounded-full bg-onyx/90 text-paper shadow-md transition-all duration-200;
+}
+
+.nav-chevron:hover {
+  @apply bg-onyx text-white;
+}
+
+.nav-chevron.left {
+  @apply left-1;
+}
+
+.nav-chevron.right {
+  @apply right-1;
+}
+
 .navbar-list {
-  @apply flex flex-wrap items-center justify-center px-2;
+  @apply flex touch-pan-x scrollbar-none items-center justify-start overflow-x-auto px-2;
+  -webkit-overflow-scrolling: touch;
+}
+
+.navbar-list::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar-item {
+  @apply shrink-0;
+}
+
+@media (min-width: 580px) {
+  .nav-chevron {
+    display: none;
+  }
+
+  .navbar-list {
+    @apply flex-wrap justify-center gap-2 overflow-x-visible;
+  }
 }
 
 .navbar-link {
-  @apply relative px-4 py-3 text-1 text-paper transition-all duration-200 ease-out;
+  @apply relative px-4 py-3 text-1 text-paper;
 }
 
 .navbar-link::after {
@@ -62,14 +130,27 @@ const changeTab = (id: string) => {
     transition-transform duration-300 ease-out content-[""];
 }
 
-.navbar-link:hover {
-  @apply -translate-y-0.5 text-white;
-}
-
-.navbar-link:hover::after,
-.navbar-link:focus::after,
 .navbar-link.active::after {
   @apply scale-x-100;
+}
+
+.navbar-link.no-hover {
+  @apply pointer-events-none!;
+}
+
+@media (min-width: 580px) {
+  .navbar-link::after {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .navbar-link:hover::after,
+  .navbar-link:focus::after {
+    @apply scale-x-100;
+  }
+
+  .navbar-link:hover {
+    @apply -translate-y-0.5 text-white;
+  }
 }
 
 .navbar-link.active {
@@ -86,7 +167,11 @@ const changeTab = (id: string) => {
   }
 
   .navbar-link {
-    @apply text-3;
+    @apply text-3 transition-all duration-200 ease-out;
+  }
+
+  .navbar-link:hover {
+    @apply -translate-y-0.5 text-white;
   }
 }
 
