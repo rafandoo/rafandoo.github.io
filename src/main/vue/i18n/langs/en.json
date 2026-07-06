@@ -2,15 +2,17 @@
   "main": {
     "about_me": "About me",
     "about": "About",
+    "experience": "Experience",
+    "education": "Education",
     "portfolio": "Portfolio",
-    "skills": "Skills",
-    "experience": "Experience"
+    "skills": "Skills"
   },
   "elements": {
     "show_contacts": "Show contacts",
     "email": "E-mail",
     "phone": "Phone",
-    "location": "Location"
+    "location": "Location",
+    "view_credential": "View credential"
   },
   "personal": {
     "subtitle": "Backend Developer",
@@ -94,6 +96,30 @@
         "title": "Administrative assistant",
         "date": "Dec/2018 - Aug/2021",
         "description": "Responsible for the registration and management of products, customers and suppliers, ensuring the accuracy of information. Manage the control of incoming and outgoing goods, including the issuance and receipt of invoices. Manage accounts receivable and perform billing control, ensuring that all financial transactions are recorded correctly. Monitor and control banking services, performing reconciliations and payments. Coordinate purchasing processes and perform customer service, ensuring satisfaction and support required."
+      }
+    },
+    "education": {
+      "academic": {
+        "title": "Academic Education",
+        "computer_science": {
+          "title": "Bachelor's in Computer Science",
+          "date": "2020 - 2026",
+          "description": "Bachelor's degree in Computer Science from the Federal Institute of Santa Catarina, focusing on software development, systems architecture, and cloud computing.",
+          "institution": "Federal Institute of Santa Catarina"
+        }
+      },
+      "courses": {
+        "title": "Courses and Certifications",
+        "quarkus_workshop_instructor": {
+          "title": "Quarkus Workshop Instructor",
+          "issuer": "Federal Institute of Santa Catarina",
+          "date": "May/2024"
+        },
+        "binary_search_algorithm": {
+          "title": "Binary Search Algorithm Implementation in Serial and Concurrent Versions in C++ and JAVA Programming Languages",
+          "issuer": "FETEC - Feira do Conhecimento Tecnológico e Científico",
+          "date": "Oct/2024"
+        }
       }
     }
   }

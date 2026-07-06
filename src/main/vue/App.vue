@@ -10,13 +10,21 @@ import personalInfo from '@/data/PersonalInfo'
 import experiences from '@/data/Experiences'
 import projects from '@/data/Projects'
 import skills from '@/data/Skills'
-import { PAGE_ABOUT_ME, PAGE_EXPERIENCE, PAGE_PROJECTS, PAGE_SKILLS } from '@/constants/pages'
+import {
+  PAGE_ABOUT_ME,
+  PAGE_EXPERIENCE,
+  PAGE_EDUCATION,
+  PAGE_PROJECTS,
+  PAGE_SKILLS,
+} from '@/constants/pages'
+import education from '@/data/Education'
 
 const { t } = useI18n()
 
 const aboutMeText = computed(() => t('personal.about_me'))
 
 const Experiences = defineAsyncComponent(() => import('@/components/pages/Experiences.vue'))
+const Education = defineAsyncComponent(() => import('@/components/pages/Education.vue'))
 const Projects = defineAsyncComponent(() => import('@/components/pages/Projects.vue'))
 const Skills = defineAsyncComponent(() => import('@/components/pages/Skills.vue'))
 </script>
@@ -45,6 +53,16 @@ const Skills = defineAsyncComponent(() => import('@/components/pages/Skills.vue'
         :aria-labelledby="`${PAGE_EXPERIENCE.id}-tab`"
       >
         <Experiences :experiences="experiences" />
+      </div>
+
+      <div
+        v-if="activeTab === PAGE_EDUCATION.id"
+        :id="`${PAGE_EDUCATION.id}-panel`"
+        class="tab-content"
+        role="tabpanel"
+        :aria-labelledby="`${PAGE_EDUCATION.id}-tab`"
+      >
+        <Education :education="education" />
       </div>
 
       <div

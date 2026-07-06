@@ -2,15 +2,17 @@
   "main": {
     "about_me": "Sobre mim",
     "about": "Sobre",
+    "experience": "Experiência",
+    "education": "Formação",
     "portfolio": "Portfólio",
-    "skills": "Habilidades",
-    "experience": "Experiência"
+    "skills": "Habilidades"
   },
   "elements": {
     "show_contacts": "Mostrar contatos",
     "email": "E-mail",
     "phone": "Telefone",
-    "location": "Localização"
+    "location": "Localização",
+    "view_credential": "Ver credencial"
   },
   "personal": {
     "subtitle": "Desenvolvedor Backend",
@@ -94,6 +96,30 @@
         "title": "Auxiliar administrativo",
         "date": "Dez/2018 - Ago/2021",
         "description": "Responsável pelo cadastro e gestão de produtos, clientes e fornecedores, garantindo a precisão das informações. Gerenciar o controle de entrada e saída de mercadorias, incluindo a emissão e recebimento de notas fiscais. Administrar contas a receber e realizar o controle de faturamento, assegurando que todas as transações financeiras sejam registradas corretamente. Monitorar e controlar serviços bancários, realizando conciliações e pagamentos. Coordenar processos de compras e realizar atendimento ao cliente, garantindo a satisfação e o suporte necessário."
+      }
+    },
+    "education": {
+      "academic": {
+        "title": "Formação Acadêmica",
+        "computer_science": {
+          "title": "Bacharelado em Ciência da Computação",
+          "date": "2020 - 2026",
+          "description": "Bacharelado em Ciência da Computação com formação voltada ao desenvolvimento de software, engenharia de software, bancos de dados, redes de computadores e inteligência artificial. Ênfase em fundamentos de computação, pesquisa, inovação e resolução de problemas por meio de tecnologias da informação.",
+          "institution": "Instituto Federal Catarinense"
+        }
+      },
+      "courses": {
+        "title": "Cursos e Certificações",
+        "quarkus_workshop_instructor": {
+          "title": "Instrutor de Workshop em Quarkus",
+          "issuer": "Instituto Federal Catarinense",
+          "date": "Mai/2024"
+        },
+        "binary_search_algorithm": {
+          "title": "Implementação do algoritmo de busca binária em versões serial e concorrente nas linguagens de programação C++ e JAVA",
+          "issuer": "FETEC - Feira do Conhecimento Tecnológico e Científico",
+          "date": "Out/2024"
+        }
       }
     }
   }

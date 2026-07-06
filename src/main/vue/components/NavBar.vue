@@ -2,7 +2,7 @@
 import { useI18n } from 'vue-i18n'
 
 import LanguageSwitch from '@/components/elements/LanguageSwitch.vue'
-import { activeTab } from '@/composables/useActiveTab'
+import { activeTab, setActiveTab } from '@/composables/useActiveTab'
 import { resetRevealStates } from '@/composables/useReveal'
 import { NAV_TABS } from '@/constants/pages'
 
@@ -13,7 +13,7 @@ const changeTab = (id: string) => {
     return
   }
 
-  activeTab.value = id
+  setActiveTab(id)
   window.scrollTo({ top: 0, behavior: 'smooth' })
   resetRevealStates()
 }

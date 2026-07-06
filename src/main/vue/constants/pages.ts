@@ -13,6 +13,11 @@ export const PAGE_EXPERIENCE = {
   label: 'main.experience',
 }
 
+export const PAGE_EDUCATION = {
+  id: 'education',
+  label: 'main.education',
+}
+
 export const PAGE_PROJECTS = {
   id: 'projects',
   label: 'main.portfolio',
@@ -23,4 +28,10 @@ export const PAGE_SKILLS = {
   label: 'main.skills',
 }
 
-export const NAV_TABS: NavTab[] = [PAGE_ABOUT_ME, PAGE_EXPERIENCE, PAGE_PROJECTS, PAGE_SKILLS]
+export const NAV_TABS: NavTab[] = [
+  PAGE_ABOUT_ME,
+  PAGE_EXPERIENCE,
+  PAGE_EDUCATION,
+  PAGE_PROJECTS,
+  PAGE_SKILLS,
+]
