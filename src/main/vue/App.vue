@@ -1,53 +1,111 @@
 <script setup lang="ts">
+import { computed, defineAsyncComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
 
-import { defineAsyncComponent } from 'vue'
-
-import SideBar from '@/components/SideBar.vue'
+import Sidebar from '@/components/Sidebar.vue'
 import NavBar from '@/components/NavBar.vue'
-
-import AboutMe from '@/components/pages/AboutMePage.vue'
-
-const Experiences = defineAsyncComponent(() => import('@/components/pages/ExperiencesPage.vue'))
-const Projects = defineAsyncComponent(() => import('@/components/pages/ProjectsPage.vue'))
-const Skills = defineAsyncComponent(() => import('@/components/pages/SkillsPage.vue'))
-const ContactMe = defineAsyncComponent(() => import('@/components/pages/ContactMe.vue'))
-
+import AboutMe from '@/components/pages/AboutMe.vue'
+import { activeTab } from '@/composables/useActiveTab'
 import personalInfo from '@/data/PersonalInfo'
 import experiences from '@/data/Experiences'
 import projects from '@/data/Projects'
 import skills from '@/data/Skills'
+import { PAGE_ABOUT_ME, PAGE_EXPERIENCE, PAGE_PROJECTS, PAGE_SKILLS } from '@/constants/pages'
 
-import {
-  PAGE_ABOUT_ME,
-  PAGE_CONTACT,
-  PAGE_EXPERIENCE,
-  PAGE_PROJECTS,
-  PAGE_SKILLS,
-} from '@/constants/pages.ts'
+const { t } = useI18n()
+
+const aboutMeText = computed(() => t('personal.about_me'))
+
+const Experiences = defineAsyncComponent(() => import('@/components/pages/Experiences.vue'))
+const Projects = defineAsyncComponent(() => import('@/components/pages/Projects.vue'))
+const Skills = defineAsyncComponent(() => import('@/components/pages/Skills.vue'))
 </script>
 
 <template>
   <div class="main">
-    <SideBar :personal-info="personalInfo" />
-    <div class="main-content">
+    <Sidebar :personal-info="personalInfo" />
+    <main class="main-content">
       <NavBar />
-      <div :id="PAGE_ABOUT_ME" class="tab-content active">
-        <AboutMe :about-me-text="t('personal.about_me')" />
+
+      <div
+        v-if="activeTab === PAGE_ABOUT_ME.id"
+        :id="`${PAGE_ABOUT_ME.id}-panel`"
+        class="tab-content"
+        role="tabpanel"
+        :aria-labelledby="`${PAGE_ABOUT_ME.id}-tab`"
+      >
+        <AboutMe :about-me-text="aboutMeText" />
       </div>
-      <div :id="PAGE_EXPERIENCE" class="tab-content">
+
+      <div
+        v-if="activeTab === PAGE_EXPERIENCE.id"
+        :id="`${PAGE_EXPERIENCE.id}-panel`"
+        class="tab-content"
+        role="tabpanel"
+        :aria-labelledby="`${PAGE_EXPERIENCE.id}-tab`"
+      >
         <Experiences :experiences="experiences" />
       </div>
-      <div :id="PAGE_PROJECTS" class="tab-content">
+
+      <div
+        v-if="activeTab === PAGE_PROJECTS.id"
+        :id="`${PAGE_PROJECTS.id}-panel`"
+        class="tab-content"
+        role="tabpanel"
+        :aria-labelledby="`${PAGE_PROJECTS.id}-tab`"
+      >
         <Projects :projects="projects" />
       </div>
-      <div :id="PAGE_SKILLS" class="tab-content">
+
+      <div
+        v-if="activeTab === PAGE_SKILLS.id"
+        :id="`${PAGE_SKILLS.id}-panel`"
+        class="tab-content"
+        role="tabpanel"
+        :aria-labelledby="`${PAGE_SKILLS.id}-tab`"
+      >
         <Skills :skills="skills" />
       </div>
-      <div :id="PAGE_CONTACT" class="tab-content">
-        <ContactMe :email="personalInfo.email" />
-      </div>
-    </div>
+    </main>
   </div>
 </template>
+
+<style scoped>
+@reference "#/assets/css/style.css";
+
+.main {
+  @apply mx-3 mt-4 mb-20 min-w-2xs;
+}
+
+.tab-content {
+  @apply block;
+  /*TODO*/
+  animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@media (min-width: 580px) {
+  .main {
+    @apply mt-12 mb-24.5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    @apply mb-15;
+  }
+
+  .main-content {
+    @apply relative m-auto w-max;
+  }
+}
+
+@media (min-width: 1250px) {
+  .main {
+    @apply mx-auto flex max-w-7xl items-stretch justify-center gap-5;
+  }
+
+  .main-content {
+    @apply m-0 w-3/4 min-w-3/4;
+  }
+}
+</style>

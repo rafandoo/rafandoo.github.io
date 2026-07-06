@@ -1,10 +1,6 @@
-import ptBR from './pt_br.json'
-import en from './en.json'
+import ptBR from '@/i18n/langs/pt_br.json'
+import en from '@/i18n/langs/en.json'
 
-/**
- * Defines the available locale keys for internationalization.
- * Provides a constant mapping of supported language locales.
- */
 export const LOCALE_KEYS = {
   PT_BR: 'pt_br',
   EN: 'en',

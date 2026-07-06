@@ -1,26 +1,28 @@
 import type { PersonalInfo } from '@/types/PersonalInfo'
 
-const personal: PersonalInfo = {
+const personalInfo: PersonalInfo = {
   name: 'Rafael Camargo',
-  subTitle: 'personal.subtitle',
-  email: 'rafaelcamargo.inf@gmail.com',
-  whatsappMessage: 'Ol%C3%A1!',
-  phone: '+55 (47) 99166-4002',
-  location: 'personal.location',
+  subtitle: 'personal.subtitle',
+  contact: {
+    email: 'rafaelcamargo.inf@gmail.com',
+    phone: '+55 (47) 99166-4002',
+    whatsappMessage: 'Ol%C3%A1!',
+    location: 'Santa Catarina, Brasil',
+  },
   social: [
     {
-      name: 'Github',
+      name: 'GitHub',
       link: 'https://github.com/rafandoo/',
-    },
-    {
-      name: 'Instagram',
-      link: 'https://www.instagram.com/rafandoo/',
     },
     {
       name: 'Linkedin',
       link: 'https://www.linkedin.com/in/rafaelcamargob/',
     },
-  ]
+    {
+      name: 'Instagram',
+      link: 'https://www.instagram.com/rafandoo/',
+    },
+  ],
 }
 
-export default personal
+export default personalInfo

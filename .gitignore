@@ -21,3 +21,10 @@ cmake-build-*/
 
 # Cache file creation bug
 .idea/$CACHE_FILE$
+
+# Temporary files
+*.tmp
+tmp/
+
+# Local certificates
+certs/

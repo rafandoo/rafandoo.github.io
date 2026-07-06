@@ -1,14 +1,18 @@
 export type PersonalInfo = {
   name: string
-  subTitle: string
-  email: string
-  whatsappMessage: string
-  phone: string
-  location: string
-  social: SocialNetwork[]
+  subtitle: string
+  contact: Contact
+  social: Social[]
 }
 
-export type SocialNetwork = {
+export type Contact = {
+  email: string
+  phone: string
+  whatsappMessage: string
+  location: string
+}
+
+export type Social = {
   name: string
   link: string
 }
