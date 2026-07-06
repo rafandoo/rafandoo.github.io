@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { nextTick, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useScroll, useSwipe } from '@vueuse/core'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
@@ -33,6 +33,18 @@ const changeTab = (id: string) => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
   resetRevealStates()
 }
+
+onMounted(() => {
+  nextTick(() => {
+    const el = navListRef.value
+    if (!el) {
+      return
+    }
+
+    arrivedState.right = el.scrollWidth <= el.clientWidth
+    arrivedState.left = true
+  })
+})
 </script>
 
 <template>
