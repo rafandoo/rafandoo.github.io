@@ -5,7 +5,7 @@
     "": {
       "name": "rafandoo",
       "dependencies": {
-        "@vueuse/core": "^14.3.0",
+        "@vueuse/core": "14.3.0",
         "blueimp-md5": "2.19.0",
         "lucide-vue-next": "0.511.0",
         "vue": "3.5.28",
@@ -19,7 +19,7 @@
         "@types/node": "26.1.0",
         "@vitejs/plugin-vue": "6.0.7",
         "@vue/eslint-config-prettier": "10.2.0",
-        "@vue/eslint-config-typescript": "14.8.0",
+        "@vue/eslint-config-typescript": "14.9.0",
         "@vue/tsconfig": "0.9.1",
         "eslint": "10.6.0",
         "eslint-import-resolver-typescript": "4.4.5",
@@ -340,7 +340,7 @@
 
     "@vue/eslint-config-prettier": ["@vue/eslint-config-prettier@10.2.0", "", { "dependencies": { "eslint-config-prettier": "^10.0.1", "eslint-plugin-prettier": "^5.2.2" }, "peerDependencies": { "eslint": ">= 8.21.0", "prettier": ">= 3.0.0" } }, "sha512-GL3YBLwv/+b86yHcNNfPJxOTtVFJ4Mbc9UU3zR+KVoG7SwGTjPT+32fXamscNumElhcpXW3mT0DgzS9w32S7Bw=="],
 
-    "@vue/eslint-config-typescript": ["@vue/eslint-config-typescript@14.8.0", "", { "dependencies": { "@typescript-eslint/utils": "^8.60.0", "fast-glob": "^3.3.3", "typescript-eslint": "^8.60.0", "vue-eslint-parser": "^10.4.0" }, "peerDependencies": { "eslint": "^9.10.0 || ^10.0.0", "eslint-plugin-vue": "^9.28.0 || ^10.0.0", "typescript": ">=4.8.4" }, "optionalPeers": ["typescript"] }, "sha512-yIquzhXH7ZsrwSSm+rYvoGCRY6wcuF4qBi76e0l7hHLq7YU0f9aC+RcR5fL+XJNfmBZxgX5cVl4sppt4x7ZCBg=="],
+    "@vue/eslint-config-typescript": ["@vue/eslint-config-typescript@14.9.0", "", { "dependencies": { "@typescript-eslint/utils": "^8.60.0", "fast-glob": "^3.3.3", "typescript-eslint": "^8.60.0", "vue-eslint-parser": "^10.4.0" }, "peerDependencies": { "eslint": "^9.10.0 || ^10.0.0", "eslint-plugin-vue": "^9.28.0 || ^10.0.0", "typescript": ">=4.8.4" }, "optionalPeers": ["typescript"], "bin": { "vue-eslint-config-typescript": "./dist/bin.js" } }, "sha512-E3j9hDlfVf10F30MRcLTPY2IIhWIx1nsvkVukk14kTcuA+oBVot9zsP1hzsO+PAMDxV3Fd9FimBJtUBNBL5KFA=="],
 
     "@vue/language-core": ["@vue/language-core@3.3.6", "", { "dependencies": { "@volar/language-core": "2.4.28", "@vue/compiler-dom": "^3.5.0", "@vue/shared": "^3.5.0", "alien-signals": "^3.2.0", "muggle-string": "^0.4.1", "path-browserify": "^1.0.1", "picomatch": "^4.0.4" } }, "sha512-LgBMZAy2sR3cQWknpyaxnI6yBkqDfLBPkbdhwRhQCvzfNJRQXPilgQIrdI/v4ytJ0sAq9bWhaPsjqBqneomJ3Q=="],
 
