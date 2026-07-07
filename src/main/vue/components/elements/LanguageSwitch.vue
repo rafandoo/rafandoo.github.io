@@ -24,7 +24,7 @@ onClickOutside(
   () => {
     isOpen.value = false
   },
-  { ignore: [buttonRef] }
+  { ignore: [buttonRef] },
 )
 
 function updatePosition() {
@@ -58,11 +58,15 @@ function selectLocale(locale: LocaleType) {
   isOpen.value = false
 }
 
-watchDebounced(windowWidth, () => {
-  if (isOpen.value) {
-    updatePosition()
-  }
-}, { debounce: 100 })
+watchDebounced(
+  windowWidth,
+  () => {
+    if (isOpen.value) {
+      updatePosition()
+    }
+  },
+  { debounce: 100 },
+)
 </script>
 
 <template>

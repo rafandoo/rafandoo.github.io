@@ -7,6 +7,7 @@ import type { PersonalInfo } from '@/types/PersonalInfo'
 import { useLinks } from '@/composables/useLinks'
 import SocialList from '@/components/elements/SocialList.vue'
 import ContactList from '@/components/elements/ContactList.vue'
+import CvDownloadButton from '@/components/elements/CvDownloadButton.vue'
 
 const props = defineProps<{
   personalInfo: PersonalInfo
@@ -47,6 +48,8 @@ const { gravatar } = useLinks(props.personalInfo.contact)
         <Minimize2 v-else class="sidebar-toggle-icon" :size="16" />
       </button>
     </div>
+
+    <CvDownloadButton class="sidebar-cv-download" :file-name="personalInfo.name" />
 
     <div class="sidebar-details">
       <div class="sidebar-divider"></div>
@@ -113,6 +116,10 @@ const { gravatar } = useLinks(props.personalInfo.contact)
 
 .sidebar.active .sidebar-details {
   @apply visible opacity-100;
+}
+
+.sidebar-cv-download {
+  @apply mx-auto mt-3.5 w-full max-w-60;
 }
 
 @media (min-width: 580px) {

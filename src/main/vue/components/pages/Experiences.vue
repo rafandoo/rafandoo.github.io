@@ -98,7 +98,7 @@ defineProps<{
 }
 
 .timeline-item::after {
-  @apply absolute top-1.5 h-1.5 w-1.5 rounded-[50%] bg-ember-orange shadow-4 content-[""];
+  @apply absolute top-1.5 h-1.5 w-1.5 rounded-[50%] bg-ember-orange shadow-3 content-[""];
   left: calc(var(--tl-rail) * -1);
   transform: translateX(-50%);
 }

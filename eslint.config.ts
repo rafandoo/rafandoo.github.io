@@ -5,7 +5,7 @@ import pluginImport from 'eslint-plugin-import-x'
 import pluginUnusedImports from 'eslint-plugin-unused-imports'
 import eslintPluginVueScopedCSS from 'eslint-plugin-vue-scoped-css'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
-import tailwind from 'eslint-plugin-tailwindcss'
+import eslintPluginTailwindcss from 'eslint-plugin-tailwindcss'
 
 export default defineConfigWithVueTs(
   {
@@ -29,12 +29,13 @@ export default defineConfigWithVueTs(
       import: pluginImport,
       'unused-imports': pluginUnusedImports,
       'vue-scoped-css': eslintPluginVueScopedCSS,
+      tailwindcss: eslintPluginTailwindcss,
     },
     extends: [
       pluginVue.configs['flat/essential'],
       vueTsConfigs.recommended,
       skipFormatting,
-      tailwind.configs.recommended,
+      eslintPluginTailwindcss.configs.recommended,
     ],
     settings: {
       'import/resolver': {
@@ -42,6 +43,9 @@ export default defineConfigWithVueTs(
           project: './tsconfig.app.json',
           alwaysTryTypes: true,
         },
+      },
+      tailwindcss: {
+        cssConfigPath: './src/main/resources/assets/css/style.css',
       },
     },
     rules: {
@@ -75,14 +79,23 @@ export default defineConfigWithVueTs(
       'import/no-cycle': 'warn',
 
       /**
-       * Remove imports não usados automaticamente
+       * Unused imports
        */
       'unused-imports/no-unused-imports': 'error',
 
       /**
-       * TS / JS geral
+       * Tailwind
+       */
+      'tailwindcss/classnames-order': 'warn',
+      'tailwindcss/no-arbitrary-value': 'warn',
+      'tailwindcss/no-contradicting-classname': 'warn',
+      'tailwindcss/enforces-shorthand': 'warn',
+
+      /**
+       * TS / JS general
        */
       '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
       'no-console': 'warn',
     },
   },

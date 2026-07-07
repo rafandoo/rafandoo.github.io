@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRoute } from 'vue-router'
 
 import Sidebar from '@/components/Sidebar.vue'
 import NavBar from '@/components/NavBar.vue'
+import CvDocument from '@/components/cv/CvDocument.vue'
 import AboutMe from '@/components/pages/AboutMe.vue'
-import { activeTab } from '@/composables/useActiveTab'
+import { activeTab, useActiveTabListener } from '@/composables/useActiveTab'
 import personalInfo from '@/data/PersonalInfo'
 import experiences from '@/data/Experiences'
 import projects from '@/data/Projects'
@@ -21,6 +23,11 @@ import education from '@/data/Education'
 
 const { t } = useI18n()
 
+const route = useRoute()
+const isPreview = computed(() => route.name === 'CvPreview')
+
+useActiveTabListener()
+
 const aboutMeText = computed(() => t(personalInfo.me.bio))
 
 const Experiences = defineAsyncComponent(() => import('@/components/pages/Experiences.vue'))
@@ -30,7 +37,7 @@ const Skills = defineAsyncComponent(() => import('@/components/pages/Skills.vue'
 </script>
 
 <template>
-  <div class="main">
+  <div class="main" v-if="!isPreview">
     <Sidebar :personal-info="personalInfo" />
     <main class="main-content">
       <NavBar />
@@ -86,6 +93,10 @@ const Skills = defineAsyncComponent(() => import('@/components/pages/Skills.vue'
       </div>
     </main>
   </div>
+
+  <router-view v-else />
+
+  <CvDocument v-if="!isPreview" />
 </template>
 
 <style scoped>
@@ -97,8 +108,7 @@ const Skills = defineAsyncComponent(() => import('@/components/pages/Skills.vue'
 
 .tab-content {
   @apply block;
-  /*TODO*/
-  animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation: fade 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
 @media (min-width: 580px) {

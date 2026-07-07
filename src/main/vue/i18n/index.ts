@@ -42,7 +42,10 @@ function getBrowserLocale(): LocaleType | null {
   }
 }
 
-const initialLocale = (isValidLocaleOrEmpty(storedLocale.value) ? storedLocale.value : null) ?? getBrowserLocale() ?? fallbackLocale
+const initialLocale =
+  (isValidLocaleOrEmpty(storedLocale.value) ? storedLocale.value : null) ??
+  getBrowserLocale() ??
+  fallbackLocale
 
 const i18n = createI18n({
   legacy: false,

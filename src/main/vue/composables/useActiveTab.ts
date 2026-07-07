@@ -1,3 +1,4 @@
+import { tryOnScopeDispose } from '@vueuse/core'
 import { ref } from 'vue'
 
 import { NAV_TABS } from '@/constants/pages'
@@ -18,7 +19,12 @@ const handleHashChange = () => {
   }
 }
 
-window.addEventListener('hashchange', handleHashChange)
+const stopHashListener = () => window.removeEventListener('hashchange', handleHashChange)
+
+export function useActiveTabListener() {
+  window.addEventListener('hashchange', handleHashChange)
+  tryOnScopeDispose(stopHashListener)
+}
 
 export const setActiveTab = (id: string) => {
   if (VALID_TAB_IDS.includes(id)) {

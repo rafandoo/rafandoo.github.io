@@ -7,6 +7,7 @@
     "skills": "Skills"
   },
   "common": {
+    "export_cv": "Export CV",
     "show_contacts": "Show contacts",
     "email": "E-mail",
     "phone": "Phone",
@@ -21,7 +22,7 @@
     "about": {
       "headline": "Backend Developer",
       "bio": "Hello, my name is Rafael. I'm a student of Computer Science at the Federal Institute of Santa Catarina and work as a software developer.\n Since I got in touch with programming, I developed a real passion for technology. This motivation leads me to always be in search of new knowledge, exploring tools, languages and architectures that challenge me and make me evolve as a developer. Currently, I’m focused on deepening my understanding of microservice-based architectures by exploring concepts such as scalability, resilience, asynchronous communication and observability.\n I have experience with several programming languages, such as Java, Python and PHP, which allows me to adapt solutions according to the needs of the project. I am also familiar with modern development practices such as version control with Git, containerization with Docker and relational database management.\n Follow good development practices such as automated testing, code organization and use of continuous integration pipelines. I like to solve problems objectively and learn from practice in everyday development.",
-      "summary": "Hello, my name is Rafael."
+      "summary": "Full-stack developer and Computer Science student at Instituto Federal Catarinense, with experience in Java microservices architecture (Quarkus) and Vue 3 front-end. Builds integrations between external systems and scalable, high-availability services. Masters modern practices such as Docker containerization, CI pipelines and self-hosted infrastructure (Traefik, Grafana), combining product development and operations in a full-stack approach."
     },
     "portfolio": {
       "projects": {
@@ -75,6 +76,15 @@
     },
     "experiences": {
       "companies": {
+        "syonet": {
+          "items": [
+            {
+              "title": "Full Stack Developer",
+              "date": "Nov/2025 - Present",
+              "description": "Develop and maintain microservices that integrate external systems, with the main focus on creating Leads. Ensure efficient communication between applications, guaranteeing data consistency and high availability of services. Perform continuous maintenance and optimization of integrations to support the growth and scalability of operations."
+            }
+          ]
+        },
         "ipm": {
           "items": [
             {
@@ -84,7 +94,7 @@
             },
             {
               "title": "Java Developer",
-              "date": "Jul/2024 - Currently",
+              "date": "Jul/2024 - Nov/2025",
               "description": "Develop and optimize Java microservices, focusing on the creation of new functionalities and on the continuous improvement of existing services. Implement agile development practices and ensure efficient integration between microservices. Perform maintenance and update of the code to ensure high availability and performance of systems. Work on solving complex problems and improving microservices architecture to support growth and scalability."
             }
           ]
@@ -104,9 +114,13 @@
           ]
         },
         "luxpoli": {
-          "title": "Administrative assistant",
-          "date": "Dec/2018 - Aug/2021",
-          "description": "Responsible for the registration and management of products, customers and suppliers, ensuring the accuracy of information. Manage the control of incoming and outgoing goods, including the issuance and receipt of invoices. Manage accounts receivable and perform billing control, ensuring that all financial transactions are recorded correctly. Monitor and control banking services, performing reconciliations and payments. Coordinate purchasing processes and perform customer service, ensuring satisfaction and support required."
+          "items": [
+            {
+              "title": "Administrative assistant",
+              "date": "Dec/2018 - Aug/2021",
+              "description": "Responsible for the registration and management of products, customers and suppliers, ensuring the accuracy of information. Manage the control of incoming and outgoing goods, including the issuance and receipt of invoices. Manage accounts receivable and perform billing control, ensuring that all financial transactions are recorded correctly. Monitor and control banking services, performing reconciliations and payments. Coordinate purchasing processes and perform customer service, ensuring satisfaction and support required."
+            }
+          ]
         }
       }
     },

@@ -1,6 +1,17 @@
 import type { Experiences } from '@/types/Experience'
 
 const experiences: Experiences = {
+  Syonet: {
+    title: 'Syonet S.A.',
+    logo: new URL('#/assets/img/experiences/syonet.webp', import.meta.url).href,
+    items: [
+      {
+        title: 'me.experiences.companies.syonet.items[0].title',
+        date: 'me.experiences.companies.syonet.items[0].date',
+        description: 'me.experiences.companies.syonet.items[0].description',
+      },
+    ],
+  },
   IPM: {
     title: 'IPM Sistemas',
     logo: new URL('#/assets/img/experiences/ipm.webp', import.meta.url).href,
@@ -37,9 +48,9 @@ const experiences: Experiences = {
     title: 'Luxpoli Tintas',
     items: [
       {
-        title: 'me.experiences.companies.luxpoli.title',
-        date: 'me.experiences.companies.luxpoli.date',
-        description: 'me.experiences.companies.luxpoli.description',
+        title: 'me.experiences.companies.luxpoli.items[0].title',
+        date: 'me.experiences.companies.luxpoli.items[0].date',
+        description: 'me.experiences.companies.luxpoli.items[0].description',
       },
     ],
   },
