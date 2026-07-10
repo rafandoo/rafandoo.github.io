@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@layer theme, base, components;
 
 @theme {
   /* Gradients */
@@ -167,7 +166,7 @@
 @layer components {
   .sidebar,
   article {
-    @apply z-1 rounded-4xl bg-charcoal-black/90 p-4 shadow-1;
+    @apply relative z-1 rounded-4xl bg-charcoal-black/90 p-4 shadow-1;
   }
 
   .reveal {

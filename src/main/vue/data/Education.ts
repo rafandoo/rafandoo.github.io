@@ -27,7 +27,8 @@ const education: Education = [
         issuerLogo: new URL('#/assets/img/education/ifc.svg', import.meta.url).href,
         date: 'me.education.courses.quarkus_workshop_instructor.date',
         credentialUrl:
-          'https://docs.rafandoo.dev/share/sMrzsDYZmgzHoEUgPbkFGwgbgP9B6k7TU8uZaE6Z03TtpK5Gm3',
+          'https://docs.rafandoo.dev/share/sMrzsDYZmgzHoEUgPbkFGwgbP9B6k7TU8uZaE6Z03TtpK5Gm3',
+        visibleOnCv: true,
       },
       {
         title: 'me.education.courses.binary_search_algorithm.title',
@@ -36,6 +37,7 @@ const education: Education = [
         date: 'me.education.courses.binary_search_algorithm.date',
         credentialUrl:
           'https://docs.rafandoo.dev/share/nAwB0V4wGZVbOZRJDZcGbhf8BsJFWTlEEcxm07mv0WxI8y5WFQ',
+        visibleOnCv: false,
       },
     ],
   },

@@ -49,13 +49,12 @@ const { gravatar } = useLinks(props.personalInfo.contact)
       </button>
     </div>
 
-    <CvDownloadButton class="sidebar-cv-download" :file-name="personalInfo.name" />
-
     <div class="sidebar-details">
       <div class="sidebar-divider"></div>
       <ContactList :contact="personalInfo.contact" />
       <div class="sidebar-divider"></div>
       <SocialList :socialLinks="personalInfo.socialLinks" />
+      <CvDownloadButton class="sidebar-cv-download" :file-name="personalInfo.name" />
     </div>
   </aside>
 </template>
@@ -68,7 +67,7 @@ const { gravatar } = useLinks(props.personalInfo.contact)
 }
 
 .sidebar.active {
-  @apply max-h-101.25;
+  @apply max-h-103.25;
 }
 
 .sidebar-main {
@@ -111,7 +110,7 @@ const { gravatar } = useLinks(props.personalInfo.contact)
 }
 
 .sidebar-details {
-  @apply invisible opacity-0 transition-all duration-500 ease-in-out;
+  @apply invisible relative pb-12 opacity-0 transition-all duration-500 ease-in-out;
 }
 
 .sidebar.active .sidebar-details {
@@ -119,7 +118,11 @@ const { gravatar } = useLinks(props.personalInfo.contact)
 }
 
 .sidebar-cv-download {
-  @apply mx-auto mt-3.5 w-full max-w-60;
+  @apply opacity-0 transition-opacity duration-500 ease-in-out;
+}
+
+.sidebar.active .sidebar-cv-download {
+  @apply opacity-100 delay-300;
 }
 
 @media (min-width: 580px) {
@@ -129,6 +132,10 @@ const { gravatar } = useLinks(props.personalInfo.contact)
 
   .sidebar.active {
     @apply max-h-128;
+  }
+
+  .sidebar-details {
+    @apply pb-5;
   }
 
   .sidebar-main {
@@ -161,6 +168,10 @@ const { gravatar } = useLinks(props.personalInfo.contact)
 }
 
 @media (min-width: 768px) {
+  .sidebar-details {
+    @apply pb-8;
+  }
+
   .sidebar-profile-name {
     @apply text-8;
   }
@@ -204,7 +215,11 @@ const { gravatar } = useLinks(props.personalInfo.contact)
   }
 
   .sidebar-details {
-    @apply visible opacity-100;
+    @apply visible pb-7 opacity-100;
+  }
+
+  .sidebar-cv-download {
+    @apply opacity-100;
   }
 
   .sidebar-divider {

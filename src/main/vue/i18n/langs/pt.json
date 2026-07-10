@@ -22,7 +22,7 @@
     "about": {
       "headline": "Desenvolvedor Backend",
       "bio": "Olá, meu nome é Rafael. Sou estudante de Ciência da Computação no Instituto Federal Catarinense e atuo como desenvolvedor de software.\nDesde que entrei em contato com a programação, desenvolvi uma verdadeira paixão por tecnologia. Essa motivação me leva a estar sempre em busca de novos conhecimentos, explorando ferramentas, linguagens e arquiteturas que me desafiem e me façam evoluir como desenvolvedor. Atualmente, estou focado em aprofundar meu entendimento sobre arquiteturas baseadas em microsserviços, explorando conceitos como escalabilidade, resiliência, comunicação assíncrona e observabilidade.\nTenho experiência com várias linguagens de programação, como Java, Python e PHP, o que me permite adaptar soluções conforme as necessidades do projeto. Também sou familiarizado com práticas modernas de desenvolvimento, como controle de versão com Git, conteinerização com Docker e gerenciamento de bancos de dados relacionais.\nProcuro seguir boas práticas de desenvolvimento, como testes automatizados, organização de código e uso de pipelines de integração contínua. Gosto de resolver problemas de forma objetiva e aprender com a prática no dia a dia do desenvolvimento.",
-      "summary": "Desenvolvedor full-stack e estudante de Ciência da Computação no Instituto Federal Catarinense, com experiência em arquitetura de microsserviços Java (Quarkus) e front-end Vue 3. Atua na construção de integrações entre sistemas externos e na criação de serviços escaláveis e de alta disponibilidade. Domina práticas modernas como conteinerização com Docker, pipelines de CI e infraestrutura self-hosted (Traefik, Grafana), unindo desenvolvimento de produto e operação em uma abordagem full-stack."
+      "summary": "Desenvolvedor backend com experiência em arquiteturas de microsserviços, integrações de sistemas e desenvolvimento de soluções escaláveis. Estudante de Ciência da Computação no Instituto Federal Catarinense, atua na construção e operação de serviços de alta disponibilidade, com foco em desempenho, confiabilidade e manutenção contínua."
     },
     "portfolio": {
       "projects": {
@@ -67,11 +67,15 @@
     "skills": {
       "categories": {
         "programming_languages": "Linguagens de programação",
-        "frameworks": "Frameworks e bibliotecas",
-        "ai": "Inteligência Artificial",
-        "tools": "Ferramentas",
+        "backend": "Backend",
+        "frontend": "Frontend",
+        "data_ai": "Dados e IA",
+        "testing": "Testes",
+        "messaging": "Mensageria",
         "devops": "DevOps",
-        "databases": "Bancos de dados"
+        "databases": "Bancos de dados",
+        "observability": "Observabilidade",
+        "tools": "Ferramentas"
       }
     },
     "experiences": {
@@ -80,7 +84,7 @@
           "items": [
             {
               "title": "Desenvolvedor Full Stack",
-              "date": "Nov/2025- Atualmente",
+              "date": "Nov/2025 - Atualmente",
               "description": "Desenvolver e manter microsserviços responsáveis por integrar sistemas externos, com foco principal na criação de Leads. Garantir a comunicação eficiente entre as aplicações, assegurando a consistência dos dados e a alta disponibilidade dos serviços. Realizar a manutenção e otimização contínua das integrações para suportar o crescimento e a escalabilidade das operações."
             }
           ]

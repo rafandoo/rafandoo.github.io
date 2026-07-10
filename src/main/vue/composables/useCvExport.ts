@@ -9,7 +9,8 @@ function isIosDevice(): boolean {
   const iPhoneiPod = /iP(hone|od)/.test(ua)
   const iOSiPadOs =
     navigator.platform === 'MacIntel' &&
-    (navigator as Navigator & { maxTouchPoints?: number }).maxTouchPoints! > 1
+    ((navigator as Navigator & { maxTouchPoints?: number }).maxTouchPoints ?? 0) > 1
+
   return iPad || iPhoneiPod || iOSiPadOs
 }
 
@@ -40,11 +41,13 @@ export function useCvExport(getFileName: () => string) {
     const elRect = el.getBoundingClientRect()
     const canvasScale = canvas.width / elRect.width
     const blockBoundaries = Array.from(
-      el.querySelectorAll('.cv-section, .cv-company, .cv-item, .cv-summary, .cv-skill-cat'),
+      el.querySelectorAll(
+        '.cv-section, .cv-company, .cv-item, .cv-summary, .cv-skill-cat, .cv-academic, .cv-course',
+      ),
     )
       .map((b) => {
-        const r = b.getBoundingClientRect()
-        return (r.bottom - elRect.top) * canvasScale
+        const rect = b.getBoundingClientRect()
+        return (rect.bottom - elRect.top) * canvasScale
       })
       .filter((y) => y > 0 && y <= canvas.height)
       .sort((a, b) => a - b)

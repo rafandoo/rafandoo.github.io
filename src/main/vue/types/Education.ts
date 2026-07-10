@@ -13,6 +13,7 @@ export type CourseItem = {
   issuerLogo?: string
   date: string
   credentialUrl?: string
+  visibleOnCv: boolean
 }
 
 export type EducationSection = {

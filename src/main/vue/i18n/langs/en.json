@@ -22,7 +22,7 @@
     "about": {
       "headline": "Backend Developer",
       "bio": "Hello, my name is Rafael. I'm a student of Computer Science at the Federal Institute of Santa Catarina and work as a software developer.\n Since I got in touch with programming, I developed a real passion for technology. This motivation leads me to always be in search of new knowledge, exploring tools, languages and architectures that challenge me and make me evolve as a developer. Currently, I’m focused on deepening my understanding of microservice-based architectures by exploring concepts such as scalability, resilience, asynchronous communication and observability.\n I have experience with several programming languages, such as Java, Python and PHP, which allows me to adapt solutions according to the needs of the project. I am also familiar with modern development practices such as version control with Git, containerization with Docker and relational database management.\n Follow good development practices such as automated testing, code organization and use of continuous integration pipelines. I like to solve problems objectively and learn from practice in everyday development.",
-      "summary": "Full-stack developer and Computer Science student at Instituto Federal Catarinense, with experience in Java microservices architecture (Quarkus) and Vue 3 front-end. Builds integrations between external systems and scalable, high-availability services. Masters modern practices such as Docker containerization, CI pipelines and self-hosted infrastructure (Traefik, Grafana), combining product development and operations in a full-stack approach."
+      "summary": "Backend developer with experience in microservices architectures, system integrations and scalable solutions. Computer Science student at Instituto Federal Catarinense, working on building and operating high-availability services, with a focus on performance, reliability and continuous maintenance."
     },
     "portfolio": {
       "projects": {
@@ -67,11 +67,15 @@
     "skills": {
       "categories": {
         "programming_languages": "Programming languages",
-        "frameworks": "Frameworks and libraries",
-        "ai": "Artificial Intelligence",
-        "tools": "Tools",
+        "backend": "Backend",
+        "frontend": "Frontend",
+        "data_ai": "Data and AI",
+        "testing": "Testing",
+        "messaging": "Messaging",
         "devops": "DevOps",
-        "databases": "Databases"
+        "databases": "Databases",
+        "observability": "Observability",
+        "tools": "Tools"
       }
     },
     "experiences": {

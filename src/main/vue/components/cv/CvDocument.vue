@@ -1,23 +1,36 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import personalInfo from '@/data/PersonalInfo'
 import experiences from '@/data/Experiences'
-import skills from '@/data/Skills'
-import { useCvPrint } from '@/composables/useCvPrint'
+import education from '@/data/Education'
+import type { AcademicItem, CourseItem } from '@/types/Education'
 
-const props = defineProps<{ preview?: boolean }>()
+defineProps<{ preview?: boolean }>()
 
 const { t } = useI18n()
 
-const { openCvPreview } = useCvPrint()
+const byStartDateAsc = (a: { startDate: string }, b: { startDate: string }) =>
+  a.startDate.localeCompare(b.startDate)
 
-onMounted(() => {
-  if (props.preview) {
-    openCvPreview()
-  }
-})
+const sortedExperiences = computed(() =>
+  Object.fromEntries(
+    Object.entries(experiences).map(([key, experience]) => [
+      key,
+      { ...experience, items: [...experience.items].sort(byStartDateAsc) },
+    ]),
+  ),
+)
+
+const cvSocialLinks = computed(() =>
+  personalInfo.socialLinks
+    .filter((social) => social.visibleOnCv)
+    .map((social) => ({
+      ...social,
+      displayUrl: social.url.replace(/^https?:\/\//, ''),
+    })),
+)
 </script>
 
 <template>
@@ -31,11 +44,8 @@ onMounted(() => {
         <li class="cv-location">{{ personalInfo.contact.location }}</li>
         <li>{{ personalInfo.contact.email }}</li>
         <li>{{ personalInfo.contact.phone }}</li>
-        <li
-          v-for="s in personalInfo.socialLinks.filter((social) => social.visibleOnCv)"
-          :key="s.name"
-        >
-          {{ s.url.replace('https://', '') }}
+        <li v-for="s in cvSocialLinks" :key="s.name">
+          {{ s.displayUrl }}
         </li>
       </ul>
     </header>
@@ -49,9 +59,9 @@ onMounted(() => {
 
     <section class="cv-section">
       <h2>{{ t('cv.professional_experience') }}</h2>
-      <div v-for="(experience, expI) in experiences" :key="expI" class="cv-company">
+      <div v-for="experience in sortedExperiences" :key="experience.title" class="cv-company">
         <h3>{{ experience.title }}</h3>
-        <div v-for="(item, expJ) in experience.items" :key="expJ" class="cv-item">
+        <div v-for="item in experience.items" :key="item.title" class="cv-item">
           <div class="cv-item-head">
             <span>{{ t(item.title) }}</span>
             <span class="cv-item-date">{{ t(item.date) }}</span>
@@ -61,17 +71,42 @@ onMounted(() => {
       </div>
     </section>
 
-    <section class="cv-section">
-      <h2>HABILIDADES</h2>
-      <div v-for="cat in skills" :key="cat.title" class="cv-skill-cat">
-        <span class="cv-skill-label">{{ cat.title }}:</span>
-        <span class="cv-skill-items">
-          <span v-for="item in cat.items" :key="item.title" class="cv-skill-chip">
-            {{ item.title }}
-          </span>
-        </span>
-      </div>
-    </section>
+    <template v-for="section in education" :key="section.id">
+      <section class="cv-section">
+        <h2>{{ t(section.title) }}</h2>
+        <template v-if="section.icon === 'graduation'">
+          <div
+            v-for="(item, idx) in section.items as AcademicItem[]"
+            :key="idx"
+            class="cv-institution"
+          >
+            <h3>{{ t(item.institution) }}</h3>
+            <div class="cv-item">
+              <div class="cv-item-head">
+                <span>{{ t(item.title) }}</span>
+                <span class="cv-item-date">{{ t(item.date) }}</span>
+              </div>
+              <p>{{ t(item.description) }}</p>
+            </div>
+          </div>
+        </template>
+        <template v-else>
+          <div
+            v-for="(item, idx) in (section.items as CourseItem[]).filter(
+              (item) => item.visibleOnCv,
+            )"
+            :key="idx"
+            class="cv-course"
+          >
+            <div class="cv-item-head">
+              <span class="cv-course-title">{{ t(item.title) }}</span>
+              <span class="cv-item-date">{{ t(item.date) }}</span>
+            </div>
+            <p class="cv-course-issuer">{{ t(item.issuer) }}</p>
+          </div>
+        </template>
+      </section>
+    </template>
   </div>
 </template>
 
@@ -143,6 +178,10 @@ onMounted(() => {
   @apply mt-4 mb-2 text-4 font-700 text-dark-graphite;
 }
 
+.cv-institution > h3 {
+  @apply mt-4 mb-2 text-4 font-700 text-dark-graphite;
+}
+
 .cv-item {
   @apply mb-3 break-inside-avoid border-l-2 border-l-ember-orange/60 pl-3;
 }
@@ -159,20 +198,15 @@ onMounted(() => {
   @apply text-justify text-3 leading-snug text-dark-graphite;
 }
 
-.cv-skill-cat {
-  @apply mb-2 flex flex-wrap items-baseline gap-2;
+.cv-course {
+  @apply mt-4 mb-3 break-inside-avoid border-l-2 border-l-ember-orange/60 pl-3;
 }
 
-.cv-skill-label {
-  @apply min-w-fit text-3 font-700 text-charcoal-black;
+.cv-course-title {
+  @apply text-3 font-600 text-dark-graphite;
 }
 
-.cv-skill-items {
-  @apply flex flex-wrap gap-1.5;
-}
-
-.cv-skill-chip {
-  @apply rounded-full border border-ember-orange/40 bg-ember-orange/5 px-2 py-0.5
-    text-2 text-dark-graphite;
+.cv-course-issuer {
+  @apply text-3 leading-snug text-dark-graphite italic;
 }
 </style>
