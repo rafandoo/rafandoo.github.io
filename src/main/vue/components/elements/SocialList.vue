@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { AtSign, Github, Instagram, Linkedin } from 'lucide-vue-next'
 
-import type { Social } from '@/types/PersonalInfo'
+import type { SocialLink } from '@/types/PersonalInfo'
 
 defineProps<{
-  social: Social[]
+  socialLinks: SocialLink[]
 }>()
 
 const getIcon = (name: string) => {
@@ -23,9 +23,9 @@ const getIcon = (name: string) => {
 
 <template>
   <ul class="social-list">
-    <li v-for="(s, key) in social" :key="key" class="social-item">
-      <a :href="s.link" class="social-link" target="_blank" rel="noopener noreferrer">
-        <component :is="getIcon(s.name)" class="social-icon" />
+    <li v-for="(social, key) in socialLinks" :key="key" class="social-item">
+      <a :href="social.url" class="social-link" target="_blank" rel="noopener noreferrer">
+        <component :is="getIcon(social.name)" class="social-icon" />
       </a>
     </li>
   </ul>
@@ -43,7 +43,7 @@ const getIcon = (name: string) => {
 }
 
 .social-item .social-link:hover {
-  @apply -translate-y-2 text-paper;
+  @apply -translate-y-1 text-paper;
 }
 
 @media (min-width: 768px) {

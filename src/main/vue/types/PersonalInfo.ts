@@ -1,8 +1,14 @@
 export type PersonalInfo = {
   name: string
-  subtitle: string
+  me: AboutMe
   contact: Contact
-  social: Social[]
+  socialLinks: SocialLink[]
+}
+
+export type AboutMe = {
+  headline: string
+  bio: string
+  summary: string
 }
 
 export type Contact = {
@@ -12,7 +18,8 @@ export type Contact = {
   location: string
 }
 
-export type Social = {
+export type SocialLink = {
   name: string
-  link: string
+  url: string
+  visibleOnCv: boolean
 }

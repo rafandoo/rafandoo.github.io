@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useToggle } from '@vueuse/core'
 import { Maximize2, Minimize2 } from 'lucide-vue-next'
 
 import type { PersonalInfo } from '@/types/PersonalInfo'
 import { useLinks } from '@/composables/useLinks'
 import SocialList from '@/components/elements/SocialList.vue'
 import ContactList from '@/components/elements/ContactList.vue'
+import CvDownloadButton from '@/components/elements/CvDownloadButton.vue'
 
 const props = defineProps<{
   personalInfo: PersonalInfo
@@ -14,13 +15,9 @@ const props = defineProps<{
 
 const { t } = useI18n()
 
-const sidebarActive = ref(false)
+const [sidebarActive, toggleSidebar] = useToggle()
 
 const { gravatar } = useLinks(props.personalInfo.contact)
-
-function toggleSidebar() {
-  sidebarActive.value = !sidebarActive.value
-}
 </script>
 
 <template>
@@ -38,15 +35,15 @@ function toggleSidebar() {
 
       <div class="sidebar-profile">
         <h1 class="sidebar-profile-name">{{ personalInfo.name }}</h1>
-        <p class="sidebar-profile-subtitle">{{ t(personalInfo.subtitle) }}</p>
+        <p class="sidebar-profile-subtitle">{{ t(personalInfo.me.headline) }}</p>
       </div>
 
       <button
         class="sidebar-toggle"
-        :aria-label="t('elements.show_contacts')"
-        @click="toggleSidebar"
+        :aria-label="t('common.show_contacts')"
+        @click="toggleSidebar()"
       >
-        <span class="sidebar-toggle-label">{{ t('elements.show_contacts') }}</span>
+        <span class="sidebar-toggle-label">{{ t('common.show_contacts') }}</span>
         <Maximize2 v-if="!sidebarActive" class="sidebar-toggle-icon" :size="16" />
         <Minimize2 v-else class="sidebar-toggle-icon" :size="16" />
       </button>
@@ -56,7 +53,8 @@ function toggleSidebar() {
       <div class="sidebar-divider"></div>
       <ContactList :contact="personalInfo.contact" />
       <div class="sidebar-divider"></div>
-      <SocialList :social="personalInfo.social" />
+      <SocialList :socialLinks="personalInfo.socialLinks" />
+      <CvDownloadButton class="sidebar-cv-download" :file-name="personalInfo.name" />
     </div>
   </aside>
 </template>
@@ -69,7 +67,7 @@ function toggleSidebar() {
 }
 
 .sidebar.active {
-  @apply max-h-101.25;
+  @apply max-h-103.25;
 }
 
 .sidebar-main {
@@ -112,11 +110,19 @@ function toggleSidebar() {
 }
 
 .sidebar-details {
-  @apply invisible opacity-0 transition-all duration-500 ease-in-out;
+  @apply invisible relative pb-12 opacity-0 transition-all duration-500 ease-in-out;
 }
 
 .sidebar.active .sidebar-details {
   @apply visible opacity-100;
+}
+
+.sidebar-cv-download {
+  @apply opacity-0 transition-opacity duration-500 ease-in-out;
+}
+
+.sidebar.active .sidebar-cv-download {
+  @apply opacity-100 delay-300;
 }
 
 @media (min-width: 580px) {
@@ -126,6 +132,10 @@ function toggleSidebar() {
 
   .sidebar.active {
     @apply max-h-128;
+  }
+
+  .sidebar-details {
+    @apply pb-5;
   }
 
   .sidebar-main {
@@ -158,6 +168,10 @@ function toggleSidebar() {
 }
 
 @media (min-width: 768px) {
+  .sidebar-details {
+    @apply pb-8;
+  }
+
   .sidebar-profile-name {
     @apply text-8;
   }
@@ -201,7 +215,11 @@ function toggleSidebar() {
   }
 
   .sidebar-details {
-    @apply visible opacity-100;
+    @apply visible pb-7 opacity-100;
+  }
+
+  .sidebar-cv-download {
+    @apply opacity-100;
   }
 
   .sidebar-divider {

@@ -1,19 +1,33 @@
 import type { Experiences } from '@/types/Experience'
 
 const experiences: Experiences = {
+  Syonet: {
+    title: 'Syonet S.A.',
+    logo: new URL('#/assets/img/experiences/syonet.webp', import.meta.url).href,
+    items: [
+      {
+        title: 'me.experiences.companies.syonet.items[0].title',
+        date: 'me.experiences.companies.syonet.items[0].date',
+        description: 'me.experiences.companies.syonet.items[0].description',
+        startDate: '2025-11',
+      },
+    ],
+  },
   IPM: {
     title: 'IPM Sistemas',
     logo: new URL('#/assets/img/experiences/ipm.webp', import.meta.url).href,
     items: [
       {
-        title: 'personal.experiences.ipm.items[1].title',
-        date: 'personal.experiences.ipm.items[1].date',
-        description: 'personal.experiences.ipm.items[1].description',
+        title: 'me.experiences.companies.ipm.items[0].title',
+        date: 'me.experiences.companies.ipm.items[0].date',
+        description: 'me.experiences.companies.ipm.items[0].description',
+        startDate: '2024-07',
       },
       {
-        title: 'personal.experiences.ipm.items[0].title',
-        date: 'personal.experiences.ipm.items[0].date',
-        description: 'personal.experiences.ipm.items[0].description',
+        title: 'me.experiences.companies.ipm.items[1].title',
+        date: 'me.experiences.companies.ipm.items[1].date',
+        description: 'me.experiences.companies.ipm.items[1].description',
+        startDate: '2024-01',
       },
     ],
   },
@@ -22,14 +36,16 @@ const experiences: Experiences = {
     logo: new URL('#/assets/img/experiences/newtech.webp', import.meta.url).href,
     items: [
       {
-        title: 'personal.experiences.newtech.items[1].title',
-        date: 'personal.experiences.newtech.items[1].date',
-        description: 'personal.experiences.newtech.items[1].description',
+        title: 'me.experiences.companies.newtech.items[0].title',
+        date: 'me.experiences.companies.newtech.items[0].date',
+        description: 'me.experiences.companies.newtech.items[0].description',
+        startDate: '2022-05',
       },
       {
-        title: 'personal.experiences.newtech.items[0].title',
-        date: 'personal.experiences.newtech.items[0].date',
-        description: 'personal.experiences.newtech.items[0].description',
+        title: 'me.experiences.companies.newtech.items[1].title',
+        date: 'me.experiences.companies.newtech.items[1].date',
+        description: 'me.experiences.companies.newtech.items[1].description',
+        startDate: '2021-09',
       },
     ],
   },
@@ -37,9 +53,10 @@ const experiences: Experiences = {
     title: 'Luxpoli Tintas',
     items: [
       {
-        title: 'personal.experiences.luxpoli.title',
-        date: 'personal.experiences.luxpoli.date',
-        description: 'personal.experiences.luxpoli.description',
+        title: 'me.experiences.companies.luxpoli.items[0].title',
+        date: 'me.experiences.companies.luxpoli.items[0].date',
+        description: 'me.experiences.companies.luxpoli.items[0].description',
+        startDate: '2018-12',
       },
     ],
   },

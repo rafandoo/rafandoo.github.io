@@ -5,11 +5,13 @@ import { useScroll, useSwipe } from '@vueuse/core'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 
 import LanguageSwitch from '@/components/elements/LanguageSwitch.vue'
-import { activeTab, setActiveTab } from '@/composables/useActiveTab'
+import { useActiveTab } from '@/composables/useActiveTab'
 import { resetRevealStates } from '@/composables/useReveal'
 import { NAV_TABS } from '@/constants/pages'
 
 const { t } = useI18n()
+
+const { activeTab, setActiveTab } = useActiveTab()
 
 const navListRef = ref<HTMLUListElement | null>(null)
 

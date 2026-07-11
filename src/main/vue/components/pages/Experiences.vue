@@ -1,15 +1,28 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { BriefcaseBusiness } from 'lucide-vue-next'
 
-import type { Experiences } from '@/types/Experience'
+import type { Experience, Experiences } from '@/types/Experience'
 import { PAGE_EXPERIENCE } from '@/constants/pages'
 
 const { t } = useI18n()
 
-defineProps<{
+const props = defineProps<{
   experiences: Experiences
 }>()
+
+const byStartDateAsc = (a: { startDate: string }, b: { startDate: string }) =>
+  a.startDate.localeCompare(b.startDate)
+
+const sortedExperiences = computed<Record<string, Experience>>(() => {
+  const entries = Object.entries(props.experiences).map(([key, experience]) => [
+    key,
+    { ...experience, items: [...experience.items].sort(byStartDateAsc) },
+  ])
+
+  return Object.fromEntries(entries) as Record<string, Experience>
+})
 </script>
 
 <template>
@@ -19,7 +32,7 @@ defineProps<{
     </header>
 
     <section
-      v-for="(experience, key, idx) in experiences"
+      v-for="(experience, key, idx) in sortedExperiences"
       :key="key"
       v-reveal="idx * 80"
       class="timeline"
@@ -39,7 +52,7 @@ defineProps<{
       </div>
 
       <ol class="timeline-list">
-        <li v-for="(item, j) in experience.items" :key="j" class="timeline-item">
+        <li v-for="item in experience.items" :key="item.title" class="timeline-item">
           <h4 class="timeline-item-title">{{ t(item.title) }}</h4>
           <span>{{ t(item.date) }}</span>
           <p class="timeline-text">{{ t(item.description) }}</p>
@@ -98,7 +111,7 @@ defineProps<{
 }
 
 .timeline-item::after {
-  @apply absolute top-1.5 h-1.5 w-1.5 rounded-[50%] bg-ember-orange shadow-4 content-[""];
+  @apply absolute top-1.5 h-1.5 w-1.5 rounded-[50%] bg-ember-orange shadow-3 content-[""];
   left: calc(var(--tl-rail) * -1);
   transform: translateX(-50%);
 }

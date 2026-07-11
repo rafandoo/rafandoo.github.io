@@ -22,9 +22,9 @@ const { t } = useI18n()
 const { email, whatsapp } = useLinks(props.contact)
 
 const contacts = computed<ContactItem[]>(() => [
-  { icon: Mail, title: 'elements.email', value: props.contact.email, href: email.value },
-  { icon: Phone, title: 'elements.phone', value: props.contact.phone, href: whatsapp.value },
-  { icon: MapPin, title: 'elements.location', value: props.contact.location },
+  { icon: Mail, title: 'common.email', value: props.contact.email, href: email.value },
+  { icon: Phone, title: 'common.phone', value: props.contact.phone, href: whatsapp.value },
+  { icon: MapPin, title: 'common.location', value: props.contact.location },
 ])
 </script>
 

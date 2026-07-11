@@ -2,25 +2,32 @@ import type { PersonalInfo } from '@/types/PersonalInfo'
 
 const personalInfo: PersonalInfo = {
   name: 'Rafael Camargo',
-  subtitle: 'personal.subtitle',
+  me: {
+    headline: 'me.about.headline',
+    bio: 'me.about.bio',
+    summary: 'me.about.summary',
+  },
   contact: {
     email: 'rafaelcamargo.inf@gmail.com',
     phone: '+55 (47) 99166-4002',
     whatsappMessage: 'Ol%C3%A1!',
     location: 'Santa Catarina, Brasil',
   },
-  social: [
+  socialLinks: [
     {
       name: 'GitHub',
-      link: 'https://github.com/rafandoo/',
+      url: 'https://github.com/rafandoo',
+      visibleOnCv: false,
     },
     {
       name: 'Linkedin',
-      link: 'https://www.linkedin.com/in/rafaelcamargob/',
+      url: 'https://linkedin.com/in/rafaelcamargob',
+      visibleOnCv: true,
     },
     {
       name: 'Instagram',
-      link: 'https://www.instagram.com/rafandoo/',
+      url: 'https://instagram.com/rafandoo',
+      visibleOnCv: false,
     },
   ],
 }
