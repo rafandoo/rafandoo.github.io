@@ -21,7 +21,7 @@
     "fix": "run-s format lint:fix"
   },
   "dependencies": {
-    "@vueuse/core": "14.3.0",
+    "@vueuse/core": "14.4.0",
     "blueimp-md5": "2.19.0",
     "html2canvas-pro": "2.2.4",
     "jspdf": "4.2.1",
